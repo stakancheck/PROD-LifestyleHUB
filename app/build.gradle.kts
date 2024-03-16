@@ -1,3 +1,6 @@
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
@@ -6,6 +9,10 @@ plugins {
 android {
     namespace = "ru.stakancheck.lifestylehub"
     compileSdk = 34
+
+    val keystorePropertiesFile = rootProject.file(".signing/signing.properties")
+    val keystoreProperties = Properties()
+    keystoreProperties.load(FileInputStream(keystorePropertiesFile))
 
     defaultConfig {
         applicationId = "ru.stakancheck.lifestylehub"
@@ -20,13 +27,37 @@ android {
         }
     }
 
+    signingConfigs {
+        create("release") {
+            keyAlias = keystoreProperties["keyAliasRelease"] as String
+            keyPassword = keystoreProperties["keyPasswordRelease"] as String
+            storeFile = rootProject.file(".signing/keystore.jks")
+            storePassword = keystoreProperties["storePassword"] as String
+        }
+
+        getByName("debug") {
+            keyAlias = keystoreProperties["keyAliasDebug"] as String
+            keyPassword = keystoreProperties["keyPasswordDebug"] as String
+            storeFile = rootProject.file(".signing/keystore.jks")
+            storePassword = keystoreProperties["storePassword"] as String
+        }
+    }
+
     buildTypes {
-        release {
+        getByName("release") {
             isMinifyEnabled = false
+            isDebuggable = false
+            signingConfig = signingConfigs.getByName("release")
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+        getByName("debug") {
+            isDebuggable = true
+            applicationIdSuffix = ".debug"
+            versionNameSuffix = "-DEBUG"
+            signingConfig = signingConfigs.getByName("debug")
         }
     }
     compileOptions {
@@ -51,6 +82,7 @@ android {
 
 dependencies {
 
+    // Default dependencies
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -66,4 +98,6 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    // Custom dependencies
 }
