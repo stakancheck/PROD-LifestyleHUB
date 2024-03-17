@@ -1,3 +1,11 @@
+/*
+ * Copyright (c) 2024. Artem Sukhanov (Stakancheck)
+ * All rights reserved.
+ *
+ * For inquiries, please contact:
+ * Personal Email: stakancheck@gmail.com
+ */
+
 import java.io.FileInputStream
 import java.util.Properties
 
@@ -71,7 +79,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
     }
     packaging {
         resources {
@@ -85,17 +93,16 @@ dependencies {
     // Default dependencies (by Android Studio)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
-    // Android UI
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.ui.graphics)
-    // Compose
-    implementation(platform(libs.androidx.compose.bom))
+    // Compose and Material 3
+    val composeBom = platform(libs.androidx.compose.bom)
+    implementation(composeBom)
+    androidTestImplementation(composeBom)
     implementation(libs.androidx.activity.compose)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    // Material 3
-    implementation(libs.androidx.material3)
-    testApi(libs.junit)
+    implementation(libs.compose.material3)
+    implementation(libs.compose.material.icons)
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
     // Tests
+    testApi(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.ui.test.junit4)
     // Tooling

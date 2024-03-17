@@ -1,3 +1,16 @@
+<!--
+  ~ Copyright (c) 2024. Artem Sukhanov (Stakancheck)
+  ~ All rights reserved.
+  ~
+  ~ For inquiries, please contact:
+  ~ Personal Email: stakancheck@gmail.com
+  -->
+
 <resources>
     <string name="app_name">LifestyleHUB</string>
+
+    <!-- Bottom bar navigation -->
+    <string name="label_bottom_main">Главная</string>
+    <string name="label_bottom_leisure">Мой досуг</string>
+    <string name="label_bottom_profile">Профиль</string>
 </resources>

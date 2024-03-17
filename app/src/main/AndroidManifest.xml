@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2024. Artem Sukhanov (Stakancheck)
+  ~ All rights reserved.
+  ~
+  ~ For inquiries, please contact:
+  ~ Personal Email: stakancheck@gmail.com
+  -->
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:name=".app.LifestyleHubApp"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -13,7 +22,7 @@
         android:theme="@style/Theme.LifestyleHUB"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.activity.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.LifestyleHUB">
             <intent-filter>
