@@ -8,34 +8,39 @@
 
 package ru.stakancheck.data.models
 
-import ru.stakancheck.api.models.Coord
-import ru.stakancheck.api.models.Main
-import ru.stakancheck.api.models.Sys
-import ru.stakancheck.api.models.Weather
 import java.util.Date
 
 /**
- * Data class representing a weather response.
+ * Data class representing weather.
  *
- * @property weather The list of weather conditions.
- * @property main The main weather parameters.
+ * @property weatherId The id of the weather condition.
+ * @property weatherGroup The main group of weather parameters.
+ * @property description The description of the weather condition.
+ * @property icon The id of the weather icon.
+ * @property temp The temperature.
+ * @property feelsLike The perceived temperature.
+ * @property pressure The atmospheric pressure at sea level.
+ * @property humidity The humidity percentage.
+ * @property tempMin The minimum temperature at the moment.
+ * @property tempMax The maximum temperature at the moment.
  * @property dt The date and time of the weather data getting.
- * @property sys The system parameters.
- * @property timezone The timezone of the location.
- * @property id The id of the location.
- * @property name The name of the location.
- * @property cod The cod parameter.
+ * @property sunrise The sunrise time.
+ * @property sunset The sunset time.
+ * @property location The name of the location.
  */
-data class CurrentWeatherDTO(
-    val coord: Coord,
-    val weather: List<Weather>,
-    val base: String,
-    val main: Main,
+data class Weather(
+    val weatherId: Int,
+    val weatherGroup: String,
+    val description: String,
+    val icon: String,
+    val temp: Double,
+    val feelsLike: Double,
+    val pressure: Int,
+    val humidity: Int,
+    val tempMin: Double,
+    val tempMax: Double,
     val dt: Date,
-    val sys: Sys,
-    val timezone: Int,
-    val id: Int,
-    val name: String,
-    val cod: Int
+    val sunrise: Date,
+    val sunset: Date,
+    val location: String,
 )
-

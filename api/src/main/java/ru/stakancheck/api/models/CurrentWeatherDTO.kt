@@ -99,7 +99,6 @@ data class Main(
  * @property sunrise The sunrise time.
  * @property sunset The sunset time.
  */
-@Suppress("SERIALIZER_TYPE_INCOMPATIBLE")
 @Serializable
 data class Sys(
     val type: Int,
