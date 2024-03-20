@@ -1,0 +1,46 @@
+{
+    "coord": {
+        "lon": 50.8079,
+        "lat": 61.6919
+    },
+    "weather": [
+        {
+            "id": 500,
+            "main": "Rain",
+            "description": "light rain",
+            "icon": "10n"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 275.98,
+        "feels_like": 272.34,
+        "temp_min": 275.98,
+        "temp_max": 275.98,
+        "pressure": 1022,
+        "humidity": 30
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 4,
+        "deg": 280
+    },
+    "rain": {
+        "1h": 0.35
+    },
+    "clouds": {
+        "all": 0
+    },
+    "dt": 1710875946,
+    "sys": {
+        "type": 1,
+        "id": 9036,
+        "country": "RU",
+        "sunrise": 1710816044,
+        "sunset": 1710859694
+    },
+    "timezone": 10800,
+    "id": 485239,
+    "name": "Syktyvkar",
+    "cod": 200
+}

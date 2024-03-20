@@ -1,3 +1,11 @@
+/*
+ * Copyright (c) 2024. Artem Sukhanov (Stakancheck)
+ * All rights reserved.
+ *
+ * For inquiries, please contact:
+ * Personal Email: stakancheck@gmail.com
+ */
+
 pluginManagement {
     repositories {
         google {
@@ -20,4 +28,7 @@ dependencyResolutionManagement {
 
 rootProject.name = "LifestyleHUB"
 include(":app")
- 
+include(":api")
+include(":features:main-feed")
+include(":common")
+include(":data")

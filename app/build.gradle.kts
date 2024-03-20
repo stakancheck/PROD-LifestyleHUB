@@ -12,15 +12,22 @@ import java.util.Properties
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+    alias(libs.plugins.kotlinSerialization)
 }
 
 android {
     namespace = "ru.stakancheck.lifestylehub"
     compileSdk = 34
 
+    // App signing properties
     val keystorePropertiesFile = rootProject.file(".signing/signing.properties")
     val keystoreProperties = Properties()
     keystoreProperties.load(FileInputStream(keystorePropertiesFile))
+
+    // API keys properties
+    val secretsPropertiesFile = rootProject.file("secrets.properties")
+    val secretsProperties = Properties()
+    secretsProperties.load(FileInputStream(secretsPropertiesFile))
 
     defaultConfig {
         applicationId = "ru.stakancheck.lifestylehub"
@@ -33,6 +40,11 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
+        buildConfigField(
+            "String",
+            "OPEN_WEATHER_API_KEY",
+            secretsProperties["OPEN_WEATHER_API_KEY"] as String
+        )
     }
 
     signingConfigs {
@@ -77,6 +89,7 @@ android {
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
@@ -110,7 +123,6 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-    // Custom dependencies
     // Coroutines
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
@@ -118,6 +130,10 @@ dependencies {
     implementation(libs.ktor.core)
     implementation(libs.ktor.client.okhttp)
     implementation(libs.ktor.client.logging)
+    implementation(libs.ktor.serialization.json)
     // Navigation
     implementation(libs.androidx.navigation.compose)
+    // Serialization JSON
+    implementation(libs.kotlinx.serialization.json)
+
 }
