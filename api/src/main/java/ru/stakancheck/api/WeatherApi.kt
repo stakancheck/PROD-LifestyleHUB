@@ -19,6 +19,7 @@ import io.ktor.http.path
 import ru.stakancheck.api.models.ApiResult
 import ru.stakancheck.api.models.CurrentWeatherDTO
 import ru.stakancheck.api.models.Language
+import ru.stakancheck.api.models.MeasurementUnit
 import ru.stakancheck.api.models.WeatherErrorDTO
 
 /**
@@ -43,7 +44,8 @@ class WeatherApi(
     suspend fun getCurrentWeather(
         lat: Double,
         long: Double,
-        lang: Language
+        lang: Language,
+        units: MeasurementUnit = MeasurementUnit.METRIC,
     ): ApiResult<CurrentWeatherDTO> =
         ApiResult.withCatching<CurrentWeatherDTO, WeatherErrorDTO> {
             val httpResponse: HttpResponse = httpClient.get {
@@ -62,6 +64,7 @@ class WeatherApi(
                     append("lat", lat.toString())
                     append("lon", long.toString())
                     append("lang", lang.code)
+                    append("units", units.value)
                     append("appid", apiKey)
                 }
             }
