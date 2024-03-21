@@ -6,7 +6,7 @@
  * Personal Email: stakancheck@gmail.com
  */
 
-package ru.stakancheck.lifestylehub.ui.theme
+package ru.stakancheck.uikit.theme
 
 import android.app.Activity
 import androidx.annotation.ColorInt
@@ -18,7 +18,7 @@ import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
 
 @Composable
-internal fun SystemAppearance(isDark: Boolean, navColor: Color) {
+fun SystemAppearance(isDark: Boolean, navColor: Color) {
     val view = LocalView.current
     LaunchedEffect(isDark) {
         @ColorInt val systemBarColor: Int = android.graphics.Color.TRANSPARENT

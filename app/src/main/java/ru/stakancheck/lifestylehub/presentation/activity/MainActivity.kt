@@ -19,8 +19,8 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import ru.stakancheck.lifestylehub.presentation.navigating.BottomNavigationBar
 import ru.stakancheck.lifestylehub.presentation.navigating.MainNavHost
-import ru.stakancheck.lifestylehub.ui.theme.LifestyleHUBTheme
-import ru.stakancheck.lifestylehub.ui.theme.SystemAppearance
+import ru.stakancheck.uikit.theme.LifestyleHUBTheme
+import ru.stakancheck.uikit.theme.SystemAppearance
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +28,10 @@ class MainActivity : ComponentActivity() {
         setContent {
             LifestyleHUBTheme {
                 // Setup system appearance
-                SystemAppearance(isSystemInDarkTheme(), MaterialTheme.colorScheme.surfaceContainer)
+                SystemAppearance(
+                    isSystemInDarkTheme(),
+                    MaterialTheme.colorScheme.surfaceContainer
+                )
 
                 val navController = rememberNavController()
                 Scaffold(

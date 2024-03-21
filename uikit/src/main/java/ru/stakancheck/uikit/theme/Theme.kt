@@ -6,7 +6,7 @@
  * Personal Email: stakancheck@gmail.com
  */
 
-package ru.stakancheck.lifestylehub.ui.theme
+package ru.stakancheck.uikit.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
@@ -48,7 +48,7 @@ fun LifestyleHUBTheme(
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = Typography,
+        typography = typography,
         content = content
     )
 }

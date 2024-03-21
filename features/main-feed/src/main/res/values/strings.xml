@@ -10,14 +10,14 @@
     <!-- Weather -->
 
     <!-- Wind direction -->
-    <string name="wind_north">North</string>
-    <string name="wind_north_east">North-East</string>
-    <string name="wind_east">East</string>
-    <string name="wind_south_east">South-East</string>
-    <string name="wind_south">South</string>
-    <string name="wind_south_west">South-West</string>
-    <string name="wind_west">West</string>
-    <string name="wind_north_west">North-West</string>
+    <string name="wind_north">N</string>
+    <string name="wind_north_east">NE</string>
+    <string name="wind_east">E</string>
+    <string name="wind_south_east">SE</string>
+    <string name="wind_south">S</string>
+    <string name="wind_south_west">SW</string>
+    <string name="wind_west">W</string>
+    <string name="wind_north_west">NW</string>
 
 
 </resources>

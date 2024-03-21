@@ -141,5 +141,5 @@ dependencies {
     implementation(project(":features:main-feed"))
     implementation(project(":data"))
     implementation(project(":api"))
-
+    api(project(":uikit"))
 }

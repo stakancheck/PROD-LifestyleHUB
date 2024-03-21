@@ -84,5 +84,6 @@ dependencies {
 
     // Modules
     implementation(project(":data"))
+    api(project(":uikit"))
     api(project(":common"))
 }
