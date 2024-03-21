@@ -8,6 +8,8 @@
 
 package ru.stakancheck.data.utils
 
+import ru.stakancheck.common.error.Error
+
 typealias RootError = Error
 
 sealed interface Result<out D, out E : RootError> {

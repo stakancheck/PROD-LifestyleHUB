@@ -12,6 +12,7 @@ import java.util.Date
 
 /**
  * Data class representing weather.
+ * [More abount weather condition](https://openweathermap.org/weather-conditions)
  *
  * @property weatherId The id of the weather condition.
  * @property weatherGroup The main group of weather parameters.
@@ -23,6 +24,8 @@ import java.util.Date
  * @property humidity The humidity percentage.
  * @property tempMin The minimum temperature at the moment.
  * @property tempMax The maximum temperature at the moment.
+ * @property windSpeed The wind speed in m/s.
+ * @property windDeg The wind direction in degrees.
  * @property dt The date and time of the weather data getting.
  * @property sunrise The sunrise time.
  * @property sunset The sunset time.
@@ -39,6 +42,8 @@ data class Weather(
     val humidity: Int,
     val tempMin: Double,
     val tempMax: Double,
+    val windSpeed: Int,
+    val windDeg: Int,
     val dt: Date,
     val sunrise: Date,
     val sunset: Date,

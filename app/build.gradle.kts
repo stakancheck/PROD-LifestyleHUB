@@ -102,10 +102,10 @@ android {
 }
 
 dependencies {
-
-    // Default dependencies (by Android Studio)
+    // Android
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
+
     // Compose and Material 3
     val composeBom = platform(libs.androidx.compose.bom)
     implementation(composeBom)
@@ -114,26 +114,32 @@ dependencies {
     implementation(libs.compose.material3)
     implementation(libs.compose.material.icons)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
+
     // Tests
     testApi(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.ui.test.junit4)
+
     // Tooling
     implementation(libs.androidx.ui.tooling.preview)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
     // Coroutines
-    implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
-    // Ktor
-    implementation(libs.ktor.core)
-    implementation(libs.ktor.client.okhttp)
-    implementation(libs.ktor.client.logging)
-    implementation(libs.ktor.serialization.json)
+
     // Navigation
     implementation(libs.androidx.navigation.compose)
-    // Serialization JSON
-    implementation(libs.kotlinx.serialization.json)
+
+    // Dependency injection
+    implementation(platform(libs.koin.bom))
+    implementation(libs.koin.android)
+    implementation(libs.koin.compose)
+    implementation(libs.koin.coroutines)
+
+    // Modules
+    implementation(project(":features:main-feed"))
+    implementation(project(":data"))
+    implementation(project(":api"))
 
 }

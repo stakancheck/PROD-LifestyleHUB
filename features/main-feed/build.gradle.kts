@@ -35,6 +35,12 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    buildFeatures {
+        compose = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.versions.compose.compiler.get()
+    }
     kotlinOptions {
         jvmTarget = "1.8"
     }
@@ -49,9 +55,11 @@ dependencies {
     val composeBom = platform(libs.androidx.compose.bom)
     implementation(composeBom)
     androidTestImplementation(composeBom) // Test
-    implementation(libs.androidx.activity.compose)
     implementation(libs.compose.material3)
-    implementation(libs.compose.material.icons)
+
+    // ViewModel
+    implementation(libs.androidx.lifecycle.viewmodel.compose)
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
 
     // Tests
     testApi(libs.junit)
@@ -64,18 +72,17 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
 
     // Coroutines
-    implementation(libs.kotlinx.coroutines.core)
     implementation(libs.kotlinx.coroutines.android)
 
     // Serialization JSON
     implementation(libs.kotlinx.serialization.json)
 
-    // Navigation
-    implementation(libs.androidx.navigation.compose)
-
     // Dependency injection
     implementation(platform(libs.koin.bom))
     implementation(libs.koin.android)
     implementation(libs.koin.compose)
-    implementation(libs.koin.coroutines)
+
+    // Modules
+    implementation(project(":data"))
+    api(project(":common"))
 }

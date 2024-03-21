@@ -14,7 +14,6 @@ import io.ktor.client.request.get
 import io.ktor.client.statement.HttpResponse
 import io.ktor.http.URLProtocol
 import io.ktor.http.headers
-import io.ktor.http.parameters
 import io.ktor.http.path
 import ru.stakancheck.api.models.ApiResult
 import ru.stakancheck.api.models.CurrentWeatherDTO
@@ -53,19 +52,17 @@ class WeatherApi(
                     protocol = URLProtocol.HTTPS
                     host = HOST
                     path("data", "2.5", "weather")
+
+                    parameters.append("lat", lat.toString())
+                    parameters.append("lon", long.toString())
+                    parameters.append("lang", lang.code)
+                    parameters.append("units", units.value)
+                    parameters.append("appid", apiKey)
                 }
 
                 headers {
                     append("Content-Type", "application/json")
                     append("Accept", "application/json")
-                }
-
-                parameters {
-                    append("lat", lat.toString())
-                    append("lon", long.toString())
-                    append("lang", lang.code)
-                    append("units", units.value)
-                    append("appid", apiKey)
                 }
             }
             httpResponse.body()

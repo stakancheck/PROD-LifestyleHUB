@@ -13,9 +13,9 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import ru.stakancheck.lifestylehub.presentation.feature_leisure.LeisureScreen
-import ru.stakancheck.lifestylehub.presentation.feature_main_feed.MainFeedScreen
-import ru.stakancheck.lifestylehub.presentation.feature_user_profile.UserProfileScreen
+import ru.stakancheck.lifestylehub.presentation.screens.LeisureTab
+import ru.stakancheck.lifestylehub.presentation.screens.MainFeedTab
+import ru.stakancheck.lifestylehub.presentation.screens.UserProfileTab
 
 @Composable
 fun MainNavHost(navController: NavHostController, modifier: Modifier = Modifier) =
@@ -25,14 +25,14 @@ fun MainNavHost(navController: NavHostController, modifier: Modifier = Modifier)
         modifier = modifier
     ) {
         composable(BottomBarItem.Main.route) {
-            MainFeedScreen()
+            MainFeedTab()
         }
 
         composable(BottomBarItem.Leisure.route) {
-            LeisureScreen()
+            LeisureTab()
         }
 
         composable(BottomBarItem.Profile.route) {
-            UserProfileScreen()
+            UserProfileTab()
         }
     }

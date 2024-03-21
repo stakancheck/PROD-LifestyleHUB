@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2024. Artem Sukhanov (Stakancheck)
+  ~ All rights reserved.
+  ~
+  ~ For inquiries, please contact:
+  ~ Personal Email: stakancheck@gmail.com
+  -->
+
+<resources>
+    <!-- Weather -->
+
+    <!-- Wind direction -->
+    <string name="wind_north">Север</string>
+    <string name="wind_north_east">Северо-Восток</string>
+    <string name="wind_east">Восток</string>
+    <string name="wind_south_east">Юго-Восток</string>
+    <string name="wind_south">Юг</string>
+    <string name="wind_south_west">Юго-Запад</string>
+    <string name="wind_west">Запад</string>
+    <string name="wind_north_west">Северо-Запад</string>
+
+</resources>

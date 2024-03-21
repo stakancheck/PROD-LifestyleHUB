@@ -9,7 +9,7 @@
 package ru.stakancheck.data.mappers
 
 import ru.stakancheck.api.utils.ApiException
-import ru.stakancheck.data.utils.DataError
+import ru.stakancheck.common.error.DataError
 
 class ApiExceptionToDataErrorMapper {
 

@@ -13,13 +13,19 @@ import io.ktor.client.engine.okhttp.OkHttp
 import io.ktor.client.plugins.ClientRequestException
 import io.ktor.client.plugins.HttpResponseValidator
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
+import io.ktor.client.plugins.logging.LogLevel
+import io.ktor.client.plugins.logging.Logger
+import io.ktor.client.plugins.logging.Logging
 import io.ktor.http.HttpStatusCode
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.serialization.json.Json
 import ru.stakancheck.api.utils.ApiException
+import ru.stakancheck.api.utils.LoggerBridge
 
 
-fun HttpClient(): HttpClient = HttpClient(OkHttp) {
+fun HttpClient(
+    loggerBridge: LoggerBridge
+): HttpClient = HttpClient(OkHttp) {
     install(ContentNegotiation) {
         json(Json {
             prettyPrint = true
@@ -32,6 +38,14 @@ fun HttpClient(): HttpClient = HttpClient(OkHttp) {
         config {
             followRedirects(true)
         }
+    }
+    install(Logging) {
+        logger = object : Logger {
+            override fun log(message: String) {
+                loggerBridge.log(tag = "Ktor", message)
+            }
+        }
+        level = LogLevel.BODY
     }
     HttpResponseValidator {
         handleResponseExceptionWithRequest { exception, _ ->

@@ -27,6 +27,8 @@ class CurrentWeatherDTOToWeatherMapper {
                 humidity = dto.main.humidity,
                 tempMin = dto.main.tempMin,
                 tempMax = dto.main.tempMax,
+                windSpeed = dto.wind.speed,
+                windDeg = dto.wind.deg,
                 dt = dto.dt,
                 sunrise = dto.sys.sunrise,
                 sunset = dto.sys.sunset,

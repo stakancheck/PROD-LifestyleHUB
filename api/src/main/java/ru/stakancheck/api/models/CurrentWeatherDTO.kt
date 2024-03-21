@@ -21,6 +21,7 @@ import java.util.Date
  * @property weather The list of weather conditions.
  * @property base The base parameter.
  * @property main The main weather parameters.
+ * @property wind The wind parameters.
  * @property dt The date and time of the weather data.
  * @property sys The system parameters.
  * @property timezone The timezone of the location.
@@ -34,6 +35,7 @@ data class CurrentWeatherDTO(
     val weather: List<Weather>,
     val base: String,
     val main: Main,
+    val wind: Wind,
     @Serializable(with = DateTimeUnixSerializer::class) val dt: Date,
     val sys: Sys,
     val timezone: Int,
@@ -88,6 +90,18 @@ data class Main(
     val humidity: Int,
     @SerialName("temp_min") val tempMin: Double,
     @SerialName("temp_max") val tempMax: Double
+)
+
+/**
+ * Data class representing the wind parameters.
+ *
+ * @property speed The wind speed, in m/s.
+ * @property deg The wind direction, in degrees.
+ */
+@Serializable
+data class Wind(
+    val speed: Int,
+    val deg: Int
 )
 
 /**

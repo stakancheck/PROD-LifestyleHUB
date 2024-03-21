@@ -33,4 +33,12 @@ android {
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.kotlinx.coroutines.core)
+
+    // ViewModel
+    implementation(libs.androidx.lifecycle.viewmodel.ktx)
+
+    // Dependency injection
+    implementation(platform(libs.koin.bom))
+    implementation(libs.koin.android)
+
 }

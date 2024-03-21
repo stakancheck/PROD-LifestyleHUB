@@ -8,30 +8,72 @@
 
 package ru.stakancheck.lifestylehub.di
 
-import android.util.Log
 import io.ktor.client.HttpClient
-import io.ktor.client.engine.okhttp.OkHttp
-import io.ktor.client.plugins.logging.LogLevel
-import io.ktor.client.plugins.logging.Logger
-import io.ktor.client.plugins.logging.Logging
+import org.koin.androidx.viewmodel.dsl.viewModel
+import org.koin.dsl.module
+import ru.stakancheck.api.WeatherApi
+import ru.stakancheck.common.AndroidLogger
+import ru.stakancheck.common.Logger
+import ru.stakancheck.common.error.ErrorCollector
+import ru.stakancheck.common.error.ErrorObserver
+import ru.stakancheck.data.repository.WeatherRepository
+import ru.stakancheck.lifestylehub.BuildConfig
+import ru.stakancheck.lifestylehub.utils.LoggerBridgeImpl
+import ru.stakancheck.main.feed.domain.usecases.GetCurrentWeatherUseCase
+import ru.stakancheck.main.feed.presentation.MainFeedScreenViewModel
+import java.util.concurrent.CopyOnWriteArrayList
+import ru.stakancheck.api.HttpClient as AppHttpClient
 
-class AppContainer {
-    private val httpClient = HttpClient(OkHttp) {
-        expectSuccess = true
-        engine {
-            config {
-                followRedirects(true)
-            }
-        }
-        install(Logging) {
-            logger = object : Logger {
-                override fun log(message: String) {
-                    Log.d("Ktor", "log: $message")
-                }
-            }
-            level = LogLevel.BODY
+private val main = module {
+
+    // Error collector (only single instance)
+    single<ErrorCollector> {
+        object : ErrorCollector {
+            override val observers: CopyOnWriteArrayList<ErrorObserver>
+                get() = CopyOnWriteArrayList<ErrorObserver>()
         }
     }
 
+    // Logger (only single instance)
+    single<Logger> {
+        AndroidLogger()
+    }
 
 }
+
+private val data = module {
+    single<HttpClient> {
+        AppHttpClient(
+            loggerBridge = LoggerBridgeImpl(logger = get())
+        )
+    }
+
+    single<WeatherApi> {
+        WeatherApi(
+            httpClient = get(),
+            apiKey = BuildConfig.OPEN_WEATHER_API_KEY
+        )
+    }
+
+    single<WeatherRepository> {
+        WeatherRepository(
+            weatherApi = get(),
+            logger = get()
+        )
+    }
+}
+
+private val useCase = module {
+    factory<GetCurrentWeatherUseCase> {
+        GetCurrentWeatherUseCase(
+            weatherRepository = get(),
+            errorCollector = get()
+        )
+    }
+}
+
+private val viewmodel = module {
+    viewModel { MainFeedScreenViewModel(get(), get()) }
+}
+
+val commonModule = listOf(main, data, useCase, viewmodel)

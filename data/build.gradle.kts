@@ -51,6 +51,6 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android)
 
     // Modules
-    implementation(project(":common"))
+    api(project(":common"))
     implementation(project(":api"))
 }

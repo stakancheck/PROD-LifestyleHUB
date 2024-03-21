@@ -12,10 +12,10 @@ import ru.stakancheck.api.WeatherApi
 import ru.stakancheck.api.models.ApiResult
 import ru.stakancheck.api.models.Language
 import ru.stakancheck.common.Logger
+import ru.stakancheck.common.error.DataError
 import ru.stakancheck.data.mappers.ApiExceptionToDataErrorMapper
 import ru.stakancheck.data.mappers.CurrentWeatherDTOToWeatherMapper
 import ru.stakancheck.data.models.Weather
-import ru.stakancheck.data.utils.DataError
 import ru.stakancheck.data.utils.Result
 import java.util.Locale
 
