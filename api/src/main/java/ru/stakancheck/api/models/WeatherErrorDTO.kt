@@ -17,10 +17,5 @@ import kotlinx.serialization.Serializable
 @Serializable
 data class WeatherErrorDTO(
     val cod: String,
-    val message: String,
-) : ApiResult.Companion.ErrorResponse {
-    override val error: String
-        get() = "Error while getting weather"
-    override val errorDescription: String
-        get() = message
-}
+    override val message: String,
+) : Exception()

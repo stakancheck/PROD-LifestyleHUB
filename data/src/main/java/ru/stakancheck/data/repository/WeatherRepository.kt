@@ -11,11 +11,12 @@ package ru.stakancheck.data.repository
 import ru.stakancheck.api.WeatherApi
 import ru.stakancheck.api.models.ApiResult
 import ru.stakancheck.api.models.Language
-import ru.stakancheck.common.ErrorCollector
 import ru.stakancheck.common.Logger
-import ru.stakancheck.data.Resource
+import ru.stakancheck.data.mappers.ApiExceptionToDataErrorMapper
 import ru.stakancheck.data.mappers.CurrentWeatherDTOToWeatherMapper
 import ru.stakancheck.data.models.Weather
+import ru.stakancheck.data.utils.DataError
+import ru.stakancheck.data.utils.Result
 import java.util.Locale
 
 
@@ -29,7 +30,6 @@ import java.util.Locale
 class WeatherRepository(
     private val weatherApi: WeatherApi,
     private val logger: Logger,
-    private val errorCollector: ErrorCollector,
 ) {
 
     /**
@@ -44,7 +44,7 @@ class WeatherRepository(
         lat: Double,
         lon: Double,
         lang: String = Locale.getDefault().language
-    ): Resource<Weather> {
+    ): Result<Weather, DataError.Network> {
         val result = weatherApi.getCurrentWeather(
             lat,
             lon,
@@ -53,15 +53,14 @@ class WeatherRepository(
 
         return when (result) {
             is ApiResult.Error -> {
-                errorCollector.notifyError(Throwable(result.errorDescription))
-                logger.e(tag = TAG, message = "getCurrentWeather: ${result.errorDescription}")
-                Resource.Error(error = Throwable(result.errorDescription))
+                logger.e(tag = TAG, message = "getCurrentWeather: ${result.error}")
+                Result.Error(ApiExceptionToDataErrorMapper(result.error))
             }
 
             is ApiResult.Success -> {
-                val weather = CurrentWeatherDTOToWeatherMapper()(result.data)
+                val weather = CurrentWeatherDTOToWeatherMapper(result.data)
                 logger.d(tag = TAG, message = "getCurrentWeather: ${result.data}")
-                Resource.Success(weather)
+                Result.Success(weather)
             }
         }
     }

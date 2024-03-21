@@ -18,13 +18,13 @@ import io.ktor.http.isSuccess
  *
  * @param T The type of the data returned in case of success.
  */
-sealed class ApiResult<out T> {
+sealed interface ApiResult<out T> {
     /**
      * Represents a successful API call.
      *
      * @property data The data returned by the API call.
      */
-    data class Success<out T>(val data: T) : ApiResult<T>()
+    data class Success<out T>(val data: T) : ApiResult<T>
 
     /**
      * Represents an unsuccessful API call.
@@ -32,17 +32,9 @@ sealed class ApiResult<out T> {
      * @property error The error message.
      * @property errorDescription A more detailed description of the error.
      */
-    data class Error(override val error: String, override val errorDescription: String?) :
-        ErrorResponse, ApiResult<Nothing>()
+    data class Error(val error: Throwable) : ApiResult<Nothing>
 
     companion object {
-        /**
-         * An interface for classes that represent an error response.
-         */
-        interface ErrorResponse {
-            val error: String
-            val errorDescription: String?
-        }
 
         /**
          * Executes the given [requestFunc] and wraps its result into an [ApiResult].
@@ -52,18 +44,17 @@ sealed class ApiResult<out T> {
          * @param requestFunc The function to execute.
          * @return An [ApiResult] representing the result of the [requestFunc].
          */
-        suspend inline fun <reified R, reified E : ErrorResponse> withCatching(requestFunc: () -> HttpResponse): ApiResult<R> {
+        suspend inline fun <reified R, reified E : Throwable> withCatching(requestFunc: () -> HttpResponse): ApiResult<R> {
             return try {
                 val response = requestFunc()
                 if (response.status.isSuccess()) {
                     val resultResponse = response.body<R>()
                     Success(resultResponse)
                 } else {
-                    val errorResponse = response.body<E>()
-                    Error(errorResponse.error, errorResponse.errorDescription)
+                    Error(response.body<E>())
                 }
-            } catch (e: Exception) {
-                Error("Api exception", e.localizedMessage)
+            } catch (e: Throwable) {
+                Error(e)
             }
         }
     }

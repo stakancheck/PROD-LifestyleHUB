@@ -1,0 +1,26 @@
+/*
+ * Copyright (c) 2024. Artem Sukhanov (Stakancheck)
+ * All rights reserved.
+ *
+ * For inquiries, please contact:
+ * Personal Email: stakancheck@gmail.com
+ */
+
+package ru.stakancheck.data.mappers
+
+import ru.stakancheck.api.utils.ApiException
+import ru.stakancheck.data.utils.DataError
+
+class ApiExceptionToDataErrorMapper {
+
+    companion object {
+        operator fun invoke(throwable: Throwable): DataError.Network {
+            return when (throwable) {
+                is ApiException.UnauthorizedException -> DataError.Network.UNAUTHORIZED
+                is ApiException.NotFoundException, is ApiException.ServerErrorException -> DataError.Network.SERVER_ERROR
+                is ApiException.RequestTimeoutException -> DataError.Network.REQUEST_TIMEOUT
+                else -> DataError.Network.UNKNOWN
+            }
+        }
+    }
+}
