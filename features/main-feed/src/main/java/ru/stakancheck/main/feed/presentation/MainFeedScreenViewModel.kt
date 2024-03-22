@@ -9,6 +9,7 @@
 package ru.stakancheck.main.feed.presentation
 
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -36,9 +37,12 @@ class MainFeedScreenViewModel(
 
     private fun updateWeather() {
         viewModelScope.launch {
+            onUpdateState()
+            delay(1000)
             getWeatherUseCase.invoke(lat = 61.691891, long = 50.807930)?.let {
                 _weatherState.value = it
             }
+            onUpdatedState()
         }
     }
 

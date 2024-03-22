@@ -36,6 +36,7 @@ fun MainFeedScreen() {
 private fun MainFeedScreen(viewModel: MainFeedScreenViewModel) {
     val weatherState by viewModel.weatherState.collectAsState()
     val lazyListState = rememberLazyListState()
+    val updating by viewModel.updating.collectAsState()
 
     LaunchedEffect(Unit) {
         viewModel.onLoad()
@@ -48,12 +49,11 @@ private fun MainFeedScreen(viewModel: MainFeedScreenViewModel) {
         verticalArrangement = Arrangement.spacedBy(Dimens.spaceMedium),
     ) {
         item {
-            weatherState?.let {
-                WeatherWidget(
-                    modifier = Modifier.fillMaxWidth(),
-                    weatherModel = it
-                )
-            }
+            WeatherWidget(
+                modifier = Modifier.fillMaxWidth(),
+                loading = updating,
+                weatherModel = weatherState
+            )
         }
 
         items(10) {
