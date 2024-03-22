@@ -1,0 +1,636 @@
+{
+  "meta": {
+    "code": 200,
+    "requestId": "6511d75a83245875ff2c1d75"
+  },
+  "notifications": [
+    {
+      "type": "notificationTray",
+      "item": {
+        "unreadCount": 3
+      }
+    },
+    {
+      "type": "unconfirmed",
+      "item": {
+        "unreadCount": 0
+      }
+    }
+  ],
+  "response": {
+    "group": {
+      "activeFilters": {
+        "refinements": []
+      },
+      "results": [
+        {
+          "displayType": "venue",
+          "venue": {
+            "id": "598eb122446ea6776a6083d4",
+            "name": "Bumbershoot",
+            "contact": {},
+            "location": {
+              "lat": 47.6062095,
+              "lng": -122.3320708,
+              "labeledLatLngs": [
+                {
+                  "label": "display",
+                  "lat": 47.6062095,
+                  "lng": -122.3320708
+                }
+              ],
+              "cc": "US",
+              "neighborhood": "Seattle Central Business District",
+              "city": "Seattle",
+              "state": "WA",
+              "country": "United States",
+              "contextLine": "Seattle Central Business District",
+              "contextGeoId": 10545,
+              "formattedAddress": {
+                "text": "Seattle, WA",
+                "entities": []
+              }
+            },
+            "categories": [
+              {
+                "id": "4bf58dd8d48988d1e5931735",
+                "name": "Music Venue",
+                "pluralName": "Music Venues",
+                "shortName": "Music Venue",
+                "icon": {
+                  "prefix": "https://ss3.4sqi.net/img/categories_v2/arts_entertainment/musicvenue_",
+                  "suffix": ".png"
+                },
+                "primary": true
+              }
+            ],
+            "verified": false,
+            "stats": {
+              "tipCount": 0,
+              "usersCount": 93,
+              "checkinsCount": 160
+            },
+            "like": false,
+            "dislike": false,
+            "ok": false,
+            "allowMenuUrlEdit": true,
+            "beenHere": {
+              "count": 0,
+              "marked": false,
+              "lastCheckinExpiredAt": 0
+            },
+            "createdAt": 1502523682,
+            "popularityByGeo": 0.2447043248014122
+          },
+          "id": "6511d75af86d2d2e01e7cad7",
+          "photo": {
+            "id": "5b8c6eec31ac6c002cd351fb",
+            "createdAt": 1535930092,
+            "prefix": "https://fastly.4sqi.net/img/general/",
+            "suffix": "/23140670_CrPBOkZFynUP2g9RJV1zP1K26Dnm22lilJ6kaD-3IWI.jpg",
+            "width": 1920,
+            "height": 1440,
+            "visibility": "public"
+          },
+          "snippets": {
+            "count": 1,
+            "items": [
+              {}
+            ]
+          }
+        },
+        {
+          "displayType": "venue",
+          "venue": {
+            "id": "4c3a70261a38ef3b69229321",
+            "name": "Kurt Cobain Park",
+            "contact": {},
+            "location": {
+              "address": "seattle",
+              "lat": 47.60629067594331,
+              "lng": -122.33209692664707,
+              "labeledLatLngs": [
+                {
+                  "label": "display",
+                  "lat": 47.60629067594331,
+                  "lng": -122.33209692664707
+                }
+              ],
+              "cc": "US",
+              "neighborhood": "Seattle Central Business District",
+              "city": "Seattle",
+              "state": "WA",
+              "country": "United States",
+              "contextLine": "Seattle Central Business District",
+              "contextGeoId": 10545,
+              "formattedAddress": {
+                "text": "seattle\nSeattle, WA",
+                "entities": []
+              }
+            },
+            "categories": [
+              {
+                "id": "4bf58dd8d48988d163941735",
+                "name": "Park",
+                "pluralName": "Parks",
+                "shortName": "Park",
+                "icon": {
+                  "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/park_",
+                  "suffix": ".png"
+                },
+                "primary": true
+              }
+            ],
+            "verified": false,
+            "stats": {
+              "tipCount": 0,
+              "usersCount": 93,
+              "checkinsCount": 132
+            },
+            "like": false,
+            "dislike": false,
+            "ok": false,
+            "beenHere": {
+              "count": 0,
+              "marked": false,
+              "lastCheckinExpiredAt": 0
+            },
+            "createdAt": 1278898214,
+            "popularityByGeo": 0.8409378717525615
+          },
+          "id": "6511d75af86d2d2e01e7cad8",
+          "photo": {
+            "id": "512332eae4b09e75f11b55a7",
+            "createdAt": 1361261290,
+            "prefix": "https://fastly.4sqi.net/img/general/",
+            "suffix": "/43968679_2mbM2Ik8Q52qYzSjw-kzV8igc0L8TTd9s6YgEvYm8zg.jpg",
+            "width": 640,
+            "height": 640,
+            "visibility": "public"
+          },
+          "snippets": {
+            "count": 1,
+            "items": [
+              {}
+            ]
+          }
+        },
+        {
+          "displayType": "venue",
+          "venue": {
+            "id": "4cc37e8bbde8f04d36b4a54b",
+            "name": "Runway Shoes",
+            "contact": {
+              "phone": "2066823355",
+              "formattedPhone": "(206) 682-3355"
+            },
+            "location": {
+              "address": "400 Pine St",
+              "lat": 47.606206922022494,
+              "lng": -122.33207005141776,
+              "labeledLatLngs": [
+                {
+                  "label": "display",
+                  "lat": 47.606206922022494,
+                  "lng": -122.33207005141776
+                }
+              ],
+              "postalCode": "98101",
+              "cc": "US",
+              "neighborhood": "Seattle Central Business District",
+              "city": "Seattle",
+              "state": "WA",
+              "country": "United States",
+              "contextLine": "Seattle Central Business District",
+              "contextGeoId": 10545,
+              "formattedAddress": {
+                "text": "400 Pine St\nSeattle, WA 98101",
+                "entities": []
+              }
+            },
+            "categories": [
+              {
+                "id": "4bf58dd8d48988d107951735",
+                "name": "Shoe Store",
+                "pluralName": "Shoe Stores",
+                "shortName": "Shoes",
+                "icon": {
+                  "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/apparel_shoestore_",
+                  "suffix": ".png"
+                },
+                "primary": true
+              }
+            ],
+            "verified": false,
+            "stats": {
+              "tipCount": 0,
+              "usersCount": 10,
+              "checkinsCount": 10
+            },
+            "like": false,
+            "dislike": false,
+            "ok": false,
+            "allowMenuUrlEdit": true,
+            "beenHere": {
+              "count": 0,
+              "marked": false,
+              "lastCheckinExpiredAt": 0
+            },
+            "createdAt": 1287880331,
+            "popularityByGeo": 0.45596530949000347
+          },
+          "id": "6511d75af86d2d2e01e7cad9",
+          "snippets": {
+            "count": 1,
+            "items": [
+              {}
+            ]
+          }
+        },
+        {
+          "displayType": "venue",
+          "venue": {
+            "id": "4f295e9ae4b015f8e493edb3",
+            "name": "Redbox",
+            "contact": {
+              "phone": "8667332693",
+              "formattedPhone": "(866) 733-2693",
+              "twitter": "redbox"
+            },
+            "location": {
+              "address": "910 4th Ave",
+              "lat": 47.605799,
+              "lng": -122.33195400000001,
+              "labeledLatLngs": [
+                {
+                  "label": "display",
+                  "lat": 47.605799,
+                  "lng": -122.33195400000001
+                },
+                {
+                  "label": "entrance",
+                  "lat": 47.605668,
+                  "lng": -122.332253
+                }
+              ],
+              "cc": "US",
+              "neighborhood": "Seattle Central Business District",
+              "city": "Seattle",
+              "state": "WA",
+              "country": "United States",
+              "contextLine": "Seattle Central Business District",
+              "contextGeoId": 10545,
+              "formattedAddress": {
+                "text": "910 4th Ave\nSeattle, WA",
+                "entities": []
+              }
+            },
+            "categories": [
+              {
+                "id": "4bf58dd8d48988d126951735",
+                "name": "Video Store",
+                "pluralName": "Video Stores",
+                "shortName": "Video Store",
+                "icon": {
+                  "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/video_",
+                  "suffix": ".png"
+                },
+                "primary": true
+              }
+            ],
+            "verified": false,
+            "stats": {
+              "tipCount": 2,
+              "usersCount": 2,
+              "checkinsCount": 5
+            },
+            "url": "http://www.redbox.com/locations/washington/seattle/98164/53870",
+            "like": false,
+            "dislike": false,
+            "ok": false,
+            "allowMenuUrlEdit": true,
+            "beenHere": {
+              "count": 0,
+              "marked": false,
+              "lastCheckinExpiredAt": 0
+            },
+            "storeId": "53870",
+            "createdAt": 1328111258,
+            "popularityByGeo": 0.5667907440807398
+          },
+          "id": "6511d75af86d2d2e01e7cada",
+          "snippets": {
+            "count": 1,
+            "items": [
+              {
+                "detail": {
+                  "type": "tip",
+                  "object": {
+                    "id": "4fcd64b2e4b083992ded6c03",
+                    "createdAt": 1338860722,
+                    "text": "Free rental with code BREAKROOM!",
+                    "type": "user",
+                    "canonicalUrl": "https://foursquare.com/item/4fcd64b2e4b083992ded6c03",
+                    "logView": true,
+                    "agreeCount": 0,
+                    "disagreeCount": 0,
+                    "todo": {
+                      "count": 0
+                    },
+                    "user": {
+                      "id": "12345",
+                      "firstName": "John",
+                      "lastName": "Smith",
+                      "handle": "johnsmith",
+                      "privateProfile": false,
+                      "gender": "male",
+                      "countryCode": "US",
+                      "followingRelationship": "none",
+                      "photo": {
+                        "prefix": "https://fastly.4sqi.net/img/user/",
+                        "suffix": "/blank_boy.png"
+                      },
+                      "isAnonymous": false
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "displayType": "venue",
+          "venue": {
+            "id": "6088557b3b51f03ff4c4b859",
+            "name": "Rental Car",
+            "contact": {
+              "phone": "2058299988",
+              "formattedPhone": "(205) 829-9988"
+            },
+            "location": {
+              "address": "3060th St Ste #3150",
+              "lat": 47.60621,
+              "lng": -122.332071,
+              "labeledLatLngs": [
+                {
+                  "label": "display",
+                  "lat": 47.60621,
+                  "lng": -122.332071
+                }
+              ],
+              "postalCode": "98187",
+              "cc": "US",
+              "neighborhood": "Seattle Central Business District",
+              "city": "Seattle",
+              "state": "MI",
+              "country": "United States",
+              "contextLine": "Seattle Central Business District, Seattle",
+              "contextGeoId": 10545,
+              "formattedAddress": {
+                "text": "3060th St Ste #3150\nSeattle, MI 98187",
+                "entities": []
+              }
+            },
+            "categories": [
+              {
+                "id": "4bf58dd8d48988d18f941735",
+                "name": "Art Museum",
+                "pluralName": "Art Museums",
+                "shortName": "Art Museum",
+                "icon": {
+                  "prefix": "https://ss3.4sqi.net/img/categories_v2/arts_entertainment/museum_art_",
+                  "suffix": ".png"
+                },
+                "primary": true
+              }
+            ],
+            "verified": true,
+            "stats": {
+              "tipCount": 0,
+              "usersCount": 0,
+              "checkinsCount": 0
+            },
+            "like": false,
+            "dislike": false,
+            "ok": false,
+            "allowMenuUrlEdit": true,
+            "beenHere": {
+              "count": 0,
+              "marked": false,
+              "lastCheckinExpiredAt": 0
+            },
+            "venuePage": {
+              "id": "1367756703"
+            },
+            "createdAt": 1619547515,
+            "popularityByGeo": 0.7351490847691776
+          },
+          "id": "6511d75af86d2d2e01e7cadb",
+          "snippets": {
+            "count": 1,
+            "items": [
+              {}
+            ]
+          }
+        },
+        {
+          "displayType": "venue",
+          "venue": {
+            "id": "57604c65498e9f55fc786d89",
+            "name": "Electronic Discovery Service",
+            "contact": {
+              "phone": "2069000856",
+              "formattedPhone": "(206) 900-0856"
+            },
+            "location": {
+              "address": "1001 4th Ave #3200",
+              "lat": 47.60611964208563,
+              "lng": -122.33263492584227,
+              "labeledLatLngs": [
+                {
+                  "label": "display",
+                  "lat": 47.60611964208563,
+                  "lng": -122.33263492584227
+                }
+              ],
+              "postalCode": "98154",
+              "cc": "US",
+              "neighborhood": "Seattle Central Business District",
+              "city": "Seattle",
+              "state": "WA",
+              "country": "United States",
+              "contextLine": "Seattle Central Business District",
+              "contextGeoId": 10545,
+              "formattedAddress": {
+                "text": "1001 4th Ave #3200\nSeattle, WA 98154",
+                "entities": []
+              }
+            },
+            "categories": [
+              {
+                "id": "4bf58dd8d48988d122951735",
+                "name": "Electronics Store",
+                "pluralName": "Electronics Stores",
+                "shortName": "Electronics",
+                "icon": {
+                  "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/technology_",
+                  "suffix": ".png"
+                },
+                "primary": true
+              }
+            ],
+            "verified": false,
+            "stats": {
+              "tipCount": 0,
+              "usersCount": 1,
+              "checkinsCount": 1
+            },
+            "like": false,
+            "dislike": false,
+            "ok": false,
+            "allowMenuUrlEdit": true,
+            "beenHere": {
+              "count": 0,
+              "marked": false,
+              "lastCheckinExpiredAt": 0
+            },
+            "createdAt": 1465928805,
+            "popularityByGeo": 0.29095514025864383
+          },
+          "id": "6511d75af86d2d2e01e7cadc",
+          "snippets": {
+            "count": 1,
+            "items": [
+              {}
+            ]
+          }
+        },
+        {
+          "displayType": "venue",
+          "venue": {
+            "id": "62192ae5a9596e4f9acc51b5",
+            "name": "Comfy Zone US LLC",
+            "contact": {
+              "phone": "6575168759",
+              "formattedPhone": "(657) 516-8759"
+            },
+            "location": {
+              "address": "7511 Greenwood Ave N No 4106",
+              "lat": 47.60618056280742,
+              "lng": -122.33191341161726,
+              "labeledLatLngs": [
+                {
+                  "label": "display",
+                  "lat": 47.60618056280742,
+                  "lng": -122.33191341161726
+                }
+              ],
+              "postalCode": "98103",
+              "cc": "US",
+              "neighborhood": "Seattle Central Business District",
+              "city": "Seattle",
+              "state": "WA",
+              "country": "United States",
+              "contextLine": "Seattle Central Business District",
+              "contextGeoId": 10545,
+              "formattedAddress": {
+                "text": "7511 Greenwood Ave N No 4106\nSeattle, WA 98103",
+                "entities": []
+              }
+            },
+            "categories": [
+              {
+                "id": "4bf58dd8d48988d1f8941735",
+                "name": "Furniture and Home Store",
+                "pluralName": "Furniture and Home Stores",
+                "shortName": "Furniture and Home Store",
+                "icon": {
+                  "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/furniture_",
+                  "suffix": ".png"
+                },
+                "primary": true
+              }
+            ],
+            "verified": false,
+            "stats": {
+              "tipCount": 0,
+              "usersCount": 0,
+              "checkinsCount": 0
+            },
+            "like": false,
+            "dislike": false,
+            "ok": false,
+            "allowMenuUrlEdit": true,
+            "beenHere": {
+              "count": 0,
+              "marked": false,
+              "lastCheckinExpiredAt": 0
+            },
+            "createdAt": 1645816549,
+            "popularityByGeo": 0.8192179285467592
+          },
+          "id": "6511d75af86d2d2e01e7cadd",
+          "snippets": {
+            "count": 1,
+            "items": [
+              {}
+            ]
+          }
+        }
+      ],
+      "totalResults": 7
+    },
+    "context": {
+      "searchLocationNearYou": false,
+      "searchLocationMapBounds": false,
+      "searchLocationType": "NearGeo",
+      "currentLocation": {
+        "what": "",
+        "where": "seattle wa",
+        "feature": {
+          "cc": "US",
+          "name": "Seattle",
+          "displayName": "Seattle, WA, United States",
+          "matchedName": "Seattle, WA, United States",
+          "highlightedName": "<b>Seattle</b>, <b>WA</b>, United States",
+          "woeType": 7,
+          "slug": "seattle-washington",
+          "id": "geonameid:5809844",
+          "longId": "72057594043737780",
+          "geometry": {
+            "center": {
+              "lat": 47.60621,
+              "lng": -122.33207
+            },
+            "bounds": {
+              "ne": {
+                "lat": 47.734145,
+                "lng": -122.224433
+              },
+              "sw": {
+                "lat": 47.481719999999996,
+                "lng": -122.459696
+              }
+            }
+          }
+        },
+        "parents": []
+      },
+      "relatedNeighborhoods": [],
+      "geoParams": {
+        "ll": "47.60621,-122.33207",
+        "radius": "20"
+      },
+      "geoBounds": {
+        "circle": {
+          "center": {
+            "lat": 47.60621,
+            "lng": -122.33207
+          },
+          "radius": 20
+        }
+      },
+      "currency": "$"
+    }
+  }
+}
