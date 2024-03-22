@@ -22,8 +22,9 @@ import ru.stakancheck.main.feed.R
  * @property tempMin The min temperature.
  * @property tempMax The max temperature.
  * @property feelsLike The temperature as it feels like.
- * @property pressure The current atmospheric pressure.
+ * @property pressure The current atmospheric pressure in mmHg.
  * @property humidity The current humidity level.
+ * @property humidityLevel The current humidity level by enum (low, mid, high).
  * @property updateDate The date when the weather data was last updated.
  * @property sunriseTime The time of sunrise.
  * @property sunsetTime The time of sunset.
@@ -41,6 +42,7 @@ data class WeatherUIModel(
     val feelsLike: Int,
     val pressure: Int,
     val humidity: Int,
+    val humidityLevel: HumidityLevel,
     val updateDate: String,
     val sunriseTime: String,
     val sunsetTime: String,
@@ -93,7 +95,19 @@ enum class WindDirection(val resId: Int) {
 }
 
 
+/**
+ * Enum class representing different weather backgrounds.
+ */
 enum class WeatherBackground {
     DAY,
     NIGHT
+}
+
+/**
+ * Enum class representing different humidity levels.
+ */
+enum class HumidityLevel {
+    LOW,
+    MID,
+    HIGH
 }

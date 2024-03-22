@@ -22,6 +22,16 @@
     <string name="weather_format_temperature" translatable="false">%d</string>
     <string name="weather_feels_like">Feels like: %d°</string>
     <string name="weather_update_time">Updated: %s</string>
+    <string name="weather_temperature_range" translatable="false">%d° / %d°</string>
+    <string name="weather_wind_speed">%d m/s</string>
+    <string name="weather_pressure_value">%d mmHg</string>
+    <string name="weather_humidity_value" translatable="false">%d</string>
+
+    <string name="weather_wind">Wind</string>
+    <string name="weather_pressure">Pressure</string>
+    <string name="weather_humidity">Huidity</string>
+    <string name="weather_sunset">Sunset</string>
+    <string name="weather_sunrise">Senrise</string>
 
 
 </resources>

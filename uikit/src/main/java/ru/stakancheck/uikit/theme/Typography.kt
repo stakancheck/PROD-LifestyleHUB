@@ -11,6 +11,7 @@ package ru.stakancheck.uikit.theme
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import ru.stakancheck.uikit.R
 
 
@@ -26,10 +27,19 @@ internal val typography = Typography(
     headlineLarge = defaultTypography.headlineLarge.copy(fontFamily = appFontHeavy),
     headlineMedium = defaultTypography.headlineMedium.copy(fontFamily = appFont),
     headlineSmall = defaultTypography.headlineSmall.copy(fontFamily = appFont),
-    titleLarge = defaultTypography.titleLarge.copy(fontFamily = appFont),
-    titleMedium = defaultTypography.titleMedium.copy(fontFamily = appFont),
+    titleLarge = defaultTypography.titleLarge.copy(
+        fontFamily = appFont,
+        fontWeight = FontWeight.Bold
+    ),
+    titleMedium = defaultTypography.titleMedium.copy(
+        fontFamily = appFont,
+        fontWeight = FontWeight.Medium
+    ),
     titleSmall = defaultTypography.titleSmall.copy(fontFamily = appFont),
-    bodyLarge = defaultTypography.bodyLarge.copy(fontFamily = appFont),
+    bodyLarge = defaultTypography.bodyLarge.copy(
+        fontFamily = appFont,
+        fontWeight = FontWeight.Medium
+    ),
     bodyMedium = defaultTypography.bodyMedium.copy(fontFamily = appFont),
     bodySmall = defaultTypography.bodySmall.copy(fontFamily = appFont),
 )

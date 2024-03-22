@@ -21,5 +21,13 @@
 
     <string name="weather_feels_like">Ощущается как: %d°</string>
     <string name="weather_update_time">Обновлено: %s</string>
+    <string name="weather_wind_speed">%d м/с</string>
+    <string name="weather_pressure_value">%d мм</string>
+
+    <string name="weather_wind">Ветер</string>
+    <string name="weather_pressure">Давление</string>
+    <string name="weather_humidity">Влажность</string>
+    <string name="weather_sunset">Закат</string>
+    <string name="weather_sunrise">Рассвет</string>
 
 </resources>

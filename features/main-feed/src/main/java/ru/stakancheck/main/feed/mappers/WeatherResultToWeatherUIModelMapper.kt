@@ -8,7 +8,9 @@
 
 package ru.stakancheck.main.feed.mappers
 
+import ru.stakancheck.common.utils.capitalizeFirstLetter
 import ru.stakancheck.data.models.Weather
+import ru.stakancheck.main.feed.entities.HumidityLevel
 import ru.stakancheck.main.feed.entities.WeatherBackground
 import ru.stakancheck.main.feed.entities.WeatherIcon
 import ru.stakancheck.main.feed.entities.WeatherUIModel
@@ -20,15 +22,16 @@ class WeatherResultToWeatherUIModelMapper {
     companion object {
         operator fun invoke(weather: Weather): WeatherUIModel {
             return WeatherUIModel(
-                weatherCondition = weather.description,
+                weatherCondition = weather.description.capitalizeFirstLetter(),
                 weatherIcon = mapIconToWeatherIcon(weather.icon),
                 background = provideBackgroundType(weather.icon),
                 temp = weather.temp.roundToInt(),
                 feelsLike = weather.feelsLike.roundToInt(),
-                pressure = weather.pressure,
+                pressure = convertPressureToMmHg(weather.pressure),
                 humidity = weather.humidity,
-                tempMin = weather.tempMin.roundToInt(),
-                tempMax = weather.tempMax.roundToInt(),
+                humidityLevel = provideHumidityLevel(weather.humidity),
+                tempMin = weather.tempMin.toInt(),
+                tempMax = Math.ceil(weather.tempMax).toInt(),
                 updateDate = DateFormatter.timeFormat.format(weather.dt),
                 sunriseTime = DateFormatter.timeFormat.format(weather.sunrise),
                 sunsetTime = DateFormatter.timeFormat.format(weather.sunset),
@@ -64,6 +67,7 @@ class WeatherResultToWeatherUIModelMapper {
         private fun provideBackgroundType(icon: String): WeatherBackground =
             if (icon.endsWith("d")) WeatherBackground.DAY else WeatherBackground.NIGHT
 
+        @Suppress("MagicNumber")
         private fun mapDegreesToWindDirection(degrees: Int): WindDirection =
             when (degrees) {
                 in 23..67 -> WindDirection.NORTH_EAST
@@ -74,6 +78,19 @@ class WeatherResultToWeatherUIModelMapper {
                 in 248..292 -> WindDirection.WEST
                 in 293..337 -> WindDirection.NORTH_WEST
                 else -> WindDirection.NORTH
+            }
+
+        @Suppress("MagicNumber")
+        private fun convertPressureToMmHg(pressureInHPa: Int): Int {
+            return (pressureInHPa * 0.750062).roundToInt()
+        }
+
+        @Suppress("MagicNumber")
+        private fun provideHumidityLevel(humidity: Int): HumidityLevel =
+            when (humidity) {
+                in 0..30 -> HumidityLevel.LOW
+                in 31..60 -> HumidityLevel.MID
+                else -> HumidityLevel.HIGH
             }
     }
 }
