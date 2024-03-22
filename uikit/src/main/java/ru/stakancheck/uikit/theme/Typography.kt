@@ -15,14 +15,15 @@ import ru.stakancheck.uikit.R
 
 
 private val appFont: FontFamily = FontFamily(Font(R.font.rubik))
+private val appFontHeavy: FontFamily = FontFamily(Font(R.font.rubic_heavy))
 
 private val defaultTypography = Typography()
 
 internal val typography = Typography(
-    displayLarge = defaultTypography.displayLarge.copy(fontFamily = appFont),
-    displayMedium = defaultTypography.displayMedium.copy(fontFamily = appFont),
+    displayLarge = defaultTypography.displayLarge.copy(fontFamily = appFontHeavy),
+    displayMedium = defaultTypography.displayMedium.copy(fontFamily = appFontHeavy),
     displaySmall = defaultTypography.displaySmall.copy(fontFamily = appFont),
-    headlineLarge = defaultTypography.headlineLarge.copy(fontFamily = appFont),
+    headlineLarge = defaultTypography.headlineLarge.copy(fontFamily = appFontHeavy),
     headlineMedium = defaultTypography.headlineMedium.copy(fontFamily = appFont),
     headlineSmall = defaultTypography.headlineSmall.copy(fontFamily = appFont),
     titleLarge = defaultTypography.titleLarge.copy(fontFamily = appFont),

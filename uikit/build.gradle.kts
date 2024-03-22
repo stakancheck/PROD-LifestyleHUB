@@ -19,6 +19,13 @@ android {
         minSdk = 26
 
         consumerProguardFiles("consumer-rules.pro")
+
+        configurations.all {
+            resolutionStrategy {
+                force("androidx.emoji2:emoji2-views-helper:1.3.0")
+                force("androidx.emoji2:emoji2:1.3.0")
+            }
+        }
     }
 
     buildTypes {
@@ -62,4 +69,6 @@ dependencies {
     api(libs.androidx.ui.tooling.preview)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    api(libs.compose.material.icons)
 }

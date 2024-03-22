@@ -45,6 +45,13 @@ android {
             "OPEN_WEATHER_API_KEY",
             secretsProperties["OPEN_WEATHER_API_KEY"] as String
         )
+
+        configurations.all {
+            resolutionStrategy {
+                force("androidx.emoji2:emoji2-views-helper:1.3.0")
+                force("androidx.emoji2:emoji2:1.3.0")
+            }
+        }
     }
 
     signingConfigs {
@@ -112,7 +119,6 @@ dependencies {
     androidTestImplementation(composeBom)
     implementation(libs.androidx.activity.compose)
     implementation(libs.compose.material3)
-    implementation(libs.compose.material.icons)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
 
     // Tests

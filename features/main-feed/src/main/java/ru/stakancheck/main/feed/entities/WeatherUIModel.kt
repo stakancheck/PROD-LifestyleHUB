@@ -8,6 +8,7 @@
 
 package ru.stakancheck.main.feed.entities
 
+import androidx.annotation.DrawableRes
 import ru.stakancheck.main.feed.R
 
 
@@ -17,12 +18,12 @@ import ru.stakancheck.main.feed.R
  * @property weatherCondition The current weather condition.
  * @property weatherIcon The icon representing the current weather condition.
  * @property background The background representing the current weather condition.
- * @property icon The URL of the icon representing the current weather condition.
  * @property temp The current temperature.
+ * @property tempMin The min temperature.
+ * @property tempMax The max temperature.
  * @property feelsLike The temperature as it feels like.
  * @property pressure The current atmospheric pressure.
  * @property humidity The current humidity level.
- * @property tempRange The range of temperature for the day.
  * @property updateDate The date when the weather data was last updated.
  * @property sunriseTime The time of sunrise.
  * @property sunsetTime The time of sunset.
@@ -34,16 +35,16 @@ data class WeatherUIModel(
     val weatherCondition: String,
     val weatherIcon: WeatherIcon,
     val background: WeatherBackground,
-    val icon: String,
-    val temp: String,
-    val feelsLike: String,
-    val pressure: String,
-    val humidity: String,
-    val tempRange: String,
+    val temp: Int,
+    val tempMin: Int,
+    val tempMax: Int,
+    val feelsLike: Int,
+    val pressure: Int,
+    val humidity: Int,
     val updateDate: String,
     val sunriseTime: String,
     val sunsetTime: String,
-    val windSpeed: String,
+    val windSpeed: Int,
     val windDirection: WindDirection,
     val location: String,
 )
@@ -54,7 +55,7 @@ data class WeatherUIModel(
  *
  * Each enum constant represents a different weather condition and is associated with a drawable resource ID.
  */
-enum class WeatherIcon(resId: Int) {
+enum class WeatherIcon(@DrawableRes val resId: Int) {
     CLEAR_SKY_DAY(R.drawable.clear_sky_day),
     CLEAR_SKY_NIGHT(R.drawable.clear_sky_night),
     FEW_CLOUDS_DAY(R.drawable.few_clouds_day),
@@ -80,7 +81,7 @@ enum class WeatherIcon(resId: Int) {
  *
  * Each enum constant represents a different wind direction and is associated with a string resource ID.
  */
-enum class WindDirection(resId: Int) {
+enum class WindDirection(val resId: Int) {
     NORTH(R.string.wind_north),
     NORTH_EAST(R.string.wind_north_east),
     EAST(R.string.wind_east),

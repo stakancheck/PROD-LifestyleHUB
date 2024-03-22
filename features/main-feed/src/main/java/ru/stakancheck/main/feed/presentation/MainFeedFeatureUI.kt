@@ -8,12 +8,12 @@
 
 package ru.stakancheck.main.feed.presentation
 
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import org.koin.androidx.compose.koinViewModel
+import ru.stakancheck.main.feed.presentation.components.WeatherWidget
 
 @Composable
 fun MainFeedScreen() {
@@ -29,8 +29,9 @@ private fun MainFeedScreen(viewModel: MainFeedScreenViewModel) {
     }
 
     weatherState?.let {
-        Text(
-            text = it.weatherCondition
+        WeatherWidget(
+            weatherModel = it,
+            onUpdateWeatherClicked = viewModel::onUpdateWeatherClicked
         )
     }
 }

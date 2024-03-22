@@ -11,9 +11,9 @@ package ru.stakancheck.uikit.theme
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 
-data class Radius(
-    val small: Dp = 4.dp,
-    val medium: Dp = 16.dp,
-    val large: Dp = 32.dp,
+object Radius {
+    val small: Dp = 4.dp
+    val medium: Dp = 16.dp
+    val large: Dp = 32.dp
     val extraLarge: Dp = 48.dp
-)
+}

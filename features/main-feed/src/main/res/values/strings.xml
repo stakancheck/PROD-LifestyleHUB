@@ -19,5 +19,8 @@
     <string name="wind_west">W</string>
     <string name="wind_north_west">NW</string>
 
+    <string name="format_temperature" translatable="false">%d</string>
+    <string name="feels_like">Feels like: %d°</string>
+
 
 </resources>

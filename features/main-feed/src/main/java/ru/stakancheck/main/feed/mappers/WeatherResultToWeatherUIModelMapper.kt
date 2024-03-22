@@ -14,6 +14,7 @@ import ru.stakancheck.main.feed.entities.WeatherIcon
 import ru.stakancheck.main.feed.entities.WeatherUIModel
 import ru.stakancheck.main.feed.entities.WindDirection
 import ru.stakancheck.main.feed.utils.DateFormatter
+import kotlin.math.roundToInt
 
 class WeatherResultToWeatherUIModelMapper {
     companion object {
@@ -22,16 +23,16 @@ class WeatherResultToWeatherUIModelMapper {
                 weatherCondition = weather.description,
                 weatherIcon = mapIconToWeatherIcon(weather.icon),
                 background = provideBackgroundType(weather.icon),
-                icon = weather.icon,
-                temp = weather.temp.toString(),
-                feelsLike = weather.feelsLike.toString(),
-                pressure = weather.pressure.toString(),
-                humidity = weather.humidity.toString(),
-                tempRange = "${weather.tempMin} - ${weather.tempMax}",
+                temp = weather.temp.roundToInt(),
+                feelsLike = weather.feelsLike.roundToInt(),
+                pressure = weather.pressure,
+                humidity = weather.humidity,
+                tempMin = weather.tempMin.roundToInt(),
+                tempMax = weather.tempMax.roundToInt(),
                 updateDate = DateFormatter.dateTimeFormat.format(weather.dt),
                 sunriseTime = DateFormatter.timeFormat.format(weather.sunrise),
                 sunsetTime = DateFormatter.timeFormat.format(weather.sunset),
-                windSpeed = weather.windSpeed.toString(),
+                windSpeed = weather.windSpeed,
                 windDirection = mapDegreesToWindDirection(weather.windDeg),
                 location = weather.location
             )

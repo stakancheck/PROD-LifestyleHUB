@@ -11,3 +11,7 @@
 /copyright/profiles_settings.xml
 /inspectionProfiles/Project_Default.xml
 /copyright/Stakancheck.xml
+# GitHub Copilot persisted chat sessions
+/copilot/chatSessions
+/appInsightsSettings.xml
+/deploymentTargetSelector.xml

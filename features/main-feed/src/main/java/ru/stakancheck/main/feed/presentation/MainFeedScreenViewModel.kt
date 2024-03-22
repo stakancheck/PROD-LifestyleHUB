@@ -30,6 +30,10 @@ class MainFeedScreenViewModel(
         updateWeather()
     }
 
+    fun onUpdateWeatherClicked() {
+        updateWeather()
+    }
+
     private fun updateWeather() {
         viewModelScope.launch {
             getWeatherUseCase.invoke(lat = 61.691891, long = 50.807930)?.let {
