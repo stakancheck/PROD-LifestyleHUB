@@ -14,12 +14,12 @@ import ru.stakancheck.api.models.Language
 import ru.stakancheck.common.Logger
 import ru.stakancheck.common.error.DataError
 import ru.stakancheck.data.mappers.ApiExceptionToDataErrorMapper
-import ru.stakancheck.data.mappers.VenuesDTOToVenuesMapper
-import ru.stakancheck.data.models.Venues
+import ru.stakancheck.data.mappers.VenuesDTOToInterestsMapper
+import ru.stakancheck.data.models.Interests
 import ru.stakancheck.data.utils.Result
 import java.util.Locale
 
-class VenueRepository(
+class InterestRepository(
     private val venueApi: VenueApi,
     private val logger: Logger,
 ) {
@@ -33,12 +33,33 @@ class VenueRepository(
      * @param lang The language for the venues data localization. Defaults to the device's default language.
      * @return A Resource object containing the venues data or an error.
      */
-    suspend fun getNearVenues(
+    suspend fun getNearInterests(
         lat: Double,
         long: Double,
         page: Int,
         lang: String = Locale.getDefault().language
-    ): Result<Venues, DataError.Network> {
+    ): Result<Interests, DataError.Network> = getNearVenues(
+        lat = lat,
+        long = long,
+        page = page,
+        lang = lang
+    )
+
+    /**
+     * Fetches list of 10 venues based on the provided latitude, longitude.
+     * Paging by page value (starts from 0).
+     *
+     * @param lat The latitude of the location.
+     * @param long The longitude of the location.
+     * @param lang The language for the venues data localization. Defaults to the device's default language.
+     * @return A Resource object containing the venues data or an error.
+     */
+    private suspend fun getNearVenues(
+        lat: Double,
+        long: Double,
+        page: Int,
+        lang: String = Locale.getDefault().language
+    ): Result<Interests, DataError.Network> {
         val result = venueApi.getNearVenues(
             lat = lat,
             long = long,
@@ -54,7 +75,7 @@ class VenueRepository(
             }
 
             is ApiResult.Success -> {
-                val venues = VenuesDTOToVenuesMapper(result.data)
+                val venues = VenuesDTOToInterestsMapper(result.data)
                 logger.d(tag = TAG, message = "getCurrentWeather: ${result.data}")
                 Result.Success(venues)
             }

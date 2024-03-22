@@ -18,7 +18,7 @@ data class VenuesDTO(
 
 @Serializable
 data class Response(
-    val group: Group,
+    val group: Group? = null,
 )
 
 @Serializable
@@ -30,7 +30,7 @@ data class Group(
 data class Result(
     val id: String,
     val venue: Venue,
-    val photo: Photo,
+    val photo: Photo? = null,
 )
 
 
@@ -45,7 +45,7 @@ data class Venue(
 @Serializable
 data class Location(
     val distance: Int,
-    val formattedAddress: String,
+    val formattedAddress: List<String>,
 )
 
 @Serializable

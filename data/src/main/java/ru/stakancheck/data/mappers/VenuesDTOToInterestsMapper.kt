@@ -9,25 +9,24 @@
 package ru.stakancheck.data.mappers
 
 import ru.stakancheck.api.models.VenuesDTO
-import ru.stakancheck.data.models.Category
-import ru.stakancheck.data.models.Venue
-import ru.stakancheck.data.models.Venues
+import ru.stakancheck.data.models.Interest
+import ru.stakancheck.data.models.Interests
 
-class VenuesDTOToVenuesMapper {
+class VenuesDTOToInterestsMapper {
     companion object {
         operator fun invoke(
             dto: VenuesDTO
-        ): Venues {
-            return dto.response.group.results.map { result ->
+        ): Interests {
+            return dto.response.group?.results?.map { result ->
                 result.venue.run {
-                    Venue(
+                    Interest.Venue(
                         resultId = result.id,
                         venueId = id,
                         name = name,
-                        address = location.formattedAddress,
+                        address = location.formattedAddress.first(),
                         distance = location.distance,
                         categories = categories.map { category ->
-                            Category(
+                            Interest.Venue.Category(
                                 id = category.id,
                                 shortName = category.shortName,
                                 iconUrl = provideIconUrl(
@@ -36,11 +35,11 @@ class VenuesDTOToVenuesMapper {
                                 ),
                             )
                         },
-                        photoUrl = providePhotoUrl(result.photo.prefix, result.photo.suffix),
-                        photoId = result.photo.id
+                        photoUrl = result.photo?.let { providePhotoUrl(it.prefix, it.suffix) },
+                        photoId = result.photo?.id
                     )
                 }
-            }
+            } ?: emptyList()
         }
 
         private fun provideIconUrl(prefix: String, postfix: String): String {
