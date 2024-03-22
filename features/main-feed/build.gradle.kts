@@ -85,6 +85,13 @@ dependencies {
     // Serialization JSON
     implementation(libs.kotlinx.serialization.json)
 
+    // Paging
+    implementation(libs.androidx.paging.runtime)
+    implementation(libs.androidx.paging.compose)
+
+    // Loading images
+    implementation(libs.coil.compose)
+
     // Dependency injection
     implementation(platform(libs.koin.bom))
     implementation(libs.koin.android)

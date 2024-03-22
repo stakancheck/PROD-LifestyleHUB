@@ -46,6 +46,12 @@ android {
             secretsProperties["OPEN_WEATHER_API_KEY"] as String
         )
 
+        buildConfigField(
+            "String",
+            "FORSQUARE_API_TOKEN",
+            secretsProperties["FORSQUARE_API_TOKEN"] as String
+        )
+
         configurations.all {
             resolutionStrategy {
                 force("androidx.emoji2:emoji2-views-helper:1.3.0")
