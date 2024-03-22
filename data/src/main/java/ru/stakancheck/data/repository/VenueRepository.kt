@@ -8,46 +8,42 @@
 
 package ru.stakancheck.data.repository
 
-import ru.stakancheck.api.WeatherApi
+import ru.stakancheck.api.VenueApi
 import ru.stakancheck.api.models.ApiResult
 import ru.stakancheck.api.models.Language
 import ru.stakancheck.common.Logger
 import ru.stakancheck.common.error.DataError
 import ru.stakancheck.data.mappers.ApiExceptionToDataErrorMapper
-import ru.stakancheck.data.mappers.CurrentWeatherDTOToWeatherMapper
-import ru.stakancheck.data.models.Weather
+import ru.stakancheck.data.mappers.VenuesDTOToVenuesMapper
+import ru.stakancheck.data.models.Venues
 import ru.stakancheck.data.utils.Result
 import java.util.Locale
 
-
-/**
- * Repository class for handling weather data.
- *
- * @property weatherApi The API interface for fetching weather data.
- * @property logger A logger for logging events.
- * @property errorCollector An error collector for collecting and notifying about errors.
- */
-class WeatherRepository(
-    private val weatherApi: WeatherApi,
+class VenueRepository(
+    private val venueApi: VenueApi,
     private val logger: Logger,
 ) {
 
     /**
-     * Fetches the current weather data based on the provided latitude, longitude, and language.
+     * Fetches list of 10 venues based on the provided latitude, longitude.
+     * Paging by page value (starts from 0).
      *
      * @param lat The latitude of the location.
      * @param long The longitude of the location.
-     * @param lang The language for the weather data. Defaults to the device's default language.
-     * @return A Resource object containing the Weather data or an error.
+     * @param lang The language for the venues data localization. Defaults to the device's default language.
+     * @return A Resource object containing the venues data or an error.
      */
-    suspend fun getCurrentWeather(
+    suspend fun getNearVenues(
         lat: Double,
         long: Double,
+        page: Int,
         lang: String = Locale.getDefault().language
-    ): Result<Weather, DataError.Network> {
-        val result = weatherApi.getCurrentWeather(
+    ): Result<Venues, DataError.Network> {
+        val result = venueApi.getNearVenues(
             lat = lat,
             long = long,
+            limit = PAGE_LIMIT,
+            offset = provideOffset(page),
             lang = provideLocale(lang)
         )
 
@@ -58,16 +54,20 @@ class WeatherRepository(
             }
 
             is ApiResult.Success -> {
-                val weather = CurrentWeatherDTOToWeatherMapper(result.data)
+                val venues = VenuesDTOToVenuesMapper(result.data)
                 logger.d(tag = TAG, message = "getCurrentWeather: ${result.data}")
-                Result.Success(weather)
+                Result.Success(venues)
             }
         }
     }
 
-
     companion object {
-        const val TAG = "WeatherRepository"
+        const val TAG = "VenueRepository"
+
+        /**
+         * The limit of venues to fetch per page.
+         */
+        const val PAGE_LIMIT = 10
 
         /**
          * Provides the Language enum value based on the provided language code.
@@ -77,6 +77,10 @@ class WeatherRepository(
          */
         private fun provideLocale(code: String): Language {
             return Language.fromCode(code) ?: Language.RUSSIAN
+        }
+
+        private fun provideOffset(page: Int): Int {
+            return PAGE_LIMIT * page
         }
     }
 }

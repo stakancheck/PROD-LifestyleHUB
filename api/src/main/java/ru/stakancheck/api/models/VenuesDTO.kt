@@ -19,17 +19,11 @@ data class VenuesDTO(
 @Serializable
 data class Response(
     val group: Group,
-    val context: Context,
 )
 
 @Serializable
 data class Group(
-    val results: List<Result>
-)
-
-@Serializable
-data class Context(
-    val currency: String
+    val results: List<Result>,
 )
 
 @Serializable
