@@ -14,7 +14,6 @@ import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -62,6 +61,7 @@ import ru.stakancheck.uikit.icons.iconpack.IcHumidityLow
 import ru.stakancheck.uikit.icons.iconpack.IcHumidityMid
 import ru.stakancheck.uikit.theme.Dimens
 import ru.stakancheck.uikit.theme.Elevation
+import ru.stakancheck.uikit.theme.IconSize
 import ru.stakancheck.uikit.theme.LifestyleHUBTheme
 import ru.stakancheck.uikit.theme.Radius
 
@@ -120,21 +120,26 @@ private fun WeatherWidgetContent(
                     .padding(Dimens.spaceMedium),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                Row {
+                Row(
+                    verticalAlignment = Alignment.CenterVertically
+                ) {
                     Icon(
+                        modifier = Modifier.size(IconSize.Small),
                         imageVector = Icons.Rounded.LocationOn,
                         contentDescription = "location"
                     )
                     Spacer(Dimens.spaceExtraSmall)
                     Text(
+                        color = WeatherCardColors.surfaceContentColor,
                         text = weatherModel.location,
-                        style = MaterialTheme.typography.titleMedium
+                        style = MaterialTheme.typography.titleSmall
                     )
                 }
 
                 Text(
+                    color = WeatherCardColors.surfaceContentColor,
                     text = stringResource(R.string.weather_data_from, weatherModel.updateDate),
-                    style = MaterialTheme.typography.titleMedium
+                    style = MaterialTheme.typography.titleSmall
                 )
             }
             Row(

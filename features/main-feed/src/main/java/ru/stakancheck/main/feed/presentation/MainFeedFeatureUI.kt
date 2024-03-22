@@ -14,6 +14,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
@@ -25,6 +26,7 @@ import androidx.compose.ui.unit.dp
 import org.koin.androidx.compose.koinViewModel
 import ru.stakancheck.main.feed.presentation.components.WeatherWidget
 import ru.stakancheck.uikit.theme.Dimens
+import ru.stakancheck.uikit.theme.Radius
 
 @Composable
 fun MainFeedScreen() {
@@ -60,7 +62,8 @@ private fun MainFeedScreen(viewModel: MainFeedScreenViewModel) {
             Card(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .height(96.dp)
+                    .height(96.dp),
+                shape = RoundedCornerShape(Radius.medium)
             ) {
 
             }

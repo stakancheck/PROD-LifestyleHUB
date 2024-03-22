@@ -27,6 +27,6 @@ object WeatherCardColors {
     val surfaceContentColor = Color(0xCBC5D5E2)
 
     val sheetLightColor = Color(0xFF063E6F)
-    val sheetDarkColor = Color(0xFFD9E4EE)
+    val sheetDarkColor = Color(0xFF303238)
     val onSheetColor = Color(0xFFF2F9FF)
 }
