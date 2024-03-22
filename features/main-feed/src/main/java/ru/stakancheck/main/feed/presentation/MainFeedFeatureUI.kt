@@ -30,8 +30,7 @@ private fun MainFeedScreen(viewModel: MainFeedScreenViewModel) {
 
     weatherState?.let {
         WeatherWidget(
-            weatherModel = it,
-            onUpdateWeatherClicked = viewModel::onUpdateWeatherClicked
+            weatherModel = it
         )
     }
 }

@@ -12,8 +12,6 @@ import Spacer
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -24,14 +22,12 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.LocationOn
-import androidx.compose.material.icons.rounded.Refresh
 import androidx.compose.material3.Icon
 import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -55,9 +51,8 @@ import ru.stakancheck.uikit.theme.LifestyleHUBTheme
 
 @Composable
 fun WeatherWidget(
+    modifier: Modifier = Modifier,
     weatherModel: WeatherUIModel,
-    onUpdateWeatherClicked: () -> Unit = {},
-    modifier: Modifier = Modifier
 ) {
 
     val contentColor = when (weatherModel.background) {
@@ -101,24 +96,10 @@ fun WeatherWidget(
                     )
                 }
 
-                Row(
-                    modifier = Modifier.clickable(
-                        interactionSource = remember { MutableInteractionSource() },
-                        indication = null
-                    ) {
-                        onUpdateWeatherClicked()
-                    },
-                ) {
-                    Text(
-                        text = weatherModel.updateDate,
-                        style = MaterialTheme.typography.titleMedium
-                    )
-                    Spacer(Dimens.spaceExtraSmall)
-                    Icon(
-                        imageVector = Icons.Rounded.Refresh,
-                        contentDescription = "last update"
-                    )
-                }
+                Text(
+                    text = stringResource(R.string.weather_update_time, weatherModel.updateDate),
+                    style = MaterialTheme.typography.titleMedium
+                )
             }
 
             Image(
@@ -156,7 +137,7 @@ fun WeatherWidget(
 
                 Text(
                     color = contentSurfaceColor,
-                    text = stringResource(R.string.feels_like, weatherModel.feelsLike),
+                    text = stringResource(R.string.weather_feels_like, weatherModel.feelsLike),
                     style = MaterialTheme.typography.titleSmall
                 )
             }

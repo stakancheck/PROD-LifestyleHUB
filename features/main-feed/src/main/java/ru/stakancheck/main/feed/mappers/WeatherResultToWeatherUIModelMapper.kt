@@ -29,7 +29,7 @@ class WeatherResultToWeatherUIModelMapper {
                 humidity = weather.humidity,
                 tempMin = weather.tempMin.roundToInt(),
                 tempMax = weather.tempMax.roundToInt(),
-                updateDate = DateFormatter.dateTimeFormat.format(weather.dt),
+                updateDate = DateFormatter.timeFormat.format(weather.dt),
                 sunriseTime = DateFormatter.timeFormat.format(weather.sunrise),
                 sunsetTime = DateFormatter.timeFormat.format(weather.sunset),
                 windSpeed = weather.windSpeed,

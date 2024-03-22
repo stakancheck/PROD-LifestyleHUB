@@ -19,6 +19,7 @@
     <string name="wind_west">З</string>
     <string name="wind_north_west">СЗ</string>
 
-    <string name="feels_like">Ощущается как: %d°</string>
+    <string name="weather_feels_like">Ощущается как: %d°</string>
+    <string name="weather_update_time">Обновлено: %s</string>
 
 </resources>
