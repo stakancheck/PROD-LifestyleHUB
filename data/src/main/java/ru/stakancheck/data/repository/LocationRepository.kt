@@ -27,6 +27,15 @@ import kotlin.coroutines.CoroutineContext
 import kotlin.coroutines.resume
 import android.location.Location as AndroidLocation
 
+
+/**
+ * Repository to get location
+ *
+ * @param context - Android context
+ * @param permissionChecker - Permission checker (for requesting location permission)
+ * @param mainDispatcher - Coroutine dispatcher by default [Dispatchers.Main].immediate
+ * @param logger - Logger
+ */
 class LocationRepository(
     private val context: Context,
     private val permissionChecker: PermissionChecker,
@@ -35,6 +44,20 @@ class LocationRepository(
 ) {
     private val savedLocation: Location? = null
 
+
+    /**
+     * Get location request
+     *
+     * 1) Method checks and request location permissions
+     * 2) Checks if location services enabled
+     * 3) Get location and return result
+     *
+     * _Location providers:_
+     * - [LocationManager.GPS_PROVIDER]
+     * - [LocationManager.NETWORK_PROVIDER]
+     *
+     * @return [Result] with [Location] or [DataError.Location] error
+     */
     @SuppressLint("MissingPermission")
     suspend fun getLocation(): Result<Location, DataError.Location> {
 
