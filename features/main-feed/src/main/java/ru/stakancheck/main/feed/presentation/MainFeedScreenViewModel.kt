@@ -11,7 +11,6 @@ package ru.stakancheck.main.feed.presentation
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
@@ -54,8 +53,7 @@ class MainFeedScreenViewModel(
 
     private suspend fun updateWeather() {
         onUpdateState()
-        delay(1000)
-        getWeatherUseCase.invoke(lat = 61.691891, long = 50.807930)?.let {
+        getWeatherUseCase.invoke()?.let {
             _weatherState.value = it
         }
         onUpdatedState()

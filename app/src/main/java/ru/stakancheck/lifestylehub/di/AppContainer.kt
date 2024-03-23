@@ -9,7 +9,9 @@
 package ru.stakancheck.lifestylehub.di
 
 import io.ktor.client.HttpClient
+import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
+import org.koin.dsl.bind
 import org.koin.dsl.module
 import ru.stakancheck.api.VenueApi
 import ru.stakancheck.api.WeatherApi
@@ -17,7 +19,10 @@ import ru.stakancheck.common.AndroidLogger
 import ru.stakancheck.common.Logger
 import ru.stakancheck.common.error.ErrorCollector
 import ru.stakancheck.common.error.ErrorObserver
+import ru.stakancheck.common.permission.PermissionChecker
+import ru.stakancheck.common.permission.PermissionCheckerImpl
 import ru.stakancheck.data.repository.InterestRepository
+import ru.stakancheck.data.repository.LocationRepository
 import ru.stakancheck.data.repository.WeatherRepository
 import ru.stakancheck.lifestylehub.BuildConfig
 import ru.stakancheck.lifestylehub.utils.LoggerBridgeImpl
@@ -68,6 +73,7 @@ private val data = module {
     single<WeatherRepository> {
         WeatherRepository(
             weatherApi = get(),
+            locationRepository = get(),
             logger = get()
         )
     }
@@ -75,6 +81,21 @@ private val data = module {
     single<InterestRepository> {
         InterestRepository(
             venueApi = get(),
+            locationRepository = get(),
+            logger = get()
+        )
+    }
+
+    single {
+        PermissionCheckerImpl(
+            context = androidContext()
+        )
+    } bind PermissionChecker::class
+
+    single<LocationRepository> {
+        LocationRepository(
+            context = androidContext(),
+            permissionChecker = get(),
             logger = get()
         )
     }

@@ -9,7 +9,6 @@
 package ru.stakancheck.lifestylehub.presentation.activity
 
 import android.os.Bundle
-import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.padding
@@ -18,12 +17,13 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
+import ru.stakancheck.common.permission.PermissionCheckerActivity
 import ru.stakancheck.lifestylehub.presentation.navigating.BottomNavigationBar
 import ru.stakancheck.lifestylehub.presentation.navigating.MainNavHost
 import ru.stakancheck.uikit.theme.LifestyleHUBTheme
 import ru.stakancheck.uikit.theme.SystemAppearance
 
-class MainActivity : ComponentActivity() {
+class MainActivity : PermissionCheckerActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {

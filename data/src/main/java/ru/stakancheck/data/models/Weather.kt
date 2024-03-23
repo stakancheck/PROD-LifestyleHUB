@@ -48,4 +48,8 @@ data class Weather(
     val sunrise: Date,
     val sunset: Date,
     val location: String,
-)
+) {
+    override fun toString(): String {
+        return "Weather -> weather: $description, location: $location, temp: $temp, feelsLike: $feelsLike"
+    }
+}

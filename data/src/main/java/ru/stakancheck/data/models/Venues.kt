@@ -50,6 +50,10 @@ sealed interface Interest {
             val shortName: String,
             val iconUrl: String,
         )
+
+        override fun toString(): String {
+            return "Venue -> name: $name, address: $address, distance: $distance"
+        }
     }
 }
 

@@ -15,6 +15,14 @@ sealed interface DataError : Error {
         UNAUTHORIZED,
         SERVER_ERROR,
         SERIALIZATION,
+        LOCATION_PERMISSION_NOT_GRANTED,
+        LOCATION_SERVICES_OFF,
+        UNKNOWN,
+    }
+
+    enum class Location : DataError {
+        NO_PERMISSION,
+        LOCATION_SERVICES_OFF,
         UNKNOWN,
     }
 
@@ -23,3 +31,10 @@ sealed interface DataError : Error {
         NO_CACHE,
     }
 }
+
+fun DataError.Location.toNetworkError(): DataError.Network =
+    when (this) {
+        DataError.Location.NO_PERMISSION -> DataError.Network.LOCATION_PERMISSION_NOT_GRANTED
+        DataError.Location.LOCATION_SERVICES_OFF -> DataError.Network.LOCATION_SERVICES_OFF
+        DataError.Location.UNKNOWN -> DataError.Network.UNKNOWN
+    }

@@ -27,8 +27,6 @@ class InterestsSource(
         val currentPage = params.key ?: 0
 
         return when (val result = interestRepository.getNearInterests(
-            lat = 61.691891,
-            long = 50.807930,
             page = currentPage
         )) {
             is Result.Error -> {

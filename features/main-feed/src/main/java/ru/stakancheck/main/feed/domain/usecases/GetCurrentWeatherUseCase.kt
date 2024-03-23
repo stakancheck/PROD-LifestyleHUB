@@ -18,11 +18,8 @@ class GetCurrentWeatherUseCase(
     private val weatherRepository: WeatherRepository,
     private val errorCollector: ErrorCollector,
 ) {
-    suspend operator fun invoke(
-        lat: Double,
-        long: Double
-    ): WeatherUIModel? {
-        return when (val result = weatherRepository.getCurrentWeather(lat, long)) {
+    suspend operator fun invoke(): WeatherUIModel? {
+        return when (val result = weatherRepository.getCurrentWeather()) {
             is Result.Error -> {
                 errorCollector.notifyError(result.error)
                 null

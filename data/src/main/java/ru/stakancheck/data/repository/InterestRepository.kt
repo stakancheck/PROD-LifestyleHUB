@@ -13,14 +13,24 @@ import ru.stakancheck.api.models.ApiResult
 import ru.stakancheck.api.models.Language
 import ru.stakancheck.common.Logger
 import ru.stakancheck.common.error.DataError
+import ru.stakancheck.common.error.toNetworkError
 import ru.stakancheck.data.mappers.ApiExceptionToDataErrorMapper
 import ru.stakancheck.data.mappers.VenuesDTOToInterestsMapper
 import ru.stakancheck.data.models.Interests
 import ru.stakancheck.data.utils.Result
 import java.util.Locale
 
+
+/**
+ * Repository class for handling interest data.
+ *
+ * @property venueApi The API interface for fetching interest data.
+ * @property locationRepository The repository for handling location data.
+ * @property logger A logger for logging events.
+ */
 class InterestRepository(
     private val venueApi: VenueApi,
+    private val locationRepository: LocationRepository,
     private val logger: Logger,
 ) {
 
@@ -28,22 +38,29 @@ class InterestRepository(
      * Fetches list of 10 venues based on the provided latitude, longitude.
      * Paging by page value (starts from 0).
      *
-     * @param lat The latitude of the location.
-     * @param long The longitude of the location.
      * @param lang The language for the venues data localization. Defaults to the device's default language.
      * @return A Resource object containing the venues data or an error.
      */
     suspend fun getNearInterests(
-        lat: Double,
-        long: Double,
         page: Int,
         lang: String = Locale.getDefault().language
-    ): Result<Interests, DataError.Network> = getNearVenues(
-        lat = lat,
-        long = long,
-        page = page,
-        lang = lang
-    )
+    ): Result<Interests, DataError.Network> {
+        // Get location and collect all data
+        return when (val locationResult = locationRepository.getLocation()) {
+            is Result.Error -> {
+                Result.Error(locationResult.error.toNetworkError())
+            }
+
+            is Result.Success -> {
+                getNearVenues(
+                    lat = locationResult.data.latitude,
+                    long = locationResult.data.longitude,
+                    page = page,
+                    lang = lang
+                )
+            }
+        }
+    }
 
     /**
      * Fetches list of 10 venues based on the provided latitude, longitude.
