@@ -30,4 +30,8 @@
     <string name="weather_sunset">Закат</string>
     <string name="weather_sunrise">Рассвет</string>
 
+
+    <!-- Places of interest and venues -->
+    <string name="location_distance_meters">%d м</string>
+
 </resources>

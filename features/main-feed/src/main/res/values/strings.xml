@@ -34,4 +34,7 @@
     <string name="weather_sunrise">Senrise</string>
 
 
+    <!-- Places of interest and venues -->
+    <string name="location_distance_meters">%d m</string>
+
 </resources>

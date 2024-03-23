@@ -15,11 +15,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -30,10 +26,10 @@ import androidx.paging.LoadState
 import androidx.paging.compose.collectAsLazyPagingItems
 import org.koin.androidx.compose.koinViewModel
 import ru.stakancheck.data.models.Interest
+import ru.stakancheck.main.feed.presentation.components.VenueInterestItem
 import ru.stakancheck.main.feed.presentation.components.WeatherWidget
 import ru.stakancheck.uikit.components.ShimmerPlaceHolder
 import ru.stakancheck.uikit.theme.Dimens
-import ru.stakancheck.uikit.theme.Radius
 
 @Composable
 fun MainFeedScreen() {
@@ -68,18 +64,10 @@ private fun MainFeedScreen(viewModel: MainFeedScreenViewModel) {
         }
 
         items(interestsItems.itemCount) { index ->
-            Card(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(96.dp),
-                shape = RoundedCornerShape(Radius.medium)
-            ) {
-                when (val interest = interestsItems[index]!!) {
-                    is Interest.Venue -> {
-                        Text(
-                            text = interest.name,
-                            style = MaterialTheme.typography.titleMedium
-                        )
+            when (val interest = interestsItems[index]!!) {
+                is Interest.Venue -> {
+                    VenueInterestItem(venueModel = interest) {
+
                     }
                 }
             }
