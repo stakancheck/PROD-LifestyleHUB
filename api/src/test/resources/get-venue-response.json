@@ -1,17 +1,11 @@
 {
   "meta": {
     "code": 200,
-    "requestId": "6511d75a83245875ff2c1d75"
+    "requestId": "65ff42f65510fb4f0439c437"
   },
   "notifications": [
     {
       "type": "notificationTray",
-      "item": {
-        "unreadCount": 3
-      }
-    },
-    {
-      "type": "unconfirmed",
       "item": {
         "unreadCount": 0
       }
@@ -19,338 +13,73 @@
   ],
   "response": {
     "group": {
-      "activeFilters": {
-        "refinements": []
-      },
       "results": [
         {
           "displayType": "venue",
           "venue": {
-            "id": "598eb122446ea6776a6083d4",
-            "name": "Bumbershoot",
-            "contact": {},
+            "id": "54bf834b498e7de2f1488ca0",
+            "name": "Pension Eberhardt",
             "location": {
-              "lat": 47.6062095,
-              "lng": -122.3320708,
+              "address": "Nesselbergstr. 65",
+              "lat": 50.7557661,
+              "lng": 10.5005483,
               "labeledLatLngs": [
                 {
                   "label": "display",
-                  "lat": 47.6062095,
-                  "lng": -122.3320708
+                  "lat": 50.7557661,
+                  "lng": 10.5005483
                 }
               ],
-              "cc": "US",
-              "neighborhood": "Seattle Central Business District",
-              "city": "Seattle",
-              "state": "WA",
-              "country": "United States",
-              "contextLine": "Seattle Central Business District",
-              "contextGeoId": 10545,
-              "formattedAddress": {
-                "text": "Seattle, WA",
-                "entities": []
-              }
+              "distance": 4696,
+              "postalCode": "98593",
+              "cc": "DE",
+              "city": "Floh-Seligenthal",
+              "state": "Тюрингия",
+              "country": "Германия",
+              "formattedAddress": [
+                "Nesselbergstr. 65",
+                "98593 Floh-Seligenthal",
+                "Германия"
+              ]
             },
             "categories": [
               {
-                "id": "4bf58dd8d48988d1e5931735",
-                "name": "Music Venue",
-                "pluralName": "Music Venues",
-                "shortName": "Music Venue",
+                "id": "4bf58dd8d48988d1ef941735",
+                "name": "Автопрокат",
+                "pluralName": "Автопрокаты",
+                "shortName": "Автопрокат",
                 "icon": {
-                  "prefix": "https://ss3.4sqi.net/img/categories_v2/arts_entertainment/musicvenue_",
+                  "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/airport_rentalcar_",
                   "suffix": ".png"
                 },
+                "categoryCode": 19048,
+                "mapIcon": "fsq-default",
                 "primary": true
               }
             ],
-            "verified": false,
-            "stats": {
-              "tipCount": 0,
-              "usersCount": 93,
-              "checkinsCount": 160
-            },
             "like": false,
             "dislike": false,
             "ok": false,
-            "allowMenuUrlEdit": true,
-            "beenHere": {
-              "count": 0,
-              "marked": false,
-              "lastCheckinExpiredAt": 0
+            "venuePage": {
+              "id": "148498562"
             },
-            "createdAt": 1502523682,
-            "popularityByGeo": 0.2447043248014122
+            "createdAt": 1421837131
           },
-          "id": "6511d75af86d2d2e01e7cad7",
-          "photo": {
-            "id": "5b8c6eec31ac6c002cd351fb",
-            "createdAt": 1535930092,
-            "prefix": "https://fastly.4sqi.net/img/general/",
-            "suffix": "/23140670_CrPBOkZFynUP2g9RJV1zP1K26Dnm22lilJ6kaD-3IWI.jpg",
-            "width": 1920,
-            "height": 1440,
-            "visibility": "public"
+          "id": "65ff42f6e941a7497f74b34f",
+          "photos": {
+            "count": 0,
+            "groups": []
           },
           "snippets": {
-            "count": 1,
+            "count": 2,
             "items": [
-              {}
-            ]
-          }
-        },
-        {
-          "displayType": "venue",
-          "venue": {
-            "id": "4c3a70261a38ef3b69229321",
-            "name": "Kurt Cobain Park",
-            "contact": {},
-            "location": {
-              "address": "seattle",
-              "lat": 47.60629067594331,
-              "lng": -122.33209692664707,
-              "labeledLatLngs": [
-                {
-                  "label": "display",
-                  "lat": 47.60629067594331,
-                  "lng": -122.33209692664707
-                }
-              ],
-              "cc": "US",
-              "neighborhood": "Seattle Central Business District",
-              "city": "Seattle",
-              "state": "WA",
-              "country": "United States",
-              "contextLine": "Seattle Central Business District",
-              "contextGeoId": 10545,
-              "formattedAddress": {
-                "text": "seattle\nSeattle, WA",
-                "entities": []
-              }
-            },
-            "categories": [
-              {
-                "id": "4bf58dd8d48988d163941735",
-                "name": "Park",
-                "pluralName": "Parks",
-                "shortName": "Park",
-                "icon": {
-                  "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/park_",
-                  "suffix": ".png"
-                },
-                "primary": true
-              }
-            ],
-            "verified": false,
-            "stats": {
-              "tipCount": 0,
-              "usersCount": 93,
-              "checkinsCount": 132
-            },
-            "like": false,
-            "dislike": false,
-            "ok": false,
-            "beenHere": {
-              "count": 0,
-              "marked": false,
-              "lastCheckinExpiredAt": 0
-            },
-            "createdAt": 1278898214,
-            "popularityByGeo": 0.8409378717525615
-          },
-          "id": "6511d75af86d2d2e01e7cad8",
-          "photo": {
-            "id": "512332eae4b09e75f11b55a7",
-            "createdAt": 1361261290,
-            "prefix": "https://fastly.4sqi.net/img/general/",
-            "suffix": "/43968679_2mbM2Ik8Q52qYzSjw-kzV8igc0L8TTd9s6YgEvYm8zg.jpg",
-            "width": 640,
-            "height": 640,
-            "visibility": "public"
-          },
-          "snippets": {
-            "count": 1,
-            "items": [
-              {}
-            ]
-          }
-        },
-        {
-          "displayType": "venue",
-          "venue": {
-            "id": "4cc37e8bbde8f04d36b4a54b",
-            "name": "Runway Shoes",
-            "contact": {
-              "phone": "2066823355",
-              "formattedPhone": "(206) 682-3355"
-            },
-            "location": {
-              "address": "400 Pine St",
-              "lat": 47.606206922022494,
-              "lng": -122.33207005141776,
-              "labeledLatLngs": [
-                {
-                  "label": "display",
-                  "lat": 47.606206922022494,
-                  "lng": -122.33207005141776
-                }
-              ],
-              "postalCode": "98101",
-              "cc": "US",
-              "neighborhood": "Seattle Central Business District",
-              "city": "Seattle",
-              "state": "WA",
-              "country": "United States",
-              "contextLine": "Seattle Central Business District",
-              "contextGeoId": 10545,
-              "formattedAddress": {
-                "text": "400 Pine St\nSeattle, WA 98101",
-                "entities": []
-              }
-            },
-            "categories": [
-              {
-                "id": "4bf58dd8d48988d107951735",
-                "name": "Shoe Store",
-                "pluralName": "Shoe Stores",
-                "shortName": "Shoes",
-                "icon": {
-                  "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/apparel_shoestore_",
-                  "suffix": ".png"
-                },
-                "primary": true
-              }
-            ],
-            "verified": false,
-            "stats": {
-              "tipCount": 0,
-              "usersCount": 10,
-              "checkinsCount": 10
-            },
-            "like": false,
-            "dislike": false,
-            "ok": false,
-            "allowMenuUrlEdit": true,
-            "beenHere": {
-              "count": 0,
-              "marked": false,
-              "lastCheckinExpiredAt": 0
-            },
-            "createdAt": 1287880331,
-            "popularityByGeo": 0.45596530949000347
-          },
-          "id": "6511d75af86d2d2e01e7cad9",
-          "snippets": {
-            "count": 1,
-            "items": [
-              {}
-            ]
-          }
-        },
-        {
-          "displayType": "venue",
-          "venue": {
-            "id": "4f295e9ae4b015f8e493edb3",
-            "name": "Redbox",
-            "contact": {
-              "phone": "8667332693",
-              "formattedPhone": "(866) 733-2693",
-              "twitter": "redbox"
-            },
-            "location": {
-              "address": "910 4th Ave",
-              "lat": 47.605799,
-              "lng": -122.33195400000001,
-              "labeledLatLngs": [
-                {
-                  "label": "display",
-                  "lat": 47.605799,
-                  "lng": -122.33195400000001
-                },
-                {
-                  "label": "entrance",
-                  "lat": 47.605668,
-                  "lng": -122.332253
-                }
-              ],
-              "cc": "US",
-              "neighborhood": "Seattle Central Business District",
-              "city": "Seattle",
-              "state": "WA",
-              "country": "United States",
-              "contextLine": "Seattle Central Business District",
-              "contextGeoId": 10545,
-              "formattedAddress": {
-                "text": "910 4th Ave\nSeattle, WA",
-                "entities": []
-              }
-            },
-            "categories": [
-              {
-                "id": "4bf58dd8d48988d126951735",
-                "name": "Video Store",
-                "pluralName": "Video Stores",
-                "shortName": "Video Store",
-                "icon": {
-                  "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/video_",
-                  "suffix": ".png"
-                },
-                "primary": true
-              }
-            ],
-            "verified": false,
-            "stats": {
-              "tipCount": 2,
-              "usersCount": 2,
-              "checkinsCount": 5
-            },
-            "url": "http://www.redbox.com/locations/washington/seattle/98164/53870",
-            "like": false,
-            "dislike": false,
-            "ok": false,
-            "allowMenuUrlEdit": true,
-            "beenHere": {
-              "count": 0,
-              "marked": false,
-              "lastCheckinExpiredAt": 0
-            },
-            "storeId": "53870",
-            "createdAt": 1328111258,
-            "popularityByGeo": 0.5667907440807398
-          },
-          "id": "6511d75af86d2d2e01e7cada",
-          "snippets": {
-            "count": 1,
-            "items": [
+              {},
               {
                 "detail": {
-                  "type": "tip",
+                  "type": "socialStatusBar",
                   "object": {
-                    "id": "4fcd64b2e4b083992ded6c03",
-                    "createdAt": 1338860722,
-                    "text": "Free rental with code BREAKROOM!",
-                    "type": "user",
-                    "canonicalUrl": "https://foursquare.com/item/4fcd64b2e4b083992ded6c03",
-                    "logView": true,
-                    "agreeCount": 0,
-                    "disagreeCount": 0,
-                    "todo": {
-                      "count": 0
-                    },
-                    "user": {
-                      "id": "12345",
-                      "firstName": "John",
-                      "lastName": "Smith",
-                      "handle": "johnsmith",
-                      "privateProfile": false,
-                      "gender": "male",
-                      "countryCode": "US",
-                      "followingRelationship": "none",
-                      "photo": {
-                        "prefix": "https://fastly.4sqi.net/img/user/",
-                        "suffix": "/blank_boy.png"
-                      },
-                      "isAnonymous": false
+                    "socialStatusBar": {
+                      "items": []
                     }
                   }
                 }
@@ -361,276 +90,641 @@
         {
           "displayType": "venue",
           "venue": {
-            "id": "6088557b3b51f03ff4c4b859",
-            "name": "Rental Car",
-            "contact": {
-              "phone": "2058299988",
-              "formattedPhone": "(205) 829-9988"
-            },
+            "id": "522b024f11d26a5cf89e5c24",
+            "name": "Netto Filiale",
             "location": {
-              "address": "3060th St Ste #3150",
-              "lat": 47.60621,
-              "lng": -122.332071,
+              "address": "Nentershäuser Str. 4a",
+              "lat": 50.78518731,
+              "lng": 10.4073146,
               "labeledLatLngs": [
                 {
                   "label": "display",
-                  "lat": 47.60621,
-                  "lng": -122.332071
+                  "lat": 50.78518731,
+                  "lng": 10.4073146
                 }
               ],
-              "postalCode": "98187",
-              "cc": "US",
-              "neighborhood": "Seattle Central Business District",
-              "city": "Seattle",
-              "state": "MI",
-              "country": "United States",
-              "contextLine": "Seattle Central Business District, Seattle",
-              "contextGeoId": 10545,
-              "formattedAddress": {
-                "text": "3060th St Ste #3150\nSeattle, MI 98187",
-                "entities": []
-              }
+              "distance": 7259,
+              "postalCode": "98596",
+              "cc": "DE",
+              "city": "Trusetal",
+              "state": "Тюрингия",
+              "country": "Германия",
+              "formattedAddress": [
+                "Nentershäuser Str. 4a",
+                "98596 Trusetal",
+                "Германия"
+              ]
             },
             "categories": [
               {
-                "id": "4bf58dd8d48988d18f941735",
-                "name": "Art Museum",
-                "pluralName": "Art Museums",
-                "shortName": "Art Museum",
+                "id": "52f2ab2ebcbc57f1066b8b46",
+                "name": "Супермаркет",
+                "pluralName": "Супермаркеты",
+                "shortName": "Супермаркет",
                 "icon": {
-                  "prefix": "https://ss3.4sqi.net/img/categories_v2/arts_entertainment/museum_art_",
+                  "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/food_grocery_",
                   "suffix": ".png"
                 },
+                "categoryCode": 17142,
+                "mapIcon": "fsq-default",
                 "primary": true
               }
             ],
-            "verified": true,
-            "stats": {
-              "tipCount": 0,
-              "usersCount": 0,
-              "checkinsCount": 0
-            },
             "like": false,
             "dislike": false,
             "ok": false,
-            "allowMenuUrlEdit": true,
-            "beenHere": {
-              "count": 0,
-              "marked": false,
-              "lastCheckinExpiredAt": 0
-            },
             "venuePage": {
-              "id": "1367756703"
+              "id": "542028590"
             },
-            "createdAt": 1619547515,
-            "popularityByGeo": 0.7351490847691776
+            "createdAt": 1378550351
           },
-          "id": "6511d75af86d2d2e01e7cadb",
-          "snippets": {
+          "id": "65ff42f6e941a7497f74b350",
+          "photo": {
+            "id": "522b027a11d28bcdb8b56968",
+            "createdAt": 1378550394,
+            "prefix": "https://fastly.4sqi.net/img/general/",
+            "suffix": "/11647471_tLZfxEJLYu1u13mqjkptpRfd7YlsnDmzxngrzzWl578.jpg",
+            "width": 960,
+            "height": 720,
+            "visibility": "public"
+          },
+          "photos": {
             "count": 1,
+            "groups": [
+              {
+                "type": "venue",
+                "name": "Фотографии заведения",
+                "count": 1,
+                "items": [
+                  {
+                    "id": "522b027a11d28bcdb8b56968",
+                    "createdAt": 1378550394,
+                    "prefix": "https://fastly.4sqi.net/img/general/",
+                    "suffix": "/11647471_tLZfxEJLYu1u13mqjkptpRfd7YlsnDmzxngrzzWl578.jpg",
+                    "width": 960,
+                    "height": 720,
+                    "user": {
+                      "id": "11647471",
+                      "firstName": "Heinrich",
+                      "lastName": "Soebke",
+                      "handle": "heisob",
+                      "privateProfile": false,
+                      "gender": "male",
+                      "countryCode": "DE",
+                      "followingRelationship": "none",
+                      "photo": {
+                        "prefix": "https://fastly.4sqi.net/img/user/",
+                        "suffix": "/412JYCKQHE12HM0R.jpg"
+                      }
+                    },
+                    "visibility": "public"
+                  }
+                ]
+              }
+            ]
+          },
+          "snippets": {
+            "count": 2,
             "items": [
-              {}
+              {},
+              {
+                "detail": {
+                  "type": "socialStatusBar",
+                  "object": {
+                    "socialStatusBar": {
+                      "items": []
+                    }
+                  }
+                }
+              }
             ]
           }
         },
         {
           "displayType": "venue",
           "venue": {
-            "id": "57604c65498e9f55fc786d89",
-            "name": "Electronic Discovery Service",
-            "contact": {
-              "phone": "2069000856",
-              "formattedPhone": "(206) 900-0856"
-            },
+            "id": "4df4e0671f6e818dae0577e4",
+            "name": "Trusetaler Wasserfall",
             "location": {
-              "address": "1001 4th Ave #3200",
-              "lat": 47.60611964208563,
-              "lng": -122.33263492584227,
+              "address": "Brotteroder Str.",
+              "lat": 50.79525641835777,
+              "lng": 10.418213599667226,
               "labeledLatLngs": [
                 {
                   "label": "display",
-                  "lat": 47.60611964208563,
-                  "lng": -122.33263492584227
+                  "lat": 50.79525641835777,
+                  "lng": 10.418213599667226
                 }
               ],
-              "postalCode": "98154",
-              "cc": "US",
-              "neighborhood": "Seattle Central Business District",
-              "city": "Seattle",
-              "state": "WA",
-              "country": "United States",
-              "contextLine": "Seattle Central Business District",
-              "contextGeoId": 10545,
-              "formattedAddress": {
-                "text": "1001 4th Ave #3200\nSeattle, WA 98154",
-                "entities": []
-              }
+              "distance": 8018,
+              "postalCode": "98597",
+              "cc": "DE",
+              "city": "Trusetal",
+              "state": "Тюрингия",
+              "country": "Германия",
+              "formattedAddress": [
+                "Brotteroder Str.",
+                "98597 Trusetal",
+                "Германия"
+              ]
             },
             "categories": [
               {
-                "id": "4bf58dd8d48988d122951735",
-                "name": "Electronics Store",
-                "pluralName": "Electronics Stores",
-                "shortName": "Electronics",
+                "id": "56aa371be4b08b9a8d573560",
+                "name": "Водопад",
+                "pluralName": "Водопады",
+                "shortName": "Водопад",
                 "icon": {
-                  "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/technology_",
+                  "prefix": "https://ss3.4sqi.net/img/categories_v2/parks_outdoors/default_",
                   "suffix": ".png"
                 },
+                "categoryCode": 16052,
+                "mapIcon": "fsq-default",
                 "primary": true
               }
             ],
-            "verified": false,
-            "stats": {
-              "tipCount": 0,
-              "usersCount": 1,
-              "checkinsCount": 1
-            },
             "like": false,
             "dislike": false,
             "ok": false,
-            "allowMenuUrlEdit": true,
-            "beenHere": {
-              "count": 0,
-              "marked": false,
-              "lastCheckinExpiredAt": 0
-            },
-            "createdAt": 1465928805,
-            "popularityByGeo": 0.29095514025864383
+            "createdAt": 1307893863
           },
-          "id": "6511d75af86d2d2e01e7cadc",
+          "id": "65ff42f6e941a7497f74b351",
+          "photo": {
+            "id": "6283f9267836093e5398dea1",
+            "createdAt": 1652816166,
+            "prefix": "https://fastly.4sqi.net/img/general/",
+            "suffix": "/429004_azk6FINs6RJ0d_JYLeYwlvTTIjEnBcSjIfO5gmiuz5E.jpg",
+            "width": 1440,
+            "height": 1920,
+            "visibility": "public"
+          },
+          "photos": {
+            "count": 10,
+            "groups": [
+              {
+                "type": "venue",
+                "name": "Фотографии заведения",
+                "count": 10,
+                "items": [
+                  {
+                    "id": "6283f9267836093e5398dea1",
+                    "createdAt": 1652816166,
+                    "prefix": "https://fastly.4sqi.net/img/general/",
+                    "suffix": "/429004_azk6FINs6RJ0d_JYLeYwlvTTIjEnBcSjIfO5gmiuz5E.jpg",
+                    "width": 1440,
+                    "height": 1920,
+                    "user": {
+                      "id": "429004",
+                      "firstName": "Ricarda Christina",
+                      "lastName": "Hollweg",
+                      "handle": "ricachristina",
+                      "privateProfile": false,
+                      "gender": "female",
+                      "address": "",
+                      "city": "",
+                      "state": "",
+                      "countryCode": "DE",
+                      "followingRelationship": "none",
+                      "photo": {
+                        "prefix": "https://fastly.4sqi.net/img/user/",
+                        "suffix": "/429004_0JcKaZx4_4peX0MgtMIP4ujNaoAofV5OzufYK8qM6PI96OAZRkSny2lx1sTxUI0r5ew3z_DRm.jpg"
+                      }
+                    },
+                    "visibility": "public"
+                  },
+                  {
+                    "id": "5f98500118dfa15b36b29d23",
+                    "createdAt": 1603817473,
+                    "prefix": "https://fastly.4sqi.net/img/general/",
+                    "suffix": "/429004_s-c8oovM-Fk6E7KQ8bFMhEw31P19RVuQpAvePs9ner4.jpg",
+                    "width": 1440,
+                    "height": 1920,
+                    "user": {
+                      "id": "429004",
+                      "firstName": "Ricarda Christina",
+                      "lastName": "Hollweg",
+                      "handle": "ricachristina",
+                      "privateProfile": false,
+                      "gender": "female",
+                      "address": "",
+                      "city": "",
+                      "state": "",
+                      "countryCode": "DE",
+                      "followingRelationship": "none",
+                      "photo": {
+                        "prefix": "https://fastly.4sqi.net/img/user/",
+                        "suffix": "/429004_0JcKaZx4_4peX0MgtMIP4ujNaoAofV5OzufYK8qM6PI96OAZRkSny2lx1sTxUI0r5ew3z_DRm.jpg"
+                      }
+                    },
+                    "visibility": "public"
+                  },
+                  {
+                    "id": "5f984fe14c414c38a4035e80",
+                    "createdAt": 1603817441,
+                    "prefix": "https://fastly.4sqi.net/img/general/",
+                    "suffix": "/429004_xS7Ln5LYrnF9uJpN7zi4aLU7C-53JIZilq_o0iBlR2o.jpg",
+                    "width": 1440,
+                    "height": 1920,
+                    "user": {
+                      "id": "429004",
+                      "firstName": "Ricarda Christina",
+                      "lastName": "Hollweg",
+                      "handle": "ricachristina",
+                      "privateProfile": false,
+                      "gender": "female",
+                      "address": "",
+                      "city": "",
+                      "state": "",
+                      "countryCode": "DE",
+                      "followingRelationship": "none",
+                      "photo": {
+                        "prefix": "https://fastly.4sqi.net/img/user/",
+                        "suffix": "/429004_0JcKaZx4_4peX0MgtMIP4ujNaoAofV5OzufYK8qM6PI96OAZRkSny2lx1sTxUI0r5ew3z_DRm.jpg"
+                      }
+                    },
+                    "visibility": "public"
+                  },
+                  {
+                    "id": "5f984df51c79327b45cfb887",
+                    "createdAt": 1603816949,
+                    "prefix": "https://fastly.4sqi.net/img/general/",
+                    "suffix": "/429004_PcVWix5KeoVWSvU4jFdq3qQtppS02IEvLY4t2CAv5a8.jpg",
+                    "width": 1440,
+                    "height": 1920,
+                    "user": {
+                      "id": "429004",
+                      "firstName": "Ricarda Christina",
+                      "lastName": "Hollweg",
+                      "handle": "ricachristina",
+                      "privateProfile": false,
+                      "gender": "female",
+                      "address": "",
+                      "city": "",
+                      "state": "",
+                      "countryCode": "DE",
+                      "followingRelationship": "none",
+                      "photo": {
+                        "prefix": "https://fastly.4sqi.net/img/user/",
+                        "suffix": "/429004_0JcKaZx4_4peX0MgtMIP4ujNaoAofV5OzufYK8qM6PI96OAZRkSny2lx1sTxUI0r5ew3z_DRm.jpg"
+                      }
+                    },
+                    "visibility": "public"
+                  },
+                  {
+                    "id": "5f0d7ec9a1d01f7f1071d2a4",
+                    "createdAt": 1594719945,
+                    "prefix": "https://fastly.4sqi.net/img/general/",
+                    "suffix": "/40684999_4Yg1HhgF9D91nFnfIpnQOqCGnXFmG60rOKguzTfkQmI.jpg",
+                    "width": 1440,
+                    "height": 1919,
+                    "user": {
+                      "id": "40684999",
+                      "firstName": "Andreas",
+                      "lastName": "Heße",
+                      "handle": "andiolli80",
+                      "privateProfile": false,
+                      "gender": "male",
+                      "countryCode": "DE",
+                      "followingRelationship": "none",
+                      "photo": {
+                        "prefix": "https://fastly.4sqi.net/img/user/",
+                        "suffix": "/40684999-KVKJMZMAR50RVCJ5.jpg"
+                      }
+                    },
+                    "visibility": "public"
+                  },
+                  {
+                    "id": "5ecbabc0047deb00073496a0",
+                    "createdAt": 1590406080,
+                    "prefix": "https://fastly.4sqi.net/img/general/",
+                    "suffix": "/25760649_jkjJYy2WJ-3xzWULgeHKL4S7HoO9JpyhVgigNc34g5k.jpg",
+                    "width": 1440,
+                    "height": 1920,
+                    "user": {
+                      "id": "25760649",
+                      "firstName": "Alfred",
+                      "lastName": "Benischke",
+                      "handle": "alfredb7272900",
+                      "privateProfile": false,
+                      "gender": "male",
+                      "address": "",
+                      "city": "",
+                      "state": "",
+                      "countryCode": "DE",
+                      "followingRelationship": "none",
+                      "photo": {
+                        "prefix": "https://fastly.4sqi.net/img/user/",
+                        "suffix": "/25760649_7xVbDv1C_pU_NdDqSpMMNb7BXNN4Q0ed5xFAwwWIvIdpy4nWy8qZlA6so582yoFom1GTWl_F0.jpg"
+                      }
+                    },
+                    "visibility": "public"
+                  },
+                  {
+                    "id": "579c9993498e7f9178a32b5e",
+                    "createdAt": 1469880723,
+                    "prefix": "https://fastly.4sqi.net/img/general/",
+                    "suffix": "/3754447_m4_-BGMewWWOjj5YbDP6iyvZm9M3kV0Mn2Tu7AcGEcw.jpg",
+                    "width": 1440,
+                    "height": 1920,
+                    "user": {
+                      "id": "3754447",
+                      "firstName": "Kai",
+                      "lastName": "Sobzak",
+                      "handle": "ironboarder",
+                      "privateProfile": false,
+                      "gender": "male",
+                      "countryCode": "DE",
+                      "followingRelationship": "none",
+                      "photo": {
+                        "prefix": "https://fastly.4sqi.net/img/user/",
+                        "suffix": "/SOOEAQTSRZHPEAUO.jpg"
+                      }
+                    },
+                    "visibility": "public"
+                  },
+                  {
+                    "id": "57814ffacd10afc6f7ba2ae3",
+                    "createdAt": 1468092410,
+                    "prefix": "https://fastly.4sqi.net/img/general/",
+                    "suffix": "/138800623_Qm05WUVbyvxYxPkAnn69_sQp7OAm_KXxHB4KXR9T7qs.jpg",
+                    "width": 1440,
+                    "height": 1920,
+                    "user": {
+                      "id": "138800623",
+                      "firstName": "Kristin",
+                      "lastName": "S.",
+                      "handle": "kristins1477991",
+                      "privateProfile": false,
+                      "gender": "female",
+                      "countryCode": "DE",
+                      "followingRelationship": "none",
+                      "photo": {
+                        "prefix": "https://fastly.4sqi.net/img/user/",
+                        "suffix": "/138800623-GH4UP3MNWOPMWQDV.jpg"
+                      }
+                    },
+                    "visibility": "public"
+                  },
+                  {
+                    "id": "572de9b9498e9106dc3ea039",
+                    "createdAt": 1462626745,
+                    "prefix": "https://fastly.4sqi.net/img/general/",
+                    "suffix": "/150493790_L1NiPh9V5pAZp3cnwDQ3lDyDu1htU-C9DXMhAHhXNUg.jpg",
+                    "width": 720,
+                    "height": 960,
+                    "user": {
+                      "id": "150493790",
+                      "firstName": "Sven",
+                      "lastName": "Sickel",
+                      "handle": "svens7422405",
+                      "privateProfile": false,
+                      "gender": "male",
+                      "countryCode": "DE",
+                      "followingRelationship": "none",
+                      "photo": {
+                        "prefix": "https://fastly.4sqi.net/img/user/",
+                        "suffix": "/150493790-XGD2IEVISMDQ20AZ.jpg"
+                      }
+                    },
+                    "visibility": "public"
+                  },
+                  {
+                    "id": "55c246c1498eb0127c4e219a",
+                    "createdAt": 1438795457,
+                    "prefix": "https://fastly.4sqi.net/img/general/",
+                    "suffix": "/2224042_HjNIVQmr8OkPODEM5hEOkqjeo6t2jKNlJm7NjLvmX-c.jpg",
+                    "width": 720,
+                    "height": 720,
+                    "user": {
+                      "id": "2224042",
+                      "firstName": "wienerle",
+                      "handle": "wienerle1526001",
+                      "privateProfile": false,
+                      "gender": "male",
+                      "countryCode": "DE",
+                      "followingRelationship": "none",
+                      "photo": {
+                        "prefix": "https://fastly.4sqi.net/img/user/",
+                        "suffix": "/4PMMRCWTYHFTAUAY.jpg"
+                      }
+                    },
+                    "visibility": "public"
+                  }
+                ]
+              }
+            ]
+          },
           "snippets": {
-            "count": 1,
+            "count": 2,
             "items": [
-              {}
+              {},
+              {
+                "detail": {
+                  "type": "socialStatusBar",
+                  "object": {
+                    "socialStatusBar": {
+                      "items": []
+                    }
+                  }
+                }
+              }
             ]
           }
         },
         {
           "displayType": "venue",
           "venue": {
-            "id": "62192ae5a9596e4f9acc51b5",
-            "name": "Comfy Zone US LLC",
-            "contact": {
-              "phone": "6575168759",
-              "formattedPhone": "(657) 516-8759"
-            },
+            "id": "511ac866a629ec8f68cf3c4e",
+            "name": "Bahnhof Wasungen",
             "location": {
-              "address": "7511 Greenwood Ave N No 4106",
-              "lat": 47.60618056280742,
-              "lng": -122.33191341161726,
+              "address": "Bahnhofstr. 19",
+              "lat": 50.66291441604762,
+              "lng": 10.35931348800659,
               "labeledLatLngs": [
                 {
                   "label": "display",
-                  "lat": 47.60618056280742,
-                  "lng": -122.33191341161726
+                  "lat": 50.66291441604762,
+                  "lng": 10.35931348800659
                 }
               ],
-              "postalCode": "98103",
-              "cc": "US",
-              "neighborhood": "Seattle Central Business District",
-              "city": "Seattle",
-              "state": "WA",
-              "country": "United States",
-              "contextLine": "Seattle Central Business District",
-              "contextGeoId": 10545,
-              "formattedAddress": {
-                "text": "7511 Greenwood Ave N No 4106\nSeattle, WA 98103",
-                "entities": []
-              }
+              "distance": 9659,
+              "postalCode": "98634",
+              "cc": "DE",
+              "city": "Wasungen",
+              "state": "Тюрингия",
+              "country": "Германия",
+              "formattedAddress": [
+                "Bahnhofstr. 19",
+                "98634 Wasungen",
+                "Германия"
+              ]
             },
             "categories": [
               {
-                "id": "4bf58dd8d48988d1f8941735",
-                "name": "Furniture and Home Store",
-                "pluralName": "Furniture and Home Stores",
-                "shortName": "Furniture and Home Store",
+                "id": "4bf58dd8d48988d129951735",
+                "name": "Железнодорожная станция",
+                "pluralName": "Железнодорожные станции",
+                "shortName": "Железнодорожная станция",
                 "icon": {
-                  "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/furniture_",
+                  "prefix": "https://ss3.4sqi.net/img/categories_v2/travel/trainstation_",
                   "suffix": ".png"
                 },
+                "categoryCode": 19047,
+                "mapIcon": "fsq-default",
                 "primary": true
               }
             ],
-            "verified": false,
-            "stats": {
-              "tipCount": 0,
-              "usersCount": 0,
-              "checkinsCount": 0
-            },
             "like": false,
             "dislike": false,
             "ok": false,
-            "allowMenuUrlEdit": true,
-            "beenHere": {
-              "count": 0,
-              "marked": false,
-              "lastCheckinExpiredAt": 0
-            },
-            "createdAt": 1645816549,
-            "popularityByGeo": 0.8192179285467592
+            "createdAt": 1360709734
           },
-          "id": "6511d75af86d2d2e01e7cadd",
-          "snippets": {
+          "id": "65ff42f6e941a7497f74b352",
+          "photo": {
+            "id": "51ac9de0498e19d5a2788770",
+            "createdAt": 1370267104,
+            "prefix": "https://fastly.4sqi.net/img/general/",
+            "suffix": "/55086011_WQf8-FRnrjxb6tGIIKMAG6ya9J3fabatuGzweJSaUAA.jpg",
+            "width": 720,
+            "height": 960,
+            "visibility": "public"
+          },
+          "photos": {
             "count": 1,
+            "groups": [
+              {
+                "type": "venue",
+                "name": "Фотографии заведения",
+                "count": 1,
+                "items": [
+                  {
+                    "id": "51ac9de0498e19d5a2788770",
+                    "createdAt": 1370267104,
+                    "prefix": "https://fastly.4sqi.net/img/general/",
+                    "suffix": "/55086011_WQf8-FRnrjxb6tGIIKMAG6ya9J3fabatuGzweJSaUAA.jpg",
+                    "width": 720,
+                    "height": 960,
+                    "user": {
+                      "id": "55086011",
+                      "firstName": "Maik",
+                      "lastName": "Neumann",
+                      "handle": "thirdjanuary",
+                      "privateProfile": false,
+                      "gender": "male",
+                      "countryCode": "DE",
+                      "followingRelationship": "none",
+                      "photo": {
+                        "prefix": "https://fastly.4sqi.net/img/user/",
+                        "suffix": "/5VXYIZBK4E3MLEYO.jpg"
+                      }
+                    },
+                    "visibility": "public"
+                  }
+                ]
+              }
+            ]
+          },
+          "snippets": {
+            "count": 2,
             "items": [
-              {}
+              {
+                "detail": {
+                  "type": "tip",
+                  "object": {
+                    "id": "51c83fa5498e4ffa3a291fe7",
+                    "createdAt": 1372077989,
+                    "text": "Nicht der schönste aber zweckmäßig. In der Stunde bringt er einen jeweils immer um XX:49 in Richtung Eisenach und immer um XX:04 Richtung Meiningen, Grimmenthal und Eisfeld.Gute Reise!",
+                    "type": "user",
+                    "canonicalUrl": "https://foursquare.com/item/51c83fa5498e4ffa3a291fe7",
+                    "logView": true,
+                    "agreeCount": 0,
+                    "disagreeCount": 0,
+                    "todo": {
+                      "count": 0
+                    },
+                    "user": {
+                      "id": "55086011",
+                      "firstName": "Maik",
+                      "lastName": "Neumann",
+                      "handle": "thirdjanuary",
+                      "privateProfile": false,
+                      "gender": "male",
+                      "countryCode": "DE",
+                      "followingRelationship": "none",
+                      "photo": {
+                        "prefix": "https://fastly.4sqi.net/img/user/",
+                        "suffix": "/5VXYIZBK4E3MLEYO.jpg"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "detail": {
+                  "type": "socialStatusBar",
+                  "object": {
+                    "socialStatusBar": {
+                      "items": []
+                    }
+                  }
+                }
+              }
             ]
           }
         }
       ],
-      "totalResults": 7
+      "totalResults": 14
     },
     "context": {
-      "searchLocationNearYou": false,
+      "searchLocationNearYou": true,
       "searchLocationMapBounds": false,
-      "searchLocationType": "NearGeo",
+      "searchLocationType": "NearYou",
       "currentLocation": {
         "what": "",
-        "where": "seattle wa",
+        "where": "",
         "feature": {
-          "cc": "US",
-          "name": "Seattle",
-          "displayName": "Seattle, WA, United States",
-          "matchedName": "Seattle, WA, United States",
-          "highlightedName": "<b>Seattle</b>, <b>WA</b>, United States",
+          "cc": "DE",
+          "name": "Шмалькальден",
+          "displayName": "Шмалькальден",
           "woeType": 7,
-          "slug": "seattle-washington",
-          "id": "geonameid:5809844",
-          "longId": "72057594043737780",
+          "slug": "schmalkalden-germany",
+          "id": "geonameid:2838059",
+          "longId": "72057594040765995",
           "geometry": {
             "center": {
-              "lat": 47.60621,
-              "lng": -122.33207
+              "lat": 50.72136,
+              "lng": 10.44386
             },
             "bounds": {
               "ne": {
-                "lat": 47.734145,
-                "lng": -122.224433
+                "lat": 50.747867746366865,
+                "lng": 10.499981499664102
               },
               "sw": {
-                "lat": 47.481719999999996,
-                "lng": -122.459696
+                "lat": 50.70915488778547,
+                "lng": 10.392218355666614
               }
             }
           }
         },
         "parents": []
       },
+      "boundsSummaryRadius": 10000,
       "relatedNeighborhoods": [],
       "geoParams": {
-        "ll": "47.60621,-122.33207",
-        "radius": "20"
+        "ll": "50.726553,10.452442",
+        "radius": "10000"
       },
       "geoBounds": {
         "circle": {
           "center": {
-            "lat": 47.60621,
-            "lng": -122.33207
+            "lat": 50.726553,
+            "lng": 10.452442
           },
-          "radius": 20
+          "radius": 10000
         }
       },
-      "currency": "$"
+      "currency": "€"
     }
   }
 }

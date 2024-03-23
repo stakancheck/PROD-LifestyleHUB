@@ -9,6 +9,7 @@
 package ru.stakancheck.api.models
 
 import io.ktor.client.call.body
+import io.ktor.client.plugins.ClientRequestException
 import io.ktor.client.statement.HttpResponse
 import io.ktor.http.isSuccess
 
@@ -53,6 +54,8 @@ sealed interface ApiResult<out T> {
                 } else {
                     Error(response.body<E>())
                 }
+            } catch (e: ClientRequestException) {
+                Error(e.response.body<E>())
             } catch (e: Throwable) {
                 Error(e)
             }

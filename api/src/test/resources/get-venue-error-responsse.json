@@ -1,9 +1,0 @@
-{
-  "meta": {
-    "code": 401,
-    "errorType": "invalid_auth",
-    "errorDetail": "OAuth token invalid or revoked.",
-    "requestId": "65fd75e1f12e584816623a04"
-  },
-  "response": {}
-}

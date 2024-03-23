@@ -11,6 +11,7 @@ package ru.stakancheck.api
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.okhttp.OkHttp
 import io.ktor.client.plugins.ClientRequestException
+import io.ktor.client.plugins.HttpCallValidator
 import io.ktor.client.plugins.HttpResponseValidator
 import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
 import io.ktor.client.plugins.logging.LogLevel
@@ -47,24 +48,26 @@ fun HttpClient(
         }
         level = LogLevel.BODY
     }
-    HttpResponseValidator {
-        handleResponseExceptionWithRequest { exception, _ ->
-            val clientException = exception as? ClientRequestException
-                ?: return@handleResponseExceptionWithRequest
-            val exceptionResponse = clientException.response
+    HttpResponseValidator(getResponseValidator())
+}
 
-            when (exceptionResponse.status) {
-                HttpStatusCode.Unauthorized -> {
-                    throw ApiException.UnauthorizedException()
-                }
+internal fun getResponseValidator(): HttpCallValidator.Config.() -> Unit = {
+    handleResponseExceptionWithRequest { exception, _ ->
+        val clientException = exception as? ClientRequestException
+            ?: return@handleResponseExceptionWithRequest
+        val exceptionResponse = clientException.response
 
-                HttpStatusCode.NotFound -> {
-                    throw ApiException.NotFoundException()
-                }
+        when (exceptionResponse.status) {
+            HttpStatusCode.Unauthorized -> {
+                throw ApiException.UnauthorizedException()
+            }
 
-                HttpStatusCode.RequestTimeout -> {
-                    throw ApiException.RequestTimeoutException()
-                }
+            HttpStatusCode.NotFound -> {
+                throw ApiException.NotFoundException()
+            }
+
+            HttpStatusCode.RequestTimeout -> {
+                throw ApiException.RequestTimeoutException()
             }
         }
     }
