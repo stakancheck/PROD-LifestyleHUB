@@ -73,8 +73,8 @@ val md_theme_dark_scrim = Color(0xFF000000)
 
 val custom_weatherDayGradientStart_light = Color(0xFF00B5F2)
 val custom_weatherDayGradientEnd_light = Color(0xFF0076ab)
-val custom_weatherNightGradientStart_light = Color(0xFF38426C)
-val custom_weatherNightGradientEnd_light = Color(0xFF2D334D)
+val custom_weatherNightGradientStart_light = Color(0xFF2D3863)
+val custom_weatherNightGradientEnd_light = Color(0xFF21263D)
 
 val custom_onWeatherDayGradient_light = Color(0xFFEEF6FF)
 val custom_onWeatherDayGradientVariant_light = Color(0xCCF1F8FF)
@@ -82,7 +82,7 @@ val custom_onWeatherDayGradientVariant_light = Color(0xCCF1F8FF)
 val custom_onWeatherNightGradient_light = Color(0xFFEEF6FF)
 val custom_onWeatherNightGradientVariant_light = Color(0xFFBED3E7)
 
-val custom_sheetWeatherNight_light = Color(0x66437BCF)
+val custom_sheetWeatherNight_light = Color(0x1AF7FCFF)
 val custom_sheetWeatherDay_light = Color(0x66000814)
 
 val custom_pictureSheet_light = Color(0xB3000814)
@@ -91,7 +91,7 @@ val custom_onPictureSheet_light = Color(0xFFFAFAFA)
 
 val custom_weatherDayGradientStart_dark = Color(0xFF0094D4)
 val custom_weatherDayGradientEnd_dark = Color(0xFF00638D)
-val custom_weatherNightGradientStart_dark = Color(0xFF004095)
+val custom_weatherNightGradientStart_dark = Color(0xFF00357C)
 val custom_weatherNightGradientEnd_dark = Color(0xFF000814)
 
 val custom_onWeatherDayGradient_dark = Color(0xFFEEF6FF)
@@ -100,7 +100,7 @@ val custom_onWeatherDayGradientVariant_dark = Color(0xFFB2DAFF)
 val custom_onWeatherNightGradient_dark = Color(0xFFEEF6FF)
 val custom_onWeatherNightGradientVariant_dark = Color(0xFFBED3E7)
 
-val custom_sheetWeatherNight_dark = Color(0x99437BCF)
+val custom_sheetWeatherNight_dark = Color(0x1AF7FCFF)
 val custom_sheetWeatherDay_dark = Color(0x99000814)
 
 val custom_pictureSheet_dark = Color(0xCC000309)

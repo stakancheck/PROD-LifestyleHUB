@@ -14,6 +14,7 @@ import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -21,7 +22,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Air
 import androidx.compose.material.icons.rounded.LocationOn
@@ -37,7 +37,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.Stroke
@@ -66,8 +66,6 @@ import ru.stakancheck.uikit.theme.Dimens
 import ru.stakancheck.uikit.theme.Elevation
 import ru.stakancheck.uikit.theme.IconSize
 import ru.stakancheck.uikit.theme.LifestyleHUBTheme
-import ru.stakancheck.uikit.theme.Radius
-import ru.stakancheck.uikit.utils.withoutAlpha
 
 
 @Composable
@@ -78,10 +76,14 @@ fun WeatherWidget(
 ) {
     ElevatedCard(
         modifier = modifier,
-        shape = RoundedCornerShape(Radius.large),
+        shape = MaterialTheme.shapes.large,
         colors = CardDefaults.elevatedCardColors(
             contentColor = CustomTheme.colors.weatherDayColors.onWeatherBackground,
-            containerColor = CustomTheme.colors.weatherDayColors.weatherBackgroundGradient.first()
+            containerColor = if (weatherModel == null) {
+                CustomTheme.colors.weatherDayColors.weatherBackgroundGradient.first()
+            } else {
+                Color.Transparent
+            }
         ),
         elevation = CardDefaults.cardElevation(Elevation.defaultElevation)
     ) {
@@ -214,18 +216,13 @@ private fun WeatherWidgetContent(
                         )
                     }
                 }
-                ElevatedCard(
+                Box(
                     modifier = Modifier
                         .fillMaxWidth()
                         .heightIn(max = 142.dp)
-                        .alpha(colors.sheetWeatherBackground.alpha)
-                        .padding(Dimens.spaceMedium),
-                    shape = RoundedCornerShape(Radius.medium),
-                    colors = CardDefaults.elevatedCardColors(
-                        containerColor = colors.sheetWeatherBackground.withoutAlpha(),
-                        contentColor = colors.onWeatherBackground
-                    ),
-                    elevation = CardDefaults.cardElevation(Elevation.defaultElevation)
+                        .padding(Dimens.spaceMedium)
+                        .clip(MaterialTheme.shapes.medium)
+                        .background(colors.sheetWeatherBackground)
                 ) {
                     Row(
                         modifier = Modifier.padding(Dimens.spaceSmall),
@@ -235,6 +232,7 @@ private fun WeatherWidgetContent(
                             modifier = Modifier.weight(1f),
                             imageVector = Icons.Rounded.Air,
                             title = stringResource(R.string.weather_wind),
+                            // TODO: to string res
                             value =
                             stringResource(
                                 R.string.weather_wind_speed,
