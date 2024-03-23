@@ -52,4 +52,12 @@ data class Weather(
     override fun toString(): String {
         return "Weather -> weather: $description, location: $location, temp: $temp, feelsLike: $feelsLike"
     }
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (other !is Weather) return false
+        if (weatherId != other.weatherId) return false
+
+        return true
+    }
 }
