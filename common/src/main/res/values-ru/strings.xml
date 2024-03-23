@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2024. Artem Sukhanov (Stakancheck)
+  ~ All rights reserved.
+  ~
+  ~ For inquiries, please contact:
+  ~ Personal Email: stakancheck@gmail.com
+  -->
+
+<resources>
+    <!-- Error titles -->
+    <string name="error_request_timeout">Запрос превысил время ожидания</string>
+    <string name="error_no_internet">Нет подключения к интернету</string>
+    <string name="error_unauthorized">Нет доступа</string>
+    <string name="error_server_error">Ошибка сервера</string>
+    <string name="error_serialization">Ошибка сериализации</string>
+    <string name="error_location_permission_not_granted">Нет разрешения на опредления местоположения</string>
+    <string name="error_location_services_off">Службы определения местоположения отключены</string>
+    <string name="error_unknown">Неизвестная ошибка</string>
+    <string name="error_no_data">Данные отсутствуют</string>
+    <string name="error_no_cache">Кэш отсутствует</string>
+
+    <!-- Error descriptions -->
+    <string name="error_request_timeout_description">Попробуйте повторить запрос позднее</string>
+    <string name="error_request_no_internet_description">Проверьте свое подключение к сети</string>
+    <string name="error_unauthorized_description">Проверьте ваши учетные данные</string>
+    <string name="error_server_error_description">Попробуйте повторить запрос позднее</string>
+    <string name="error_serialization_description">Пожалуйста, попробуйте еще раз</string>
+    <string name="error_location_permission_not_granted_description">Пожалуйста, включите разрешения в настройках</string>
+    <string name="error_location_services_off_description">Пожалуйста, включите их в настройках</string>
+    <string name="error_unknown_description">Пожалуйста, попробуйте еще раз</string>
+</resources>

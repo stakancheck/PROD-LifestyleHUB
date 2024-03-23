@@ -8,6 +8,7 @@
 
 package ru.stakancheck.common.error
 
+
 interface ErrorObserver {
     fun onError(error: Error)
 }

@@ -29,6 +29,8 @@ import ru.stakancheck.lifestylehub.utils.LoggerBridgeImpl
 import ru.stakancheck.main.feed.domain.usecases.GetCurrentWeatherUseCase
 import ru.stakancheck.main.feed.domain.usecases.GetInterestsUseCase
 import ru.stakancheck.main.feed.presentation.MainFeedScreenViewModel
+import ru.stakancheck.uikit.components.ErrorPresenter
+import ru.stakancheck.uikit.components.ToastErrorPresenter
 import java.util.concurrent.CopyOnWriteArrayList
 import ru.stakancheck.api.HttpClient as AppHttpClient
 
@@ -38,8 +40,15 @@ private val main = module {
     single<ErrorCollector> {
         object : ErrorCollector {
             override val observers: CopyOnWriteArrayList<ErrorObserver>
-                get() = CopyOnWriteArrayList<ErrorObserver>()
+                get() = CopyOnWriteArrayList<ErrorObserver>().apply {
+                    add(get<ErrorPresenter>())
+                }
         }
+    }
+
+    // Error presenter with composable invoke
+    single<ErrorPresenter> {
+        ToastErrorPresenter()
     }
 
     // Logger (only single instance)

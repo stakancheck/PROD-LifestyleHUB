@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2024. Artem Sukhanov (Stakancheck)
+  ~ All rights reserved.
+  ~
+  ~ For inquiries, please contact:
+  ~ Personal Email: stakancheck@gmail.com
+  -->
+
+<resources>
+    <!-- Error titles -->
+    <string name="error_request_timeout">Request timed out</string>
+    <string name="error_no_internet">No internet connection</string>
+    <string name="error_unauthorized">Unauthorized access</string>
+    <string name="error_server_error">Server error</string>
+    <string name="error_serialization">Serialization error</string>
+    <string name="error_location_permission_not_granted">Location permission not granted</string>
+    <string name="error_location_services_off">Location services are turned off</string>
+    <string name="error_unknown">Unknown error</string>
+    <string name="error_no_data">No data available</string>
+    <string name="error_no_cache">No cache available</string>
+
+    <!-- Error descriptions -->
+    <string name="error_request_timeout_description">Try to repeat the request later</string>
+    <string name="error_request_no_internet_description">Check your network connection</string>
+    <string name="error_unauthorized_description">Check your credentials</string>
+    <string name="error_server_error_description">Try to repeat the request later</string>
+    <string name="error_serialization_description">Please try again</string>
+    <string name="error_location_permission_not_granted_description">Please enable permissions in the settings</string>
+    <string name="error_location_services_off_description">Please enable them in the settings</string>
+    <string name="error_unknown_description">Please try again</string>
+</resources>

@@ -72,4 +72,6 @@ dependencies {
 
     api(libs.compose.material.icons)
     api(libs.androidx.compose.ui.graphics)
+
+    implementation(project(":common"))
 }
