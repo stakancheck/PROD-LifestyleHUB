@@ -27,7 +27,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
@@ -38,7 +37,7 @@ import coil.request.CachePolicy
 import coil.request.ImageRequest
 import ru.stakancheck.data.models.Interest
 import ru.stakancheck.main.feed.R
-import ru.stakancheck.main.feed.utils.WeatherCardColors
+import ru.stakancheck.uikit.theme.CustomTheme
 import ru.stakancheck.uikit.theme.Dimens
 
 
@@ -79,9 +78,9 @@ fun VenueInterestItem(
                 modifier = Modifier
                     .fillMaxWidth()
                     .align(Alignment.BottomCenter)
-                    .background(WeatherCardColors.sheetDarkColor.copy(alpha = 0.8f))
+                    .background(CustomTheme.colors.pictureSheet)
             ) {
-                CompositionLocalProvider(value = LocalContentColor provides Color.White) {
+                CompositionLocalProvider(value = LocalContentColor provides CustomTheme.colors.onPictureSheet) {
                     Column(
                         modifier = Modifier
                             .padding(Dimens.spaceMedium)
