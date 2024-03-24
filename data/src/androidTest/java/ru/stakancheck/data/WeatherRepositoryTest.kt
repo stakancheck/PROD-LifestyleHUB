@@ -73,10 +73,8 @@ class WeatherRepositoryTest {
     }
 
     @Test
-    fun testGetCurrentWeather() = runBlocking {
+    fun `testGetCurrentWeather`() = runBlocking {
         val result = weatherRepository.getCurrentWeather(Language.ENGLISH.code)
-
-        // Проверьте, что результат не является ошибкой и содержит ожидаемые данные
         Assert.assertTrue(result is Result.Success)
         Assert.assertNotNull((result as Result.Success).data)
     }
