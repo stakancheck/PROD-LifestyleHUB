@@ -15,12 +15,12 @@ import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import ru.stakancheck.api.WeatherApi
-import ru.stakancheck.api.models.ApiResult
 import ru.stakancheck.api.models.Coord
 import ru.stakancheck.api.models.CurrentWeatherDTO
 import ru.stakancheck.api.models.Main
 import ru.stakancheck.api.models.Sys
 import ru.stakancheck.api.models.Wind
+import ru.stakancheck.api.models.tools.ApiResult
 import ru.stakancheck.common.Logger
 import ru.stakancheck.common.error.DataError
 import ru.stakancheck.data.models.Location

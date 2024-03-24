@@ -19,11 +19,13 @@ import io.ktor.http.headersOf
 import io.ktor.serialization.kotlinx.json.json
 import kotlinx.coroutines.runBlocking
 import kotlinx.serialization.json.Json
+import org.junit.Assert.assertEquals
 import org.junit.Test
 import ru.stakancheck.api.VenueApi
 import ru.stakancheck.api.getResponseValidator
-import ru.stakancheck.api.models.ApiResult
-import ru.stakancheck.api.models.Language
+import ru.stakancheck.api.models.tools.ApiResult
+import ru.stakancheck.api.models.tools.Language
+import java.io.File
 import java.util.Properties
 
 class VenueApiTest {
@@ -58,15 +60,13 @@ class VenueApiTest {
 
     @Test
     fun `test get near venues 200`() {
-        val apiResponse =
-            Thread.currentThread().contextClassLoader.getResourceAsStream("get-venue-response.json")
-                ?.bufferedReader()
-                .use {
-                    it?.readText()
-                        ?: throw IllegalStateException("get-venue-response.json not found")
-                }
-
-        val venueApi = VenueApi(getClient(apiResponse, HttpStatusCode.OK), oauthToken)
+        val venueApi = VenueApi(
+            getClient(
+                File("src/test/resources/gget-venue-response.json").readText(),
+                HttpStatusCode.OK
+            ),
+            oauthToken
+        )
 
         runBlocking {
             val result = venueApi.getNearVenues(50.8079, 61.6919, Language.RUSSIAN, 10, 0)
@@ -151,6 +151,46 @@ class VenueApiTest {
         runBlocking {
             val result = venueApi.getNearVenues(50.8079, 61.6919, Language.RUSSIAN, 10, 0)
             assert(result is ApiResult.Error && result.error.message == "ll must be of the form XX.XX,YY.YY (received 61.691891)") { "Expected ApiResult.Error but got $result" }
+        }
+    }
+
+    @Test
+    fun `test get venue details big response 200`() {
+        val venueApi = VenueApi(
+            getClient(
+                File("src/test/resources/get-venue-details-response.json").readText(),
+                HttpStatusCode.OK
+            ),
+            oauthToken
+        )
+
+        runBlocking {
+            val result = venueApi.getVenueDetails("5c5b0c940fe7a00033ddf78e", Language.ENGLISH)
+            assert(result is ApiResult.Success) { "Expected ApiResult.Success but got $result" }
+
+            val venueDetails = (result as ApiResult.Success).data.response.venue
+            assertEquals("5c5b0c940fe7a00033ddf78e", venueDetails.id)
+            assertEquals("Flower Child", venueDetails.name)
+        }
+    }
+
+    @Test
+    fun `test get venue details short response 200`() {
+        val venueApi = VenueApi(
+            getClient(
+                File("src/test/resources/get-venue-details-response-min.json").readText(),
+                HttpStatusCode.OK
+            ),
+            oauthToken
+        )
+
+        runBlocking {
+            val result = venueApi.getVenueDetails("53a0bfb9498eea0ca3d84ee1", Language.ENGLISH)
+            assert(result is ApiResult.Success) { "Expected ApiResult.Success but got $result" }
+
+            val venueDetails = (result as ApiResult.Success).data.response.venue
+            assertEquals("53a0bfb9498eea0ca3d84ee1", venueDetails.id)
+            assertEquals("Магазин adidas", venueDetails.name)
         }
     }
 }

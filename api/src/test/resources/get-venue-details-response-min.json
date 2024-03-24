@@ -1,0 +1,171 @@
+{
+  "meta": {
+    "code": 200,
+    "requestId": "65ff5e8485f2247876dba4f5"
+  },
+  "notifications": [
+    {
+      "type": "notificationTray",
+      "item": {
+        "unreadCount": 0
+      }
+    }
+  ],
+  "response": {
+    "venue": {
+      "id": "53a0bfb9498eea0ca3d84ee1",
+      "name": "Магазин adidas",
+      "contact": {
+        "phone": "+78212370608",
+        "formattedPhone": "+7 821 237-06-08",
+        "twitter": "adidas",
+        "facebook": "182162001806727",
+        "facebookUsername": "adidas"
+      },
+      "location": {
+        "address": "Октябрьский проспект, д. 131, ТЦ \"Июнь\"",
+        "lat": 61.68975898652906,
+        "lng": 50.8027555330995,
+        "labeledLatLngs": [
+          {
+            "label": "display",
+            "lat": 61.68975898652906,
+            "lng": 50.8027555330995
+          }
+        ],
+        "cc": "RU",
+        "city": "Сыктывкар",
+        "state": "Коми",
+        "country": "Россия",
+        "formattedAddress": [
+          "Октябрьский проспект, д. 131, ТЦ \"Июнь\"",
+          "Сыктывкар",
+          "Россия"
+        ]
+      },
+      "canonicalUrl": "https://foursquare.com/v/%D0%BC%D0%B0%D0%B3%D0%B0%D0%B7%D0%B8%D0%BD-adidas/53a0bfb9498eea0ca3d84ee1",
+      "categories": [
+        {
+          "id": "4bf58dd8d48988d1f2941735",
+          "name": "Магазин спорттоваров",
+          "pluralName": "Магазин спорттоваров",
+          "shortName": "Магазин спорттоваров",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/shops/sports_outdoors_",
+            "suffix": ".png"
+          },
+          "categoryCode": 17117,
+          "mapIcon": "fsq-default",
+          "primary": true
+        }
+      ],
+      "stats": {
+        "tipCount": 0
+      },
+      "url": "http://www.adidas.com",
+      "likes": {
+        "count": 1,
+        "groups": [
+          {
+            "type": "others",
+            "count": 1,
+            "items": [
+              {
+                "id": "74592441",
+                "firstName": "Ксения",
+                "lastName": "Чижикова",
+                "handle": "kseniac7648285",
+                "privateProfile": false,
+                "gender": "female",
+                "countryCode": "RU",
+                "followingRelationship": "none",
+                "photo": {
+                  "prefix": "https://fastly.4sqi.net/img/user/",
+                  "suffix": "/74592441-ZSITDQX3EC1JVTDP.jpg"
+                }
+              }
+            ]
+          }
+        ],
+        "summary": "Ксения Чижикова"
+      },
+      "like": false,
+      "dislike": false,
+      "ok": false,
+      "allowMenuUrlEdit": true,
+      "reasons": {
+        "count": 0,
+        "items": []
+      },
+      "storeId": "",
+      "page": {
+        "pageInfo": {
+          "banner": "https://is1.4sqi.net/userpix/3LNZGZHAHPQBV421.jpg",
+          "links": {
+            "count": 1,
+            "items": [
+              {
+                "url": "http://www.adidas.com"
+              }
+            ]
+          }
+        },
+        "user": {
+          "id": "30299109",
+          "firstName": "adidas",
+          "handle": "adidas",
+          "privateProfile": false,
+          "gender": "none",
+          "countryCode": "GB",
+          "followingRelationship": "none",
+          "photo": {
+            "prefix": "https://fastly.4sqi.net/img/user/",
+            "suffix": "/XOAN531JJMGZ3ZU0.jpg"
+          },
+          "type": "chain",
+          "tips": {
+            "count": 1
+          },
+          "lists": {
+            "groups": [
+              {
+                "type": "created",
+                "count": 2,
+                "items": []
+              }
+            ]
+          },
+          "homeCity": "Global",
+          "bio": "",
+          "contact": {
+            "twitter": "adidas",
+            "facebook": "182162001806727"
+          }
+        }
+      },
+      "createdAt": 1403043769,
+      "hereNow": {
+        "count": 0,
+        "summary": "Здесь никого нет",
+        "groups": []
+      },
+      "shortUrl": "http://4sq.com/1v6MlnE",
+      "timeZone": "Europe/Moscow",
+      "listed": {
+        "count": 0,
+        "groups": []
+      },
+      "seasonalHours": [],
+      "pageUpdates": {
+        "count": 0
+      },
+      "inbox": {
+        "count": 0,
+        "items": []
+      },
+      "attributes": {
+        "groups": []
+      }
+    }
+  }
+}

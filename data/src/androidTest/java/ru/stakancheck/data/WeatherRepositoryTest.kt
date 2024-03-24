@@ -17,7 +17,7 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import ru.stakancheck.api.HttpClient
 import ru.stakancheck.api.WeatherApi
-import ru.stakancheck.api.models.Language
+import ru.stakancheck.api.models.tools.Language
 import ru.stakancheck.api.utils.LoggerBridge
 import ru.stakancheck.common.AndroidLogger
 import ru.stakancheck.common.permission.PermissionChecker

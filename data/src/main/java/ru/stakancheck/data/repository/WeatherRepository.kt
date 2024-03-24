@@ -9,8 +9,8 @@
 package ru.stakancheck.data.repository
 
 import ru.stakancheck.api.WeatherApi
-import ru.stakancheck.api.models.ApiResult
-import ru.stakancheck.api.models.Language
+import ru.stakancheck.api.models.tools.ApiResult
+import ru.stakancheck.api.models.tools.Language
 import ru.stakancheck.common.Logger
 import ru.stakancheck.common.error.DataError
 import ru.stakancheck.common.error.toNetworkError

@@ -6,7 +6,7 @@
  * Personal Email: stakancheck@gmail.com
  */
 
-package ru.stakancheck.api.models
+package ru.stakancheck.api.models.tools
 
 import io.ktor.client.call.body
 import io.ktor.client.plugins.ClientRequestException

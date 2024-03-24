@@ -15,10 +15,11 @@ import io.ktor.client.statement.HttpResponse
 import io.ktor.http.URLProtocol
 import io.ktor.http.headers
 import io.ktor.http.path
-import ru.stakancheck.api.models.ApiResult
-import ru.stakancheck.api.models.Language
+import ru.stakancheck.api.models.VenueDetailsDTO
 import ru.stakancheck.api.models.VenueErrorDTO
 import ru.stakancheck.api.models.VenuesDTO
+import ru.stakancheck.api.models.tools.ApiResult
+import ru.stakancheck.api.models.tools.Language
 
 
 /**
@@ -61,6 +62,30 @@ class VenueApi(
                     parameters.append("locale", lang.code)
                     parameters.append("limit", limit.toString())
                     parameters.append("offset", offset.toString())
+                    parameters.append("v", API_VERSION)
+                }
+
+                headers {
+                    append("Content-Type", "application/json")
+                    append("Accept", "application/json")
+                }
+            }
+            httpResponse.body()
+        }
+
+    suspend fun getVenueDetails(
+        venueId: String,
+        lang: Language,
+    ): ApiResult<VenueDetailsDTO> =
+        ApiResult.withCatching<VenueDetailsDTO, VenueErrorDTO> {
+            val httpResponse: HttpResponse = httpClient.get {
+                url {
+                    protocol = URLProtocol.HTTPS
+                    host = HOST
+                    path("v2", "venues", venueId)
+
+                    parameters.append("oauth_token", oauthToken)
+                    parameters.append("locale", lang.code)
                     parameters.append("v", API_VERSION)
                 }
 

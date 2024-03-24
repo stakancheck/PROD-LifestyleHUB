@@ -1,0 +1,707 @@
+{
+  "meta": {
+    "code": 200,
+    "requestId": "65fff723561bae635835a52a"
+  },
+  "notifications": [
+    {
+      "type": "notificationTray",
+      "item": {
+        "unreadCount": 0
+      }
+    }
+  ],
+  "response": {
+    "venue": {
+      "id": "5c5b0c940fe7a00033ddf78e",
+      "name": "Flower Child",
+      "contact": {
+        "phone": "2029193646",
+        "formattedPhone": "(202) 919-3646"
+      },
+      "location": {
+        "address": "2112 Pennsylvania Ave NW",
+        "lat": 38.90174056607336,
+        "lng": -77.0478363742827,
+        "labeledLatLngs": [
+          {
+            "label": "display",
+            "lat": 38.90174056607336,
+            "lng": -77.0478363742827
+          }
+        ],
+        "radius50": 44,
+        "radius90": 4614,
+        "postalCode": "20037",
+        "cc": "US",
+        "neighborhood": "Connecticut Avenue - K Street",
+        "city": "Вашингтон",
+        "state": "D.C.",
+        "country": "США",
+        "formattedAddress": [
+          "2112 Pennsylvania Ave NW",
+          "Вашингтон, D.C. 20037",
+          "США"
+        ]
+      },
+      "canonicalUrl": "https://foursquare.com/v/flower-child/5c5b0c940fe7a00033ddf78e",
+      "categories": [
+        {
+          "id": "4bf58dd8d48988d1d3941735",
+          "name": "Веганский или вегетарианский ресторан",
+          "pluralName": "Веганские и вегетарианские рестораны",
+          "shortName": "Веганский или вегетарианский ресторан",
+          "icon": {
+            "prefix": "https://ss3.4sqi.net/img/categories_v2/food/vegetarian_",
+            "suffix": ".png"
+          },
+          "categoryCode": 13377,
+          "mapIcon": "fsq-dining",
+          "primary": true
+        }
+      ],
+      "verified": false,
+      "stats": {
+        "tipCount": 3
+      },
+      "url": "https://www.iamaflowerchild.com",
+      "price": {
+        "tier": 2,
+        "message": "С умеренными ценами",
+        "currency": "$"
+      },
+      "likes": {
+        "count": 21,
+        "groups": [
+          {
+            "type": "others",
+            "count": 21,
+            "items": []
+          }
+        ],
+        "summary": "Лайки:21"
+      },
+      "like": false,
+      "dislike": false,
+      "ok": false,
+      "header": "Сообщество Foursquare оценивает это место на 8.7 из 10.",
+      "rating": 8.7,
+      "ratingColor": "73CF42",
+      "ratingSignals": 24,
+      "explanation": "Мы принимаем во внимание посещения и отзывы нашего сообщества. Ты увидишь некоторое количество мест, отобранных на основе оценок и подсказок, созданных такими же пользователями, как и ты.",
+      "ratingCategory": "great",
+      "allowMenuUrlEdit": true,
+      "beenHere": {
+        "count": 0,
+        "unconfirmedCount": 0,
+        "marked": false,
+        "lastCheckinExpiredAt": 0
+      },
+      "photos": {
+        "count": 12,
+        "groups": [
+          {
+            "type": "venue",
+            "name": "Фотографии заведения",
+            "count": 12,
+            "items": [
+              {
+                "id": "634454ef7a1bf05ceb0ee236",
+                "createdAt": 1665422575,
+                "source": {
+                  "name": "Swarm for iOS",
+                  "url": "https://www.swarmapp.com"
+                },
+                "prefix": "https://fastly.4sqi.net/img/general/",
+                "suffix": "/70178514_-yPrsGxb_quvD69Hddw0paZ9esUvBGpCYKetiurT73o.jpg",
+                "width": 1440,
+                "height": 1920,
+                "user": {
+                  "id": "70178514",
+                  "firstName": "Dee Gee Bee",
+                  "handle": "deegeebe9699852",
+                  "privateProfile": false,
+                  "gender": "male",
+                  "countryCode": "US",
+                  "followingRelationship": "none",
+                  "photo": {
+                    "prefix": "https://fastly.4sqi.net/img/user/",
+                    "suffix": "/70178514_LAzW0YR8_n7nyPj_1SqT0g59Q_7NhQVTJPumlG118Qo3vVtxPYX1FkyL0zhRjrwH2DICZNFGZ.jpg"
+                  }
+                },
+                "visibility": "public"
+              },
+              {
+                "id": "6160b57b2ad740467f9632d4",
+                "createdAt": 1633727867,
+                "source": {
+                  "name": "Swarm for iOS",
+                  "url": "https://www.swarmapp.com"
+                },
+                "prefix": "https://fastly.4sqi.net/img/general/",
+                "suffix": "/226293226_7yw9Fz20Pkw0MgE6Snw6nZVXE2-xv6KVoILnuOXWmF0.jpg",
+                "width": 1440,
+                "height": 1837,
+                "user": {
+                  "id": "226293226",
+                  "firstName": "طارق",
+                  "handle": "tarq9144753",
+                  "privateProfile": false,
+                  "gender": "male",
+                  "address": "",
+                  "city": "",
+                  "state": "",
+                  "countryCode": "SA",
+                  "followingRelationship": "none",
+                  "photo": {
+                    "prefix": "https://fastly.4sqi.net/img/user/",
+                    "suffix": "/226293226_bUQXD4I2_cHKZU3gFUmyfMlldz2GaA_8hkKeuSWEdarwyp9_iY6wWUHCl02V7dI8VTytrSU4e.jpg"
+                  }
+                },
+                "visibility": "public"
+              },
+              {
+                "id": "6160b56e1f68bd79f9123ab7",
+                "createdAt": 1633727854,
+                "source": {
+                  "name": "Swarm for iOS",
+                  "url": "https://www.swarmapp.com"
+                },
+                "prefix": "https://fastly.4sqi.net/img/general/",
+                "suffix": "/226293226_9AW1LiOz9LoKhfPxaMvIqNN8r_sOZ_muXBlQl6ECypQ.jpg",
+                "width": 1440,
+                "height": 1813,
+                "user": {
+                  "id": "226293226",
+                  "firstName": "طارق",
+                  "handle": "tarq9144753",
+                  "privateProfile": false,
+                  "gender": "male",
+                  "address": "",
+                  "city": "",
+                  "state": "",
+                  "countryCode": "SA",
+                  "followingRelationship": "none",
+                  "photo": {
+                    "prefix": "https://fastly.4sqi.net/img/user/",
+                    "suffix": "/226293226_bUQXD4I2_cHKZU3gFUmyfMlldz2GaA_8hkKeuSWEdarwyp9_iY6wWUHCl02V7dI8VTytrSU4e.jpg"
+                  }
+                },
+                "visibility": "public"
+              },
+              {
+                "id": "6160b56912930900a58d868e",
+                "createdAt": 1633727849,
+                "source": {
+                  "name": "Swarm for iOS",
+                  "url": "https://www.swarmapp.com"
+                },
+                "prefix": "https://fastly.4sqi.net/img/general/",
+                "suffix": "/226293226_AXZQe8TyS-a2fFMTTylsT298p6eCBoQWhgl1jUOrTYk.jpg",
+                "width": 1440,
+                "height": 1742,
+                "user": {
+                  "id": "226293226",
+                  "firstName": "طارق",
+                  "handle": "tarq9144753",
+                  "privateProfile": false,
+                  "gender": "male",
+                  "address": "",
+                  "city": "",
+                  "state": "",
+                  "countryCode": "SA",
+                  "followingRelationship": "none",
+                  "photo": {
+                    "prefix": "https://fastly.4sqi.net/img/user/",
+                    "suffix": "/226293226_bUQXD4I2_cHKZU3gFUmyfMlldz2GaA_8hkKeuSWEdarwyp9_iY6wWUHCl02V7dI8VTytrSU4e.jpg"
+                  }
+                },
+                "visibility": "public"
+              }
+            ]
+          }
+        ]
+      },
+      "reasons": {
+        "count": 0,
+        "items": []
+      },
+      "createdAt": 1549470868,
+      "hereNow": {
+        "count": 0,
+        "summary": "Здесь никого нет",
+        "groups": []
+      },
+      "tips": {
+        "count": 3,
+        "groups": [
+          {
+            "type": "following",
+            "name": "Подсказки от людей, на которых вы подписаны.",
+            "count": 0,
+            "items": []
+          },
+          {
+            "type": "others",
+            "name": "Все подсказки",
+            "count": 3,
+            "items": [
+              {
+                "id": "5cc87c62cabcff002c27944c",
+                "createdAt": 1556642914,
+                "text": "Very expensive for simple lunch fare, self service but they still ask for tips. The long line must be because it's new.",
+                "type": "user",
+                "canonicalUrl": "https://foursquare.com/item/5cc87c62cabcff002c27944c",
+                "lang": "en",
+                "likes": {
+                  "count": 0,
+                  "groups": []
+                },
+                "like": false,
+                "logView": true,
+                "agreeCount": 2,
+                "disagreeCount": 0,
+                "todo": {
+                  "count": 0
+                },
+                "user": {
+                  "id": "82492457",
+                  "firstName": "M",
+                  "lastName": "H",
+                  "handle": "melindahwood",
+                  "privateProfile": false,
+                  "gender": "female",
+                  "address": "",
+                  "city": "",
+                  "state": "",
+                  "countryCode": "US",
+                  "followingRelationship": "none",
+                  "photo": {
+                    "prefix": "https://fastly.4sqi.net/img/user/",
+                    "suffix": "/82492457-GLNQCAGHGXPDQXYM.jpg"
+                  }
+                }
+              },
+              {
+                "id": "5c5f612ff709c1002c28f4bb",
+                "createdAt": 1549754671,
+                "text": "No outlets but free WiFi 😁",
+                "type": "user",
+                "canonicalUrl": "https://foursquare.com/item/5c5f612ff709c1002c28f4bb",
+                "photo": {
+                  "id": "5c5f6131d552c7002c4d2506",
+                  "createdAt": 1549754673,
+                  "source": {
+                    "name": "Swarm for iOS",
+                    "url": "https://www.swarmapp.com"
+                  },
+                  "prefix": "https://fastly.4sqi.net/img/general/",
+                  "suffix": "/433967959_GIZgB7TJbNiN138L5bRt2I85BU4RoFvu4fYKB0moAEI.jpg",
+                  "width": 1440,
+                  "height": 1920,
+                  "visibility": "public"
+                },
+                "photourl": "https://fastly.4sqi.net/img/general/original/433967959_GIZgB7TJbNiN138L5bRt2I85BU4RoFvu4fYKB0moAEI.jpg",
+                "lang": "en",
+                "likes": {
+                  "count": 0,
+                  "groups": []
+                },
+                "like": false,
+                "logView": true,
+                "agreeCount": 0,
+                "disagreeCount": 0,
+                "todo": {
+                  "count": 0
+                },
+                "user": {
+                  "id": "433967959",
+                  "firstName": "Matt",
+                  "lastName": "Noel",
+                  "handle": "mattn2448502",
+                  "privateProfile": false,
+                  "gender": "male",
+                  "address": "",
+                  "city": "",
+                  "state": "",
+                  "countryCode": "US",
+                  "followingRelationship": "none",
+                  "photo": {
+                    "prefix": "https://fastly.4sqi.net/img/user/",
+                    "suffix": "/433967959_1Ah7-GLl_j7930VHzhncci_DiwR_tegzPAtrxpsiH3i7i1_oP_ufhCUfSdqjgyESTXWM0Obku.jpg"
+                  }
+                },
+                "authorInteractionType": "liked"
+              },
+              {
+                "id": "5e6919bea502e4000935952b",
+                "createdAt": 1583946174,
+                "text": "Yummy healthy lunch options in DC- does vegan and meat options. Gluten free options too!",
+                "type": "user",
+                "canonicalUrl": "https://foursquare.com/item/5e6919bea502e4000935952b",
+                "lang": "en",
+                "likes": {
+                  "count": 0,
+                  "groups": []
+                },
+                "like": false,
+                "logView": true,
+                "agreeCount": 0,
+                "disagreeCount": 0,
+                "todo": {
+                  "count": 0
+                },
+                "user": {
+                  "id": "101230984",
+                  "firstName": "Zoë",
+                  "lastName": "Penman",
+                  "handle": "zoep7343326",
+                  "privateProfile": false,
+                  "gender": "female",
+                  "countryCode": "US",
+                  "followingRelationship": "none",
+                  "photo": {
+                    "prefix": "https://fastly.4sqi.net/img/user/",
+                    "suffix": "/101230984_7jecep-l_NDv9lk1sug1IgZOKaibvP8rdNRuJNSMqraFQ3C8Ht5iYM28dqTlH2KztKSmqYpLV.jpg"
+                  }
+                },
+                "authorInteractionType": "liked"
+              }
+            ]
+          }
+        ]
+      },
+      "shortUrl": "https://4sq.com/2DYcy6p",
+      "timeZone": "America/New_York",
+      "listed": {
+        "count": 19,
+        "groups": [
+          {
+            "type": "others",
+            "name": "Списки других пользователей",
+            "count": 19,
+            "items": [
+              {
+                "id": "57439dd4498eb9d7ac118461",
+                "name": "Washington DC",
+                "description": "",
+                "type": "others",
+                "user": {
+                  "id": "20265713",
+                  "firstName": "Jacqueline",
+                  "lastName": "Goldberg",
+                  "handle": "jacquelg6839719",
+                  "privateProfile": false,
+                  "gender": "female",
+                  "countryCode": "US",
+                  "followingRelationship": "none",
+                  "photo": {
+                    "prefix": "https://fastly.4sqi.net/img/user/",
+                    "suffix": "/20265713-I5OR1IANJKUZNENG.jpg"
+                  }
+                },
+                "editable": false,
+                "public": true,
+                "collaborative": false,
+                "url": "/jacquelg6839719/list/washington-dc",
+                "canonicalUrl": "https://foursquare.com/jacquelg6839719/list/washington-dc",
+                "createdAt": 1464049108,
+                "updatedAt": 1706578955,
+                "photo": {
+                  "id": "50392e03e4b0ef4fd24ababb",
+                  "createdAt": 1345924611,
+                  "prefix": "https://fastly.4sqi.net/img/general/",
+                  "suffix": "/watWOpKawA5ZhVRrhIkGqk_dMlgI6MK7fJTFrGzJh_0.jpg",
+                  "width": 612,
+                  "height": 612,
+                  "user": {
+                    "id": "3540293",
+                    "firstName": "Jeeves",
+                    "lastName": "Murphy",
+                    "handle": "jeevesm5768406",
+                    "privateProfile": false,
+                    "gender": "male",
+                    "countryCode": "US",
+                    "followingRelationship": "none",
+                    "photo": {
+                      "prefix": "https://fastly.4sqi.net/img/user/",
+                      "suffix": "/0UJ4VGKY0ZUYMX0D.jpg"
+                    }
+                  },
+                  "visibility": "public"
+                },
+                "followers": {
+                  "count": 0
+                },
+                "listItems": {
+                  "count": 79,
+                  "items": [
+                    {
+                      "id": "v5c5b0c940fe7a00033ddf78e",
+                      "createdAt": 1562962161
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "5c6d831be1f228002c85a043",
+                "name": "DC Gluten Free for Celiac",
+                "description": "GF menu, options, or 100% GF",
+                "type": "others",
+                "user": {
+                  "id": "527769078",
+                  "firstName": "Laura",
+                  "lastName": "S",
+                  "handle": "lauras4018926",
+                  "privateProfile": false,
+                  "gender": "none",
+                  "countryCode": "US",
+                  "followingRelationship": "none",
+                  "photo": {
+                    "prefix": "https://fastly.4sqi.net/img/user/",
+                    "suffix": "/527769078_UiTuh5ss_bHAfKa2pq8-Gxjm3QWzCJotYO2bjMoK5Kp0ofVPrt8ankIOOUkv8gl3ZstIn2lbl.jpg"
+                  }
+                },
+                "editable": false,
+                "public": true,
+                "collaborative": false,
+                "url": "/lauras4018926/list/dc-gluten-free-for-celiac",
+                "canonicalUrl": "https://foursquare.com/lauras4018926/list/dc-gluten-free-for-celiac",
+                "createdAt": 1550680859,
+                "updatedAt": 1600451921,
+                "photo": {
+                  "id": "5a73a05ef3433578a9fe33eb",
+                  "createdAt": 1517527134,
+                  "prefix": "https://fastly.4sqi.net/img/general/",
+                  "suffix": "/476789934_pCwIjHZoF2kZh-5XmO0xHbxRNJiKsCSY6Tbmgts7Ajk.jpg",
+                  "width": 1863,
+                  "height": 1242,
+                  "user": {
+                    "id": "476789934",
+                    "firstName": "Melissa",
+                    "lastName": "Limski",
+                    "handle": "melissal4706447",
+                    "privateProfile": false,
+                    "gender": "none",
+                    "countryCode": "US",
+                    "followingRelationship": "none",
+                    "photo": {
+                      "prefix": "https://fastly.4sqi.net/img/user/",
+                      "suffix": "/blank_boy.png",
+                      "default": true
+                    }
+                  },
+                  "visibility": "public"
+                },
+                "followers": {
+                  "count": 3
+                },
+                "listItems": {
+                  "count": 129,
+                  "items": [
+                    {
+                      "id": "v5c5b0c940fe7a00033ddf78e",
+                      "createdAt": 1550681915
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "hours": {
+        "status": "Закрыто до 8:00",
+        "richStatus": {
+          "entities": [],
+          "text": "Закрыто до 8:00"
+        },
+        "isOpen": false,
+        "isLocalHoliday": false,
+        "dayData": [],
+        "timeframes": [
+          {
+            "days": "Пн–Вс",
+            "includesToday": true,
+            "open": [
+              {
+                "renderedTime": "8:00–21:00"
+              }
+            ],
+            "segments": []
+          }
+        ]
+      },
+      "popular": {
+        "isOpen": false,
+        "isLocalHoliday": false,
+        "timeframes": [
+          {
+            "days": "Сегодня",
+            "includesToday": true,
+            "open": [
+              {
+                "renderedTime": "9:00–20:00"
+              }
+            ],
+            "segments": []
+          },
+          {
+            "days": "Пн",
+            "open": [
+              {
+                "renderedTime": "Полдень–20:00"
+              }
+            ],
+            "segments": []
+          },
+          {
+            "days": "Вт",
+            "open": [
+              {
+                "renderedTime": "Полдень–15:00"
+              },
+              {
+                "renderedTime": "17:00–20:00"
+              }
+            ],
+            "segments": []
+          },
+          {
+            "days": "Ср",
+            "open": [
+              {
+                "renderedTime": "9:00–21:00"
+              }
+            ],
+            "segments": []
+          },
+          {
+            "days": "Чт",
+            "open": [
+              {
+                "renderedTime": "10:00–21:00"
+              }
+            ],
+            "segments": []
+          },
+          {
+            "days": "Пт",
+            "open": [
+              {
+                "renderedTime": "Полдень–20:00"
+              },
+              {
+                "renderedTime": "22:00–23:00"
+              }
+            ],
+            "segments": []
+          },
+          {
+            "days": "Сб",
+            "open": [
+              {
+                "renderedTime": "11:00–17:00"
+              },
+              {
+                "renderedTime": "20:00–21:00"
+              }
+            ],
+            "segments": []
+          }
+        ]
+      },
+      "seasonalHours": [],
+      "defaultHours": {
+        "status": "Закрыто до 8:00",
+        "richStatus": {
+          "entities": [],
+          "text": "Закрыто до 8:00"
+        },
+        "isOpen": false,
+        "isLocalHoliday": false,
+        "dayData": [],
+        "timeframes": [
+          {
+            "days": "Пн–Вс",
+            "includesToday": true,
+            "open": [
+              {
+                "renderedTime": "8:00–21:00"
+              }
+            ],
+            "segments": []
+          }
+        ]
+      },
+      "pageUpdates": {
+        "count": 0
+      },
+      "inbox": {
+        "count": 0,
+        "items": []
+      },
+      "attributes": {
+        "groups": [
+          {
+            "type": "price",
+            "name": "Цена",
+            "summary": "$$",
+            "count": 1,
+            "items": [
+              {
+                "displayName": "Цена",
+                "displayValue": "$$",
+                "priceTier": 2
+              }
+            ]
+          },
+          {
+            "type": "serves",
+            "name": "Меню",
+            "summary": "Ужин, Обед & more",
+            "count": 8,
+            "items": [
+              {
+                "displayName": "Поздний завтрак",
+                "displayValue": "Поздний завтрак"
+              },
+              {
+                "displayName": "Обед",
+                "displayValue": "Обед"
+              },
+              {
+                "displayName": "Ужин",
+                "displayValue": "Ужин"
+              }
+            ]
+          }
+        ]
+      },
+      "bestPhoto": {
+        "id": "634454ef7a1bf05ceb0ee236",
+        "createdAt": 1665422575,
+        "source": {
+          "name": "Swarm for iOS",
+          "url": "https://www.swarmapp.com"
+        },
+        "prefix": "https://fastly.4sqi.net/img/general/",
+        "suffix": "/70178514_-yPrsGxb_quvD69Hddw0paZ9esUvBGpCYKetiurT73o.jpg",
+        "width": 1440,
+        "height": 1920,
+        "visibility": "public"
+      },
+      "colors": {
+        "highlightColor": {
+          "photoId": "634454ef7a1bf05ceb0ee236",
+          "value": -15196128
+        },
+        "highlightTextColor": {
+          "photoId": "634454ef7a1bf05ceb0ee236",
+          "value": -1
+        },
+        "algoVersion": 3
+      }
+    }
+  }
+}

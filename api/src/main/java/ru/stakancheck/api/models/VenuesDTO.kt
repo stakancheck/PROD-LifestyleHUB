@@ -9,6 +9,8 @@
 package ru.stakancheck.api.models
 
 import kotlinx.serialization.Serializable
+import ru.stakancheck.api.models.common.Category
+import ru.stakancheck.api.models.common.Photo
 
 
 @Serializable
@@ -48,22 +50,3 @@ data class Location(
     val formattedAddress: List<String>,
 )
 
-@Serializable
-data class Category(
-    val id: String,
-    val shortName: String,
-    val icon: Icon,
-)
-
-@Serializable
-data class Icon(
-    val prefix: String,
-    val suffix: String,
-)
-
-@Serializable
-data class Photo(
-    val id: String,
-    val prefix: String,
-    val suffix: String,
-)

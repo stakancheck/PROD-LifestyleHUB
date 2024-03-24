@@ -6,7 +6,7 @@
  * Personal Email: stakancheck@gmail.com
  */
 
-package ru.stakancheck.api.models
+package ru.stakancheck.api.models.tools
 
 
 /**

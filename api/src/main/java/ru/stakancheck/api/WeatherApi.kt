@@ -15,11 +15,11 @@ import io.ktor.client.statement.HttpResponse
 import io.ktor.http.URLProtocol
 import io.ktor.http.headers
 import io.ktor.http.path
-import ru.stakancheck.api.models.ApiResult
 import ru.stakancheck.api.models.CurrentWeatherDTO
-import ru.stakancheck.api.models.Language
-import ru.stakancheck.api.models.MeasurementUnit
 import ru.stakancheck.api.models.WeatherErrorDTO
+import ru.stakancheck.api.models.tools.ApiResult
+import ru.stakancheck.api.models.tools.Language
+import ru.stakancheck.api.models.tools.MeasurementUnit
 
 /**
  * WeatherApi is a class responsible for making API calls to the weather service.
