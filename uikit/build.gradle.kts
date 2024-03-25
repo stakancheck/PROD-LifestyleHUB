@@ -62,6 +62,7 @@ dependencies {
     // Compose and Material 3
     val composeBom = platform(libs.androidx.compose.bom)
     api(composeBom)
+    api(libs.androidx.activity.compose)
     androidTestImplementation(composeBom)
     api(libs.compose.material3)
 

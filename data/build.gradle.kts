@@ -63,4 +63,5 @@ dependencies {
     // Modules
     api(project(":common"))
     implementation(project(":api"))
+    implementation(project(":database"))
 }

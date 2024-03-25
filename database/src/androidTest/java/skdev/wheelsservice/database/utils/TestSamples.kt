@@ -46,9 +46,21 @@ object TestSamples {
         description = "This is a test venue.",
         shortUrl = "https://exmpl.co/testvenue",
         bestPhotoUrl = "https://example.com/photo.jpg",
-        photoUrls = "https://example.com/photo1.jpg,https://example.com/photo2.jpg",
-        phrases = "emptyList()",
-        reasons = "l",
+        photoUrls = listOf(
+            "https://example.com/photo1.jpg",
+            "https://example.com/photo2.jpg",
+            "https://example.com/photo3.jpg"
+        ),
+        phrases = listOf(
+            "Test phrase 1",
+            "Test phrase 2",
+            "Test phrase 3"
+        ),
+        reasons = listOf(
+            "Test reason 1",
+            "Test reason 2",
+            "Test reason 3"
+        ),
         hours = Hours(
             isOpen = false,
             status = "Closed until 10:00 AM",

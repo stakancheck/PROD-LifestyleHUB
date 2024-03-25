@@ -174,7 +174,7 @@ private fun WeatherWidgetContent(
                         horizontalAlignment = Alignment.Start,
                     ) {
                         Row(
-                            verticalAlignment = Alignment.Top
+                            verticalAlignment = Alignment.CenterVertically
                         ) {
                             Text(
                                 modifier = Modifier.alignByBaseline(),
@@ -182,19 +182,23 @@ private fun WeatherWidgetContent(
                                 style = MaterialTheme.typography.displayLarge
                             )
 
-                            DegreeSign(
-                                modifier = Modifier.padding(top = Dimens.spaceMedium),
-                                color = colors.onWeatherBackgroundVariant
-                            )
+                            Box(
+                                modifier = Modifier.padding(bottom = Dimens.spaceLarge),
+                            ) {
+                                DegreeSign(
+                                    color = colors.onWeatherBackgroundVariant
+                                )
+                            }
 
                             Spacer(Dimens.spaceMedium)
 
                             Text(
-                                modifier = Modifier.alignByBaseline(),
                                 color = colors.onWeatherBackground,
                                 text = stringResource(
-                                    R.string.weather_temperature_range,
-                                    weatherModel.tempMax,
+                                    R.string.weather_temperature,
+                                    weatherModel.tempMax
+                                ) + "\n" + stringResource(
+                                    R.string.weather_temperature,
                                     weatherModel.tempMin
                                 ),
                                 style = MaterialTheme.typography.titleLarge

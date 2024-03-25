@@ -12,6 +12,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import kotlinx.coroutines.flow.Flow
 import skdev.wheelsservice.database.models.VenueDetailsDBO
 
 
@@ -23,6 +24,9 @@ interface VenueDetailsDAO {
 
     @Query("SELECT * FROM venue_details WHERE id = :venueId")
     suspend fun getVenueDetailsById(venueId: String): VenueDetailsDBO
+
+    @Query("SELECT * FROM venue_details WHERE id = :venueId")
+    fun observeVenueDetailsById(venueId: String): Flow<VenueDetailsDBO>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(venue: VenueDetailsDBO)

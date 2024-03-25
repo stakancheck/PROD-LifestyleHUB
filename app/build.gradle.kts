@@ -123,7 +123,6 @@ dependencies {
     val composeBom = platform(libs.androidx.compose.bom)
     implementation(composeBom)
     androidTestImplementation(composeBom)
-    implementation(libs.androidx.activity.compose)
     implementation(libs.compose.material3)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
 
@@ -153,5 +152,6 @@ dependencies {
     implementation(project(":features:main-feed"))
     implementation(project(":data"))
     implementation(project(":api"))
+    implementation(project(":database"))
     api(project(":uikit"))
 }

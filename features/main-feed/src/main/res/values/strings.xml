@@ -22,7 +22,7 @@
     <string name="weather_format_temperature" translatable="false">%d</string>
     <string name="weather_feels_like">Feels like: %d°</string>
     <string name="weather_data_from">Data from %s</string>
-    <string name="weather_temperature_range" translatable="false">%d° / %d°</string>
+    <string name="weather_temperature" translatable="false">%d°</string>
     <string name="weather_wind_speed">%d m/s</string>
     <string name="weather_pressure_value">%d mmHg</string>
     <string name="weather_humidity_value" translatable="false">%d</string>

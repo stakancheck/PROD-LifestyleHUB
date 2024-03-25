@@ -16,6 +16,7 @@ import androidx.navigation.compose.composable
 import ru.stakancheck.lifestylehub.presentation.screens.LeisureTab
 import ru.stakancheck.lifestylehub.presentation.screens.MainFeedTab
 import ru.stakancheck.lifestylehub.presentation.screens.UserProfileTab
+import ru.stakancheck.main.feed.presentation.VenueDetailsUI
 
 @Composable
 fun MainNavHost(navController: NavHostController, modifier: Modifier = Modifier) =
@@ -25,7 +26,9 @@ fun MainNavHost(navController: NavHostController, modifier: Modifier = Modifier)
         modifier = modifier
     ) {
         composable(BottomBarItem.Main.route) {
-            MainFeedTab()
+            MainFeedTab(
+                navController = navController
+            )
         }
 
         composable(BottomBarItem.Leisure.route) {
@@ -34,5 +37,12 @@ fun MainNavHost(navController: NavHostController, modifier: Modifier = Modifier)
 
         composable(BottomBarItem.Profile.route) {
             UserProfileTab()
+        }
+
+        composable("venue/{venueId}") { backStackEntry ->
+            VenueDetailsUI(
+                venueId = backStackEntry.arguments?.getString("venueId")
+                    ?: throw IllegalStateException("No venueId")
+            )
         }
     }

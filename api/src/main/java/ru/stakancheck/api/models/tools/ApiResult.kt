@@ -60,5 +60,18 @@ sealed interface ApiResult<out T> {
                 Error(e)
             }
         }
+
+        val <D : Any> ApiResult<D>.isSuccess: Boolean
+            get() = this is Success
+
+        val <D : Any> ApiResult<D>.isError: Boolean
+            get() = this is Error
+
+        fun <D : Any> ApiResult<D>.getOrThrow(): D {
+            return when (this) {
+                is Success -> data
+                is Error -> kotlin.error(this.error)
+            }
+        }
     }
 }

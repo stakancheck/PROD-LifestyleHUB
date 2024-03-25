@@ -22,8 +22,7 @@ fun Error.getTitleResourseId(): Int =
         DataError.Network.UNKNOWN -> R.string.error_unknown
         DataError.Location.NO_PERMISSION -> R.string.error_location_permission_not_granted
         DataError.Location.LOCATION_SERVICES_OFF -> R.string.error_location_services_off
-        DataError.Local.NO_DATA -> R.string.error_no_data
-        DataError.Local.NO_CACHE -> R.string.error_no_cache
+        DataError.Local.READ_ERROR -> R.string.error_read
         else -> R.string.error_unknown
     }
 

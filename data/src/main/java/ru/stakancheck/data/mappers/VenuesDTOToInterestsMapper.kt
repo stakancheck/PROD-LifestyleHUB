@@ -12,7 +12,7 @@ import ru.stakancheck.api.models.VenuesDTO
 import ru.stakancheck.data.models.Interest
 import ru.stakancheck.data.models.Interests
 
-class VenuesDTOToInterestsMapper {
+internal class VenuesDTOToInterestsMapper {
     companion object {
         operator fun invoke(
             dto: VenuesDTO

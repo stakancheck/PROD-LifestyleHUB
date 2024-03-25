@@ -9,10 +9,17 @@
 package ru.stakancheck.lifestylehub.presentation.screens
 
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavController
 import ru.stakancheck.main.feed.presentation.MainFeedScreen
 
 
 @Composable
-fun MainFeedTab() {
-    MainFeedScreen()
+fun MainFeedTab(
+    navController: NavController
+) {
+    MainFeedScreen(
+        navigateToVenueDetails = { venueId ->
+            navController.navigate("venue/$venueId")
+        }
+    )
 }

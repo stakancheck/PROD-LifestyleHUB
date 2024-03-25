@@ -11,7 +11,7 @@ package ru.stakancheck.data.mappers
 import ru.stakancheck.api.models.CurrentWeatherDTO
 import ru.stakancheck.data.models.Weather
 
-class CurrentWeatherDTOToWeatherMapper {
+internal class CurrentWeatherDTOToWeatherMapper {
     companion object {
         operator fun invoke(
             dto: CurrentWeatherDTO

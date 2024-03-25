@@ -36,6 +36,7 @@ class MainFeedScreenViewModel(
         MutableStateFlow(PagingData.empty())
     val interestsState: StateFlow<PagingData<Interest>> = _interestsState.asStateFlow()
 
+
     fun onLoad() {
         viewModelScope.launch {
             updateWeather()
@@ -48,6 +49,12 @@ class MainFeedScreenViewModel(
     fun onUpdateWeatherClicked() {
         viewModelScope.launch {
             updateWeather()
+        }
+    }
+
+    fun onShowVenueDetails(venueId: String) {
+        viewModelScope.launch {
+            intentAction(Action.ShowVenueDetails(venueId = venueId))
         }
     }
 
@@ -70,6 +77,7 @@ class MainFeedScreenViewModel(
 
 
     sealed interface Action {
-
+        data class ShowVenueDetails(val venueId: String) : Action
     }
+
 }

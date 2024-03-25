@@ -11,7 +11,7 @@ package ru.stakancheck.data.mappers
 import ru.stakancheck.data.models.Location
 import android.location.Location as AndroidlLocation
 
-class AndroidLocationToLocationMapper {
+internal class AndroidLocationToLocationMapper {
     companion object {
         operator fun invoke(androidLocation: AndroidlLocation): Location {
             return Location(

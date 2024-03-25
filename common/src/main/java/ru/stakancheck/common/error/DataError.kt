@@ -27,8 +27,7 @@ sealed interface DataError : Error {
     }
 
     enum class Local : DataError {
-        NO_DATA,
-        NO_CACHE,
+        READ_ERROR
     }
 }
 

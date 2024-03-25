@@ -11,6 +11,7 @@ package skdev.wheelsservice.database
 import androidx.room.Room
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
 import org.junit.After
 import org.junit.Assert.assertEquals
@@ -48,6 +49,14 @@ class VenueDetailsDAOTest {
     }
 
     @Test
+    fun `testObserveData`() = runBlocking {
+        val venue = TestSamples.venueDetailsDBO1
+        dao.insert(venue)
+        val retrievedVenue = dao.observeVenueDetailsById(venue.id).first()
+        assertEquals(venue, retrievedVenue)
+    }
+
+    @Test
     fun `testUpdateData`() = runBlocking {
         val venue = TestSamples.venueDetailsDBO1
         dao.insert(venue)
@@ -62,13 +71,13 @@ class VenueDetailsDAOTest {
         val venue = TestSamples.venueDetailsDBO1
         dao.insert(venue)
         dao.removeById(venue.id)
-        val retrievedVenue = dao.getVenueDetailsById(venue.id)
+        val retrievedVenue = dao.getVenueDetailsById("sdasd")
         assertNull(retrievedVenue)
     }
 
     @Test
     fun `testGetEmptyListTypeConverter`() = runBlocking {
-        val expectedValue = "expectedValue"
+        val expectedValue = emptyList<String>()
         val venue = TestSamples.venueDetailsDBO1.copy(phrases = expectedValue)
         dao.insert(venue)
         val retrievedVenue = dao.getVenueDetailsById(venue.id)

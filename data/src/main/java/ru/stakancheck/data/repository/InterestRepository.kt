@@ -8,16 +8,26 @@
 
 package ru.stakancheck.data.repository
 
+import kotlinx.coroutines.flow.Flow
 import ru.stakancheck.api.VenueApi
+import ru.stakancheck.api.models.VenueDetailsDTO
 import ru.stakancheck.api.models.tools.ApiResult
 import ru.stakancheck.api.models.tools.Language
 import ru.stakancheck.common.Logger
 import ru.stakancheck.common.error.DataError
 import ru.stakancheck.common.error.toNetworkError
 import ru.stakancheck.data.mappers.ApiExceptionToDataErrorMapper
+import ru.stakancheck.data.mappers.VenueDetailsDBOToVenueDetailsMapper
+import ru.stakancheck.data.mappers.VenueDetailsDTOToVenueDetailsDBOMapper
+import ru.stakancheck.data.mappers.VenueDetailsDTOToVenueDetailsMapper
 import ru.stakancheck.data.mappers.VenuesDTOToInterestsMapper
 import ru.stakancheck.data.models.Interests
+import ru.stakancheck.data.models.VenueDetails
+import ru.stakancheck.data.utils.CachableDataProvider
+import ru.stakancheck.data.utils.CachebleResult
 import ru.stakancheck.data.utils.Result
+import skdev.wheelsservice.database.AppDatabase
+import skdev.wheelsservice.database.models.VenueDetailsDBO
 import java.util.Locale
 
 
@@ -30,9 +40,20 @@ import java.util.Locale
  */
 class InterestRepository(
     private val venueApi: VenueApi,
+    private val database: AppDatabase,
     private val locationRepository: LocationRepository,
     private val logger: Logger,
 ) {
+    // Lazy initialization of the cached venues provider.
+    private val cachedVenuesProvider: CachableDataProvider<VenueDetailsDTO, VenueDetailsDBO, VenueDetails> by lazy {
+        CachableDataProvider<VenueDetailsDTO, VenueDetailsDBO, VenueDetails>(
+            saveToDatabase = database.venueDetailsDao::insert,
+            remoteMapper = VenueDetailsDTOToVenueDetailsMapper::invoke,
+            localMapper = VenueDetailsDBOToVenueDetailsMapper::invoke,
+            remoteToLocalMapper = VenueDetailsDTOToVenueDetailsDBOMapper::invoke,
+            logger = logger
+        )
+    }
 
     /**
      * Fetches list of 10 venues based on the provided latitude, longitude.
@@ -98,6 +119,31 @@ class InterestRepository(
             }
         }
     }
+
+    /**
+     * Fetches the details of a venue based on the provided venue ID.
+     *
+     * Data will be cached in the database and returned with default merge strategy.
+     *
+     * @see [CachebleResult]
+     *
+     * @param venueId The ID of the venue.
+     * @param lang The language for the venue data localization. Defaults to the device's default language.
+     */
+    fun getVenueDetails(
+        venueId: String,
+        lang: String = Locale.getDefault().language
+    ): Flow<CachebleResult<VenueDetails, DataError>> =
+        cachedVenuesProvider.getDataWithCaching(
+            remoteDataProvider = {
+                venueApi.getVenueDetails(
+                    venueId = venueId,
+                    lang = provideLocale(lang)
+                )
+            },
+            localDataProvider = { database.venueDetailsDao.getVenueDetailsById(venueId) },
+            localDataObserveProvider = { database.venueDetailsDao.observeVenueDetailsById(venueId) }
+        )
 
     companion object {
         const val TAG = "VenueRepository"

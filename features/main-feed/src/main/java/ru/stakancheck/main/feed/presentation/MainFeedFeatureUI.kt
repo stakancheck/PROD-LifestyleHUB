@@ -15,7 +15,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.rememberLazyListState
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
@@ -30,15 +29,23 @@ import ru.stakancheck.main.feed.presentation.components.VenueInterestItem
 import ru.stakancheck.main.feed.presentation.components.WeatherWidget
 import ru.stakancheck.uikit.components.ShimmerPlaceHolder
 import ru.stakancheck.uikit.theme.Dimens
+import ru.stakancheck.uikit.utils.observeAsActions
 
 @Composable
-fun MainFeedScreen() {
-    MainFeedScreen(viewModel = koinViewModel())
+fun MainFeedScreen(
+    navigateToVenueDetails: (id: String) -> Unit
+) {
+    MainFeedScreen(
+        navigateToVenueDetails = navigateToVenueDetails,
+        viewModel = koinViewModel()
+    )
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun MainFeedScreen(viewModel: MainFeedScreenViewModel) {
+private fun MainFeedScreen(
+    navigateToVenueDetails: (id: String) -> Unit,
+    viewModel: MainFeedScreenViewModel
+) {
     val weatherState by viewModel.weatherState.collectAsState()
     val lazyListState = rememberLazyListState()
     val updating by viewModel.updating.collectAsState()
@@ -50,6 +57,15 @@ private fun MainFeedScreen(viewModel: MainFeedScreenViewModel) {
         lazyListState.animateScrollToItem(0)
     }
 
+    viewModel.actions.observeAsActions {
+        when (it) {
+            is MainFeedScreenViewModel.Action.ShowVenueDetails -> {
+                navigateToVenueDetails(it.venueId)
+            }
+        }
+    }
+
+    // TODO: On start scroll to saved state
     LazyColumn(
         state = lazyListState,
         contentPadding = PaddingValues(Dimens.spaceMedium),
@@ -67,7 +83,7 @@ private fun MainFeedScreen(viewModel: MainFeedScreenViewModel) {
             when (val interest = interestsItems[index]!!) {
                 is Interest.Venue -> {
                     VenueInterestItem(venueModel = interest) {
-
+                        viewModel.onShowVenueDetails(interest.venueId)
                     }
                 }
             }

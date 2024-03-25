@@ -32,10 +32,10 @@ data class VenueDetailsDBO(
     @ColumnInfo(name = "description") val description: String?,
     @ColumnInfo(name = "short_url") val shortUrl: String?,
     @ColumnInfo(name = "best_photo_url") val bestPhotoUrl: String?,
-    @ColumnInfo(name = "photo_urls") val photoUrls: String,
-    @ColumnInfo(name = "phrases") val phrases: String,
-    @ColumnInfo(name = "reasons") val reasons: String,
-    @Embedded(prefix = "hours_") val hours: Hours
+    @ColumnInfo(name = "photo_urls") val photoUrls: List<String>,
+    @ColumnInfo(name = "phrases") val phrases: List<String>,
+    @ColumnInfo(name = "reasons") val reasons: List<String>,
+    @Embedded(prefix = "hours_") val hours: Hours?
 )
 
 data class Contact(

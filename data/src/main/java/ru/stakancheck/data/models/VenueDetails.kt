@@ -43,7 +43,7 @@ data class VenueDetails(
     val photoUrls: List<String>,
     val phrases: List<String>,
     val reasons: List<String>,
-    val hours: String?
+    val hours: Hours?
 ) {
     /**
      * Data class representing the contact information of a venue.

@@ -16,8 +16,7 @@
     <string name="error_location_permission_not_granted">Нет разрешения на опредления местоположения</string>
     <string name="error_location_services_off">Службы определения местоположения отключены</string>
     <string name="error_unknown">Неизвестная ошибка</string>
-    <string name="error_no_data">Данные отсутствуют</string>
-    <string name="error_no_cache">Кэш отсутствует</string>
+    <string name="error_read">Ошибка чтения локальных данных</string>
 
     <!-- Error descriptions -->
     <string name="error_request_timeout_description">Попробуйте повторить запрос позднее</string>

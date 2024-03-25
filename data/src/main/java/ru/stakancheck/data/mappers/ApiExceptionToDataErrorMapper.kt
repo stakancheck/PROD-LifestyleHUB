@@ -11,7 +11,7 @@ package ru.stakancheck.data.mappers
 import ru.stakancheck.api.utils.ApiException
 import ru.stakancheck.common.error.DataError
 
-class ApiExceptionToDataErrorMapper {
+internal class ApiExceptionToDataErrorMapper {
 
     companion object {
         operator fun invoke(throwable: Throwable): DataError.Network {
