@@ -13,3 +13,4 @@
 .externalNativeBuild
 .cxx
 local.properties
+/schemas/ru.stakancheck.database.AppRoomDatabase/1.json

@@ -15,7 +15,7 @@ plugins {
 }
 
 android {
-    namespace = "skdev.wheelsservice.database"
+    namespace = "ru.stakancheck.database"
     compileSdk = 34
 
     defaultConfig {
