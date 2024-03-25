@@ -19,6 +19,7 @@ import kotlinx.coroutines.withContext
 import ru.stakancheck.common.Logger
 import ru.stakancheck.common.error.DataError
 import ru.stakancheck.common.permission.PermissionChecker
+import ru.stakancheck.data.BuildConfig
 import ru.stakancheck.data.mappers.AndroidLocationToLocationMapper
 import ru.stakancheck.data.models.Location
 import ru.stakancheck.data.models.checkRelevant
@@ -60,6 +61,10 @@ class LocationRepository(
      */
     @SuppressLint("MissingPermission")
     suspend fun getLocation(): Result<Location, DataError.Location> {
+        // Return custom location if debug mode
+        if (BuildConfig.DEBUG) {
+            return Result.Success(CUSTOM_DENUG_LOCATION)
+        }
 
         // Return saved location if it's relevant
         if (savedLocation.checkRelevant()) {
@@ -126,5 +131,11 @@ class LocationRepository(
 
     companion object {
         const val TAG = "LocationRepository"
+
+        /**
+         * Las Vegas center location
+         * Uses for collecting more data
+         */
+        val CUSTOM_DENUG_LOCATION = Location(36.172499, -115.146701)
     }
 }

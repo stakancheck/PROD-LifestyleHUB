@@ -94,7 +94,7 @@ data class VenueDetailsHours(
 @Serializable
 data class VenueDetailsTimeframe(
     val days: String,
-    val includesToday: Boolean,
+    val includesToday: Boolean = false,
     val open: List<VenueDetailsOpen>
 )
 

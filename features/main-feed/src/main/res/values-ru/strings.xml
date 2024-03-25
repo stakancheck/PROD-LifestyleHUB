@@ -20,9 +20,9 @@
     <string name="wind_north_west">СЗ</string>
 
     <string name="weather_feels_like">Ощущается как: %d°</string>
-    <string name="weather_data_from">Данные от %s</string>
+    <string name="weather_data_from">Данные на %s</string>
     <string name="weather_wind_speed">%d м/с</string>
-    <string name="weather_pressure_value">%d мм</string>
+    <string name="weather_pressure_value">%d мм рт. ст.</string>
 
     <string name="weather_wind">Ветер</string>
     <string name="weather_pressure">Давление</string>

@@ -16,7 +16,7 @@ import androidx.navigation.compose.composable
 import ru.stakancheck.lifestylehub.presentation.screens.LeisureTab
 import ru.stakancheck.lifestylehub.presentation.screens.MainFeedTab
 import ru.stakancheck.lifestylehub.presentation.screens.UserProfileTab
-import ru.stakancheck.main.feed.presentation.VenueDetailsUI
+import ru.stakancheck.venue.details.presentation.VenueDetailsUI
 
 @Composable
 fun MainNavHost(navController: NavHostController, modifier: Modifier = Modifier) =

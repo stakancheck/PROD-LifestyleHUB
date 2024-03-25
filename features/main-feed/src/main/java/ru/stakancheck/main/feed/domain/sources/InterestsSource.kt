@@ -15,7 +15,7 @@ import ru.stakancheck.data.models.Interest
 import ru.stakancheck.data.repository.InterestRepository
 import ru.stakancheck.data.utils.Result
 
-class InterestsSource(
+internal class InterestsSource(
     private val interestRepository: InterestRepository,
     private val errorCollector: ErrorCollector
 ) : PagingSource<Int, Interest>() {

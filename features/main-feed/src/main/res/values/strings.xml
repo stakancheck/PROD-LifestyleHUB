@@ -25,7 +25,7 @@
     <string name="weather_temperature" translatable="false">%d°</string>
     <string name="weather_wind_speed">%d m/s</string>
     <string name="weather_pressure_value">%d mmHg</string>
-    <string name="weather_humidity_value" translatable="false">%d</string>
+    <string name="weather_humidity_value" translatable="false">%d%%</string>
 
     <string name="weather_wind">Wind</string>
     <string name="weather_pressure">Pressure</string>

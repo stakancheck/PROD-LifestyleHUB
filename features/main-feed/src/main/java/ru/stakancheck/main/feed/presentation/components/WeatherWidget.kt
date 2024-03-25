@@ -32,7 +32,6 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
-import androidx.compose.material3.VerticalDivider
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Alignment
@@ -79,11 +78,7 @@ fun WeatherWidget(
         shape = MaterialTheme.shapes.large,
         colors = CardDefaults.elevatedCardColors(
             contentColor = CustomTheme.colors.weatherDayColors.onWeatherBackground,
-            containerColor = if (weatherModel == null) {
-                CustomTheme.colors.weatherDayColors.weatherBackgroundGradient.first()
-            } else {
-                Color.Transparent
-            }
+            containerColor = CustomTheme.colors.weatherDayColors.weatherBackgroundGradient.first()
         ),
         elevation = CardDefaults.cardElevation(Elevation.defaultElevation)
     ) {
@@ -107,10 +102,10 @@ private fun WeatherWidgetContent(
     loading: Boolean,
     weatherModel: WeatherUIModel,
 ) {
-    val colors = if (weatherModel.background == WeatherBackground.DAY) {
-        CustomTheme.colors.weatherDayColors
-    } else {
+    val colors = if (weatherModel.background == WeatherBackground.NIGHT) {
         CustomTheme.colors.weatherNightColors
+    } else {
+        CustomTheme.colors.weatherDayColors
     }
 
     ShimmerConteiner(
@@ -250,13 +245,6 @@ private fun WeatherWidgetContent(
 
                         Spacer(Dimens.spaceExtraSmall)
 
-                        VerticalDivider(
-                            modifier = Modifier.padding(vertical = Dimens.spaceLarge),
-                            color = colors.onWeatherBackgroundVariant,
-                        )
-
-                        Spacer(Dimens.spaceExtraSmall)
-
                         WeatherInfoRow(
                             modifier = Modifier.weight(1f),
                             imageVector = when (weatherModel.humidityLevel) {
@@ -271,13 +259,6 @@ private fun WeatherWidgetContent(
                             ),
                             color = colors.onWeatherBackground,
                             labelColor = colors.onWeatherBackgroundVariant
-                        )
-
-                        Spacer(Dimens.spaceExtraSmall)
-
-                        VerticalDivider(
-                            modifier = Modifier.padding(vertical = Dimens.spaceLarge),
-                            color = colors.onWeatherBackgroundVariant,
                         )
 
                         Spacer(Dimens.spaceExtraSmall)

@@ -66,6 +66,9 @@ dependencies {
     androidTestImplementation(composeBom)
     api(libs.compose.material3)
 
+    // Loading images
+    api(libs.coil.compose)
+
     // Tooling
     api(libs.androidx.ui.tooling.preview)
     debugImplementation(libs.androidx.ui.tooling)

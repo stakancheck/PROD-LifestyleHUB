@@ -12,7 +12,7 @@ import ru.stakancheck.common.error.ErrorCollector
 import ru.stakancheck.data.repository.WeatherRepository
 import ru.stakancheck.data.utils.Result
 import ru.stakancheck.main.feed.entities.WeatherUIModel
-import ru.stakancheck.main.feed.mappers.WeatherResultToWeatherUIModelMapper
+import ru.stakancheck.main.feed.mappers.WeatherResultToUIModelMapper
 
 class GetCurrentWeatherUseCase(
     private val weatherRepository: WeatherRepository,
@@ -26,7 +26,7 @@ class GetCurrentWeatherUseCase(
             }
 
             is Result.Success -> {
-                WeatherResultToWeatherUIModelMapper(result.data)
+                WeatherResultToUIModelMapper(result.data)
             }
         }
     }

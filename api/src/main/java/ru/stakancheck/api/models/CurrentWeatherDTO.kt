@@ -100,8 +100,8 @@ data class Main(
  */
 @Serializable
 data class Wind(
-    val speed: Int,
-    val deg: Int
+    val speed: Double,
+    val deg: Double
 )
 
 /**

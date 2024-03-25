@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2024. Artem Sukhanov (Stakancheck)
+  ~ All rights reserved.
+  ~
+  ~ For inquiries, please contact:
+  ~ Personal Email: stakancheck@gmail.com
+  -->
+
+<resources>
+
+    <string name="venue_details_visit_reasons">Reasons to visit</string>
+    <string name="venue_details_about_place">About place</string>
+    <string name="venue_details_save_to_my_leisure">Save to my leisure</string>
+    <string name="venue_details_open_in_maps">Open in maps</string>
+    <string name="venue_details_open_website">Open website</string>
+    <string name="venue_details_open_twitter">Open twitter</string>
+    <string name="venue_details_open_facebook">Open facebook</string>
+    <string name="venue_details_call">Call</string>
+    <string name="venue_details_work_schedule">Work schedule</string>
+
+</resources>

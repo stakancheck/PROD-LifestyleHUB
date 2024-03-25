@@ -58,21 +58,9 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
 
-    // Compose and Material 3
-    val composeBom = platform(libs.androidx.compose.bom)
-    implementation(composeBom)
-    androidTestImplementation(composeBom) // Test
-    implementation(libs.compose.material3)
-    implementation(libs.androidx.compose.ui.graphics)
-
     // ViewModel
-    implementation(libs.androidx.lifecycle.viewmodel.compose)
-    implementation(libs.androidx.lifecycle.viewmodel.ktx)
-
-    // Tests
-    testApi(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.ui.test.junit4)
+    api(libs.androidx.lifecycle.viewmodel.compose)
+    api(libs.androidx.lifecycle.viewmodel.ktx)
 
     // Tooling
     implementation(libs.androidx.ui.tooling.preview)
@@ -82,20 +70,14 @@ dependencies {
     // Coroutines
     implementation(libs.kotlinx.coroutines.android)
 
-    // Serialization JSON
-    implementation(libs.kotlinx.serialization.json)
-
     // Paging
     implementation(libs.androidx.paging.runtime)
     implementation(libs.androidx.paging.compose)
 
-    // Loading images
-    implementation(libs.coil.compose)
-
     // Dependency injection
-    implementation(platform(libs.koin.bom))
-    implementation(libs.koin.android)
-    implementation(libs.koin.compose)
+    api(platform(libs.koin.bom))
+    api(libs.koin.android)
+    api(libs.koin.compose)
 
     // Modules
     implementation(project(":data"))

@@ -9,20 +9,19 @@
 package ru.stakancheck.uikit.icons
 
 import androidx.compose.ui.graphics.vector.ImageVector
-import ru.stakancheck.uikit.icons.iconpack.IcHumidityHigh
-import ru.stakancheck.uikit.icons.iconpack.IcHumidityLow
-import ru.stakancheck.uikit.icons.iconpack.IcHumidityMid
+import ru.stakancheck.uikit.icons.iconpack.IcFacebook
+import ru.stakancheck.uikit.icons.iconpack.IcTwitter
 import kotlin.collections.List as ____KtList
 
 public object IconPack
 
-private var __AllIcons: ____KtList<ImageVector>? = null
+private var __IconPack: ____KtList<ImageVector>? = null
 
-public val IconPack.AllIcons: ____KtList<ImageVector>
+public val IconPack.IconPack: ____KtList<ImageVector>
     get() {
-        if (__AllIcons != null) {
-            return __AllIcons!!
+        if (__IconPack != null) {
+            return __IconPack!!
         }
-        __AllIcons = listOf(IcHumidityHigh, IcHumidityMid, IcHumidityLow)
-        return __AllIcons!!
+        __IconPack = listOf(IcTwitter, IcFacebook)
+        return __IconPack!!
     }

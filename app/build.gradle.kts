@@ -119,18 +119,6 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
 
-    // Compose and Material 3
-    val composeBom = platform(libs.androidx.compose.bom)
-    implementation(composeBom)
-    androidTestImplementation(composeBom)
-    implementation(libs.compose.material3)
-    implementation(libs.androidx.lifecycle.viewmodel.compose)
-
-    // Tests
-    testApi(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.ui.test.junit4)
-
     // Tooling
     implementation(libs.androidx.ui.tooling.preview)
     debugImplementation(libs.androidx.ui.tooling)
@@ -142,14 +130,9 @@ dependencies {
     // Navigation
     implementation(libs.androidx.navigation.compose)
 
-    // Dependency injection
-    implementation(platform(libs.koin.bom))
-    implementation(libs.koin.android)
-    implementation(libs.koin.compose)
-    implementation(libs.koin.coroutines)
-
     // Modules
     implementation(project(":features:main-feed"))
+    implementation(project(":features:venue-details"))
     implementation(project(":data"))
     implementation(project(":api"))
     implementation(project(":database"))

@@ -37,6 +37,7 @@ import coil.request.CachePolicy
 import coil.request.ImageRequest
 import ru.stakancheck.data.models.Interest
 import ru.stakancheck.main.feed.R
+import ru.stakancheck.uikit.components.InfoBadge
 import ru.stakancheck.uikit.theme.CustomTheme
 import ru.stakancheck.uikit.theme.Dimens
 

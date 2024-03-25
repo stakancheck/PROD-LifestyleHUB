@@ -12,7 +12,7 @@ package ru.stakancheck.data.models
 /**
  * Time period for location to be relevant in milliseconds
  */
-const val LOCATION_RELEVANT_PERIOD = 10_000
+const val LOCATION_RELEVANT_PERIOD = 1_000 * 60
 
 /**
  * Data class for location

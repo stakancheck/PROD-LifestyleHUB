@@ -28,11 +28,11 @@ import ru.stakancheck.lifestylehub.BuildConfig
 import ru.stakancheck.lifestylehub.utils.LoggerBridgeImpl
 import ru.stakancheck.main.feed.domain.usecases.GetCurrentWeatherUseCase
 import ru.stakancheck.main.feed.domain.usecases.GetInterestsUseCase
-import ru.stakancheck.main.feed.domain.usecases.GetVenueDetailsByIdUseCase
 import ru.stakancheck.main.feed.presentation.MainFeedScreenViewModel
-import ru.stakancheck.main.feed.presentation.VenueDetailsScreenViewModel
 import ru.stakancheck.uikit.components.ErrorPresenter
 import ru.stakancheck.uikit.components.ToastErrorPresenter
+import ru.stakancheck.venue.details.domain.usecases.GetVenueDetailsByIdUseCase
+import ru.stakancheck.venue.details.presentation.VenueDetailsScreenViewModel
 import skdev.wheelsservice.database.AppDatabase
 import java.util.concurrent.CopyOnWriteArrayList
 import ru.stakancheck.api.HttpClient as AppHttpClient

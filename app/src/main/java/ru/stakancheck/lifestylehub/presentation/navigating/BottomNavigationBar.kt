@@ -35,7 +35,9 @@ import ru.stakancheck.uikit.theme.Radius
 
 @Composable
 fun BottomNavigationBar(navController: NavController) {
-    NavigationBar {
+    NavigationBar(
+        modifier = Modifier.height(64.dp)
+    ) {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
         val currentRoute = navBackStackEntry?.destination?.route
 
@@ -56,7 +58,6 @@ fun BottomNavigationBar(navController: NavController) {
                         interactionSource = remember { MutableInteractionSource() },
                         indication = LocalIndication.current,
                     )
-                    .height(64.dp)
                     .weight(1f)
             ) {
                 Icon(
