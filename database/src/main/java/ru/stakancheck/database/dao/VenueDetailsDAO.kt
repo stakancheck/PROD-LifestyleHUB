@@ -6,14 +6,14 @@
  * Personal Email: stakancheck@gmail.com
  */
 
-package skdev.wheelsservice.database.dao
+package ru.stakancheck.database.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import kotlinx.coroutines.flow.Flow
-import skdev.wheelsservice.database.models.VenueDetailsDBO
+import ru.stakancheck.database.models.VenueDetailsDBO
 
 
 /**

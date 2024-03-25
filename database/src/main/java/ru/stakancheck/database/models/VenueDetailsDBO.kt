@@ -6,7 +6,7 @@
  * Personal Email: stakancheck@gmail.com
  */
 
-package skdev.wheelsservice.database.models
+package ru.stakancheck.database.models
 
 
 import androidx.room.ColumnInfo

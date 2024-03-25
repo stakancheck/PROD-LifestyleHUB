@@ -9,7 +9,7 @@
 package ru.stakancheck.data.mappers
 
 import ru.stakancheck.data.models.VenueDetails
-import skdev.wheelsservice.database.models.VenueDetailsDBO
+import ru.stakancheck.database.models.VenueDetailsDBO
 
 internal class VenueDetailsDBOToVenueDetailsMapper {
     companion object {

@@ -6,14 +6,14 @@
  * Personal Email: stakancheck@gmail.com
  */
 
-package skdev.wheelsservice.database.utils
+package ru.stakancheck.database.utils
 
 import androidx.room.TypeConverter
 import kotlinx.serialization.SerializationException
 import kotlinx.serialization.encodeToString
 import kotlinx.serialization.json.Json
-import skdev.wheelsservice.database.models.Category
-import skdev.wheelsservice.database.models.TimeFrame
+import ru.stakancheck.database.models.Category
+import ru.stakancheck.database.models.TimeFrame
 import java.util.Date
 
 internal class Converters {

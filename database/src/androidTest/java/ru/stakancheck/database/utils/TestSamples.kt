@@ -6,14 +6,16 @@
  * Personal Email: stakancheck@gmail.com
  */
 
-package skdev.wheelsservice.database.utils
+package ru.stakancheck.database.utils
 
-import skdev.wheelsservice.database.models.Category
-import skdev.wheelsservice.database.models.Contact
-import skdev.wheelsservice.database.models.Hours
-import skdev.wheelsservice.database.models.Location
-import skdev.wheelsservice.database.models.TimeFrame
-import skdev.wheelsservice.database.models.VenueDetailsDBO
+import ru.stakancheck.database.models.Category
+import ru.stakancheck.database.models.Contact
+import ru.stakancheck.database.models.Hours
+import ru.stakancheck.database.models.LeisureEntryDBO
+import ru.stakancheck.database.models.Location
+import ru.stakancheck.database.models.TimeFrame
+import ru.stakancheck.database.models.VenueDetailsDBO
+import java.util.Date
 
 object TestSamples {
     val venueDetailsDBO1 = VenueDetailsDBO(
@@ -71,5 +73,13 @@ object TestSamples {
                 )
             )
         )
+    )
+
+    val leisureEntryDBO1 = LeisureEntryDBO(
+        title = "Test Title",
+        description = "This is a test description.",
+        date = Date(1633027200),
+        interestLink = "venue_1231",
+        ownerId = "1"
     )
 }

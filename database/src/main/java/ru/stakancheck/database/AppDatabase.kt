@@ -6,16 +6,18 @@
  * Personal Email: stakancheck@gmail.com
  */
 
-package skdev.wheelsservice.database
+package ru.stakancheck.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import skdev.wheelsservice.database.dao.VenueDetailsDAO
-import skdev.wheelsservice.database.models.VenueDetailsDBO
-import skdev.wheelsservice.database.utils.Converters
+import ru.stakancheck.database.dao.LeisureEntryDAO
+import ru.stakancheck.database.dao.VenueDetailsDAO
+import ru.stakancheck.database.models.LeisureEntryDBO
+import ru.stakancheck.database.models.VenueDetailsDBO
+import ru.stakancheck.database.utils.Converters
 
 
 class AppDatabase internal constructor(private val database: AppRoomDatabase) {
@@ -23,10 +25,11 @@ class AppDatabase internal constructor(private val database: AppRoomDatabase) {
         get() = database.venueDetailsDao()
 }
 
-@Database(entities = [VenueDetailsDBO::class], version = 1)
+@Database(entities = [VenueDetailsDBO::class, LeisureEntryDBO::class], version = 1)
 @TypeConverters(Converters::class)
 internal abstract class AppRoomDatabase : RoomDatabase() {
     abstract fun venueDetailsDao(): VenueDetailsDAO
+    abstract fun leisureEntryDao(): LeisureEntryDAO
 }
 
 fun AppDatabase(applicationContext: Context): AppDatabase {
@@ -34,7 +37,7 @@ fun AppDatabase(applicationContext: Context): AppDatabase {
         Room.databaseBuilder(
             checkNotNull(applicationContext.applicationContext),
             AppRoomDatabase::class.java,
-            "news"
+            "app_database"
         ).build()
     return AppDatabase(appRoomDatabase)
 }

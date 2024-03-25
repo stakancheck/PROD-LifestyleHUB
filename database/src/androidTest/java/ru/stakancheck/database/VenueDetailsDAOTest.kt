@@ -6,7 +6,7 @@
  * Personal Email: stakancheck@gmail.com
  */
 
-package skdev.wheelsservice.database
+package ru.stakancheck.database
 
 import androidx.room.Room
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,8 +19,8 @@ import org.junit.Assert.assertNull
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
-import skdev.wheelsservice.database.dao.VenueDetailsDAO
-import skdev.wheelsservice.database.utils.TestSamples
+import ru.stakancheck.database.dao.VenueDetailsDAO
+import ru.stakancheck.database.utils.TestSamples
 
 @RunWith(AndroidJUnit4::class)
 class VenueDetailsDAOTest {

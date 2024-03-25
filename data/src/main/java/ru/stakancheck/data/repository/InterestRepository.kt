@@ -26,8 +26,8 @@ import ru.stakancheck.data.models.VenueDetails
 import ru.stakancheck.data.utils.CachableDataProvider
 import ru.stakancheck.data.utils.CachebleResult
 import ru.stakancheck.data.utils.Result
-import skdev.wheelsservice.database.AppDatabase
-import skdev.wheelsservice.database.models.VenueDetailsDBO
+import ru.stakancheck.database.AppDatabase
+import ru.stakancheck.database.models.VenueDetailsDBO
 import java.util.Locale
 
 

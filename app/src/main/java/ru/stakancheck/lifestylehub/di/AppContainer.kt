@@ -24,6 +24,7 @@ import ru.stakancheck.common.permission.PermissionCheckerImpl
 import ru.stakancheck.data.repository.InterestRepository
 import ru.stakancheck.data.repository.LocationRepository
 import ru.stakancheck.data.repository.WeatherRepository
+import ru.stakancheck.database.AppDatabase
 import ru.stakancheck.lifestylehub.BuildConfig
 import ru.stakancheck.lifestylehub.utils.LoggerBridgeImpl
 import ru.stakancheck.main.feed.domain.usecases.GetCurrentWeatherUseCase
@@ -33,7 +34,6 @@ import ru.stakancheck.uikit.components.ErrorPresenter
 import ru.stakancheck.uikit.components.ToastErrorPresenter
 import ru.stakancheck.venue.details.domain.usecases.GetVenueDetailsByIdUseCase
 import ru.stakancheck.venue.details.presentation.VenueDetailsScreenViewModel
-import skdev.wheelsservice.database.AppDatabase
 import java.util.concurrent.CopyOnWriteArrayList
 import ru.stakancheck.api.HttpClient as AppHttpClient
 

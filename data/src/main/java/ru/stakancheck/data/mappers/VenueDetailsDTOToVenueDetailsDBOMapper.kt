@@ -9,12 +9,12 @@
 package ru.stakancheck.data.mappers
 
 import ru.stakancheck.api.models.VenueDetailsDTO
-import skdev.wheelsservice.database.models.Category
-import skdev.wheelsservice.database.models.Contact
-import skdev.wheelsservice.database.models.Hours
-import skdev.wheelsservice.database.models.Location
-import skdev.wheelsservice.database.models.TimeFrame
-import skdev.wheelsservice.database.models.VenueDetailsDBO
+import ru.stakancheck.database.models.Category
+import ru.stakancheck.database.models.Contact
+import ru.stakancheck.database.models.Hours
+import ru.stakancheck.database.models.Location
+import ru.stakancheck.database.models.TimeFrame
+import ru.stakancheck.database.models.VenueDetailsDBO
 
 internal class VenueDetailsDTOToVenueDetailsDBOMapper {
     companion object {
