@@ -30,8 +30,10 @@
     <string name="weather_sunset">Закат</string>
     <string name="weather_sunrise">Рассвет</string>
 
+    <string name="weather_not_found">Не удалось получить погоду</string>
 
     <!-- Places of interest and venues -->
     <string name="location_distance_meters">%d м</string>
+    <string name="interests_not_found">Места досуга не найдны</string>
 
 </resources>

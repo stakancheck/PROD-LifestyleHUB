@@ -106,7 +106,7 @@ fun OutlineBadge(
 fun LargeBadge(
     modifier: Modifier = Modifier,
     icon: ImageVector? = null,
-    label: String
+    label: String,
 ) {
     Row(
         modifier = modifier,

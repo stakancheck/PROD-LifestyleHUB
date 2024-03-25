@@ -44,6 +44,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.tooling.preview.PreviewParameterProvider
@@ -54,8 +55,8 @@ import ru.stakancheck.main.feed.entities.WeatherBackground
 import ru.stakancheck.main.feed.entities.WeatherIcon
 import ru.stakancheck.main.feed.entities.WeatherUIModel
 import ru.stakancheck.main.feed.entities.WindDirection
+import ru.stakancheck.main.feed.presentation.MainFeedScreenViewModel
 import ru.stakancheck.uikit.components.ShimmerConteiner
-import ru.stakancheck.uikit.components.ShimmerPlaceHolder
 import ru.stakancheck.uikit.icons.IconPack
 import ru.stakancheck.uikit.icons.iconpack.IcHumidityHigh
 import ru.stakancheck.uikit.icons.iconpack.IcHumidityLow
@@ -70,27 +71,36 @@ import ru.stakancheck.uikit.theme.LifestyleHUBTheme
 @Composable
 fun WeatherWidget(
     modifier: Modifier = Modifier,
-    loading: Boolean,
-    weatherModel: WeatherUIModel?,
+    weatherState: MainFeedScreenViewModel.WeatherState,
 ) {
-    ElevatedCard(
+    AnimatedContent(
         modifier = modifier,
-        shape = MaterialTheme.shapes.large,
-        colors = CardDefaults.elevatedCardColors(
-            contentColor = CustomTheme.colors.weatherDayColors.onWeatherBackground,
-            containerColor = CustomTheme.colors.weatherDayColors.weatherBackgroundGradient.first()
-        ),
-        elevation = CardDefaults.cardElevation(Elevation.defaultElevation)
+        targetState = weatherState
     ) {
-        AnimatedContent(targetState = weatherModel) {
-            if (it == null) {
-                ShimmerPlaceHolder(
+        when (it) {
+            MainFeedScreenViewModel.WeatherState.Error -> {
+                Text(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .height(256.dp)
+                        .padding(Dimens.spaceMedium),
+                    textAlign = TextAlign.Center,
+                    text = stringResource(R.string.weather_not_found),
+                    style = MaterialTheme.typography.titleLarge
                 )
-            } else {
-                WeatherWidgetContent(weatherModel = it, loading = loading)
+            }
+
+            is MainFeedScreenViewModel.WeatherState.Loading -> {
+                WeatherWidgetContent(
+                    weatherUIModel = it.weather,
+                    loading = true
+                )
+            }
+
+            is MainFeedScreenViewModel.WeatherState.Success -> {
+                WeatherWidgetContent(
+                    weatherUIModel = it.weather,
+                    loading = false
+                )
             }
         }
     }
@@ -100,185 +110,208 @@ fun WeatherWidget(
 private fun WeatherWidgetContent(
     modifier: Modifier = Modifier,
     loading: Boolean,
-    weatherModel: WeatherUIModel,
+    weatherUIModel: WeatherUIModel?,
 ) {
-    val colors = if (weatherModel.background == WeatherBackground.NIGHT) {
+    val colors = if (weatherUIModel?.background == WeatherBackground.NIGHT) {
         CustomTheme.colors.weatherNightColors
     } else {
         CustomTheme.colors.weatherDayColors
     }
-
-    ShimmerConteiner(
-        modifier = modifier
-            .fillMaxWidth()
-            .background(brush = Brush.verticalGradient(colors.weatherBackgroundGradient)),
-        enabled = loading
+    ElevatedCard(
+        modifier = modifier,
+        shape = MaterialTheme.shapes.large,
+        colors = CardDefaults.elevatedCardColors(
+            contentColor = colors.onWeatherBackground,
+            containerColor = colors.weatherBackgroundGradient.first()
+        ),
+        elevation = CardDefaults.cardElevation(Elevation.defaultElevation)
     ) {
-        CompositionLocalProvider(LocalContentColor provides colors.onWeatherBackground) {
-            Column(
-                modifier = modifier
-            ) {
-                Row(
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(Dimens.spaceMedium),
-                    horizontalArrangement = Arrangement.SpaceBetween
-                ) {
-                    Row(
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        Icon(
-                            modifier = Modifier.size(IconSize.Small),
-                            tint = colors.onWeatherBackgroundVariant,
-                            imageVector = Icons.Rounded.LocationOn,
-                            contentDescription = "location"
-                        )
-                        Spacer(Dimens.spaceExtraSmall)
-                        Text(
-                            color = colors.onWeatherBackgroundVariant,
-                            text = weatherModel.location,
-                            style = MaterialTheme.typography.titleSmall
-                        )
-                    }
-
-                    Text(
-                        color = colors.onWeatherBackgroundVariant,
-                        text = stringResource(R.string.weather_data_from, weatherModel.updateDate),
-                        style = MaterialTheme.typography.titleSmall
-                    )
-                }
-                Row(
-                    modifier = Modifier.padding(horizontal = Dimens.spaceMedium),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Start
-                ) {
-                    Image(
-                        modifier = Modifier
-                            .weight(2f)
-                            .fillMaxWidth(),
-                        contentScale = ContentScale.Fit,
-                        painter = painterResource(weatherModel.weatherIcon.resId),
-                        contentDescription = weatherModel.weatherCondition
-                    )
-
-                    Spacer(Dimens.spaceLarge)
-
-                    Column(
-                        modifier = Modifier
-                            .weight(3f),
-                        horizontalAlignment = Alignment.Start,
-                    ) {
-                        Row(
-                            verticalAlignment = Alignment.CenterVertically
-                        ) {
-                            Text(
-                                modifier = Modifier.alignByBaseline(),
-                                text = weatherModel.temp.toString(),
-                                style = MaterialTheme.typography.displayLarge
-                            )
-
-                            Box(
-                                modifier = Modifier.padding(bottom = Dimens.spaceLarge),
-                            ) {
-                                DegreeSign(
-                                    color = colors.onWeatherBackgroundVariant
-                                )
-                            }
-
-                            Spacer(Dimens.spaceMedium)
-
-                            Text(
-                                color = colors.onWeatherBackground,
-                                text = stringResource(
-                                    R.string.weather_temperature,
-                                    weatherModel.tempMax
-                                ) + "\n" + stringResource(
-                                    R.string.weather_temperature,
-                                    weatherModel.tempMin
-                                ),
-                                style = MaterialTheme.typography.titleLarge
-                            )
-                        }
-
-                        Text(
-                            text = weatherModel.weatherCondition,
-                            style = MaterialTheme.typography.titleLarge
-                        )
-
-                        Text(
-                            color = colors.onWeatherBackgroundVariant,
-                            text = stringResource(
-                                R.string.weather_feels_like,
-                                weatherModel.feelsLike
-                            ),
-                            style = MaterialTheme.typography.titleSmall
-                        )
-                    }
-                }
+        ShimmerConteiner(
+            modifier = modifier
+                .fillMaxWidth()
+                .background(brush = Brush.verticalGradient(colors.weatherBackgroundGradient)),
+            enabled = loading || weatherUIModel == null,
+            color = colors.onWeatherBackground
+        ) {
+            if (weatherUIModel == null) {
                 Box(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .heightIn(max = 142.dp)
-                        .padding(Dimens.spaceMedium)
-                        .clip(MaterialTheme.shapes.medium)
-                        .background(colors.sheetWeatherBackground)
-                ) {
-                    Row(
-                        modifier = Modifier.padding(Dimens.spaceSmall),
-                        verticalAlignment = Alignment.CenterVertically
+                        .height(256.dp)
+                )
+            }
+            weatherUIModel?.let { weatherModel ->
+                CompositionLocalProvider(LocalContentColor provides colors.onWeatherBackground) {
+                    Column(
+                        modifier = modifier
                     ) {
-                        WeatherInfoRow(
-                            modifier = Modifier.weight(1f),
-                            imageVector = Icons.Rounded.Air,
-                            title = stringResource(R.string.weather_wind),
-                            // TODO: to string res
-                            value =
-                            stringResource(
-                                R.string.weather_wind_speed,
-                                weatherModel.windSpeed
-                            ) + ", " + stringResource(
-                                weatherModel.windDirection.resId
-                            ),
-                            color = colors.onWeatherBackground,
-                            labelColor = colors.onWeatherBackgroundVariant
-                        )
+                        Row(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .padding(Dimens.spaceMedium),
+                            horizontalArrangement = Arrangement.SpaceBetween
+                        ) {
+                            Row(
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                Icon(
+                                    modifier = Modifier.size(IconSize.Small),
+                                    tint = colors.onWeatherBackgroundVariant,
+                                    imageVector = Icons.Rounded.LocationOn,
+                                    contentDescription = "location"
+                                )
+                                Spacer(Dimens.spaceExtraSmall)
+                                Text(
+                                    color = colors.onWeatherBackgroundVariant,
+                                    text = weatherModel.location,
+                                    style = MaterialTheme.typography.titleSmall
+                                )
+                            }
 
-                        Spacer(Dimens.spaceExtraSmall)
+                            Text(
+                                color = colors.onWeatherBackgroundVariant,
+                                text = stringResource(
+                                    R.string.weather_data_from,
+                                    weatherModel.updateDate
+                                ),
+                                style = MaterialTheme.typography.titleSmall
+                            )
+                        }
+                        Row(
+                            modifier = Modifier.padding(horizontal = Dimens.spaceMedium),
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.Start
+                        ) {
+                            Image(
+                                modifier = Modifier
+                                    .weight(2f)
+                                    .fillMaxWidth(),
+                                contentScale = ContentScale.Fit,
+                                painter = painterResource(weatherModel.weatherIcon.resId),
+                                contentDescription = weatherModel.weatherCondition
+                            )
 
-                        WeatherInfoRow(
-                            modifier = Modifier.weight(1f),
-                            imageVector = when (weatherModel.humidityLevel) {
-                                HumidityLevel.LOW -> IconPack.IcHumidityLow
-                                HumidityLevel.MID -> IconPack.IcHumidityMid
-                                HumidityLevel.HIGH -> IconPack.IcHumidityHigh
-                            },
-                            title = stringResource(R.string.weather_humidity),
-                            value = stringResource(
-                                R.string.weather_humidity_value,
-                                weatherModel.humidity
-                            ),
-                            color = colors.onWeatherBackground,
-                            labelColor = colors.onWeatherBackgroundVariant
-                        )
+                            Spacer(Dimens.spaceLarge)
 
-                        Spacer(Dimens.spaceExtraSmall)
+                            Column(
+                                modifier = Modifier
+                                    .weight(3f),
+                                horizontalAlignment = Alignment.Start,
+                            ) {
+                                Row(
+                                    verticalAlignment = Alignment.CenterVertically
+                                ) {
+                                    Text(
+                                        modifier = Modifier.alignByBaseline(),
+                                        text = weatherModel.temp.toString(),
+                                        style = MaterialTheme.typography.displayLarge
+                                    )
 
-                        WeatherInfoRow(
-                            modifier = Modifier.weight(1f),
-                            imageVector = Icons.Rounded.Thermostat,
-                            title = stringResource(R.string.weather_pressure),
-                            value = stringResource(
-                                R.string.weather_pressure_value,
-                                weatherModel.pressure
-                            ),
-                            color = colors.onWeatherBackground,
-                            labelColor = colors.onWeatherBackgroundVariant
-                        )
+                                    Box(
+                                        modifier = Modifier.padding(bottom = Dimens.spaceLarge),
+                                    ) {
+                                        DegreeSign(
+                                            color = colors.onWeatherBackgroundVariant
+                                        )
+                                    }
+
+                                    Spacer(Dimens.spaceMedium)
+
+                                    Text(
+                                        color = colors.onWeatherBackground,
+                                        text = stringResource(
+                                            R.string.weather_temperature,
+                                            weatherModel.tempMax
+                                        ) + "\n" + stringResource(
+                                            R.string.weather_temperature,
+                                            weatherModel.tempMin
+                                        ),
+                                        style = MaterialTheme.typography.titleLarge
+                                    )
+                                }
+
+                                Text(
+                                    text = weatherModel.weatherCondition,
+                                    style = MaterialTheme.typography.titleLarge
+                                )
+
+                                Text(
+                                    color = colors.onWeatherBackgroundVariant,
+                                    text = stringResource(
+                                        R.string.weather_feels_like,
+                                        weatherModel.feelsLike
+                                    ),
+                                    style = MaterialTheme.typography.titleSmall
+                                )
+                            }
+                        }
+                        Box(
+                            modifier = Modifier
+                                .fillMaxWidth()
+                                .heightIn(max = 142.dp)
+                                .padding(Dimens.spaceMedium)
+                                .clip(MaterialTheme.shapes.medium)
+                                .background(colors.sheetWeatherBackground)
+                        ) {
+                            Row(
+                                modifier = Modifier.padding(Dimens.spaceSmall),
+                                verticalAlignment = Alignment.CenterVertically
+                            ) {
+                                WeatherInfoRow(
+                                    modifier = Modifier.weight(1f),
+                                    imageVector = Icons.Rounded.Air,
+                                    title = stringResource(R.string.weather_wind),
+                                    // TODO: to string res
+                                    value =
+                                    stringResource(
+                                        R.string.weather_wind_speed,
+                                        weatherModel.windSpeed
+                                    ) + ", " + stringResource(
+                                        weatherModel.windDirection.resId
+                                    ),
+                                    color = colors.onWeatherBackground,
+                                    labelColor = colors.onWeatherBackgroundVariant
+                                )
+
+                                Spacer(Dimens.spaceExtraSmall)
+
+                                WeatherInfoRow(
+                                    modifier = Modifier.weight(1f),
+                                    imageVector = when (weatherModel.humidityLevel) {
+                                        HumidityLevel.LOW -> IconPack.IcHumidityLow
+                                        HumidityLevel.MID -> IconPack.IcHumidityMid
+                                        HumidityLevel.HIGH -> IconPack.IcHumidityHigh
+                                    },
+                                    title = stringResource(R.string.weather_humidity),
+                                    value = stringResource(
+                                        R.string.weather_humidity_value,
+                                        weatherModel.humidity
+                                    ),
+                                    color = colors.onWeatherBackground,
+                                    labelColor = colors.onWeatherBackgroundVariant
+                                )
+
+                                Spacer(Dimens.spaceExtraSmall)
+
+                                WeatherInfoRow(
+                                    modifier = Modifier.weight(1f),
+                                    imageVector = Icons.Rounded.Thermostat,
+                                    title = stringResource(R.string.weather_pressure),
+                                    value = stringResource(
+                                        R.string.weather_pressure_value,
+                                        weatherModel.pressure
+                                    ),
+                                    color = colors.onWeatherBackground,
+                                    labelColor = colors.onWeatherBackgroundVariant
+                                )
+                            }
+                        }
                     }
                 }
             }
         }
     }
+
 }
 
 
@@ -377,6 +410,6 @@ private class WeatherModelProvider : PreviewParameterProvider<WeatherUIModel> {
 @Composable
 fun WeatherWidgetNightPreview(@PreviewParameter(WeatherModelProvider::class) weatherModel: WeatherUIModel) {
     LifestyleHUBTheme {
-        WeatherWidget(weatherModel = weatherModel, loading = false)
+        WeatherWidget(weatherState = MainFeedScreenViewModel.WeatherState.Success(weatherModel))
     }
 }

@@ -40,3 +40,16 @@ sealed interface Result<out D : Any, out E : RootError> {
         }
     }
 }
+
+/**
+ * Map some data in RootError (use it for changing data type)
+ *
+ * **Like this:**
+ * - DTO -> MODEL
+ */
+fun <I : Any, O : Any, E : RootError> Result<I, E>.map(mapper: (I) -> O): Result<O, E> {
+    return when (this) {
+        is Result.Success -> Result.Success(mapper(data))
+        is Result.Error -> Result.Error(error)
+    }
+}

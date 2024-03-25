@@ -33,8 +33,10 @@
     <string name="weather_sunset">Sunset</string>
     <string name="weather_sunrise">Senrise</string>
 
+    <string name="weather_not_found">Could not get the weather</string>
 
     <!-- Places of interest and venues -->
     <string name="location_distance_meters">%d m</string>
+    <string name="interests_not_found">Venues was not found</string>
 
 </resources>

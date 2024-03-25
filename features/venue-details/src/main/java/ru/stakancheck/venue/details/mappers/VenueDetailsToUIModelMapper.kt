@@ -33,7 +33,13 @@ class VenueDetailsToUIModelMapper {
                 categories = venueDetails.categories.map { it.toCategoryUIModel() },
                 likesCount = venueDetails.likesCount,
                 description = venueDetails.description,
-                photoUrls = venueDetails.photoUrls,
+                photoUrls = if (venueDetails.photoUrls.isEmpty()) {
+                    venueDetails.bestPhotoUrl?.let {
+                        listOf(it)
+                    } ?: emptyList()
+                } else {
+                    venueDetails.photoUrls
+                },
                 phrases = venueDetails.phrases,
                 reasons = venueDetails.reasons
             )
