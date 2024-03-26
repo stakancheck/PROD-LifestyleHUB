@@ -21,7 +21,7 @@ class LeisureEntryRepository(
 ) {
     suspend fun getLeisureEntries(): Result<List<LeisureEntry>, DataError.Local> {
         return try {
-            val entries = database.leisureEntryDao.getLeiseresByUserId("test")
+            val entries = database.leisureEntryDao.getLeisuresByUserId("test")
                 .map { LeisureEntryDBOToLeisureEntryMapper(it) }
             Result.Success(entries)
         } catch (e: Exception) {

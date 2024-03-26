@@ -12,7 +12,7 @@ plugins {
 }
 
 android {
-    namespace = "ru.stakancheck.leisure.list"
+    namespace = "ru.stakancheck.leisure.edit"
     compileSdk = 34
 
     defaultConfig {

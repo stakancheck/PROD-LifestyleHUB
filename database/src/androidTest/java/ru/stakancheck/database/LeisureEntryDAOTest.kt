@@ -12,6 +12,7 @@ import androidx.test.platform.app.InstrumentationRegistry
 import kotlinx.coroutines.runBlocking
 import org.junit.After
 import org.junit.Assert.assertEquals
+import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertNull
 import org.junit.Before
 import org.junit.Test
@@ -42,7 +43,7 @@ class LeisureEntryDAOTest {
     fun `testInsertAndRead`() = runBlocking {
         val leisureEntry = TestSamples.leisureEntryDBO1
         dao.insert(leisureEntry)
-        val retrievedEntry = dao.getLeiseresByUserId(leisureEntry.ownerId)
+        val retrievedEntry = dao.getLeisuresByUserId(leisureEntry.ownerId)
         assertEquals(leisureEntry.date, retrievedEntry.first().date)
     }
 
@@ -52,7 +53,7 @@ class LeisureEntryDAOTest {
         dao.insert(leisureEntry)
         val updatedEntry = leisureEntry.copy(title = "Updated Title")
         dao.insert(updatedEntry)
-        val retrievedEntry = dao.getLeiseresByUserId(updatedEntry.ownerId)
+        val retrievedEntry = dao.getLeisuresByUserId(updatedEntry.ownerId)
         assertEquals(listOf(updatedEntry), retrievedEntry)
     }
 
@@ -61,7 +62,16 @@ class LeisureEntryDAOTest {
         val leisureEntry = TestSamples.leisureEntryDBO1.copy(id = 3)
         dao.insert(leisureEntry)
         dao.removeById(leisureEntry.id!!)
-        val retrievedEntry = dao.getLeiseresByUserId(leisureEntry.ownerId)
+        val retrievedEntry = dao.getLeisuresByUserId(leisureEntry.ownerId)
         assertNull(retrievedEntry.find { it.id == leisureEntry.id })
+    }
+
+    @Test
+    fun `testGetOneLeisure`() = runBlocking {
+        val leisureEntry = TestSamples.leisureEntryDBO1.copy(id = 4)
+        dao.insert(leisureEntry)
+        val retrievedEntry = dao.getLeisureById(leisureEntry.id!!)
+        assertNotNull(retrievedEntry)
+        assertEquals(retrievedEntry.title, leisureEntry.title)
     }
 }

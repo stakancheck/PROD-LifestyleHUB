@@ -134,6 +134,7 @@ dependencies {
     implementation(project(":features:main-feed"))
     implementation(project(":features:venue-details"))
     implementation(project(":features:leisure-list"))
+    implementation(project(":features:leisure-edit"))
     implementation(project(":data"))
     implementation(project(":api"))
     implementation(project(":database"))

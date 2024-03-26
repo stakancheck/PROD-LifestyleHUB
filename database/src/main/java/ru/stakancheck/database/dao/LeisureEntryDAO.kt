@@ -18,10 +18,13 @@ import ru.stakancheck.database.models.LeisureEntryDBO
 @Dao
 interface LeisureEntryDAO {
     @Query("SELECT * FROM leisure_entries WHERE owner_id = :userId")
-    suspend fun getLeiseresByUserId(userId: String): List<LeisureEntryDBO>
+    suspend fun getLeisuresByUserId(userId: String): List<LeisureEntryDBO>
+
+    @Query("SELECT * FROM leisure_entries WHERE id = :leisureId")
+    suspend fun getLeisureById(leisureId: Long): LeisureEntryDBO
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(venue: LeisureEntryDBO)
+    suspend fun insert(leisure: LeisureEntryDBO)
 
     @Query("DELETE FROM leisure_entries WHERE id = :leisureId")
     suspend fun removeById(leisureId: Long)
