@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2024. Artem Sukhanov (Stakancheck)
+  ~ All rights reserved.
+  ~
+  ~ For inquiries, please contact:
+  ~ Personal Email: stakancheck@gmail.com
+  -->
+
+<resources>
+
+    <!-- Validations -->
+    <string name="field_error_title_cant_be_empty">Поле заголовка не может быть пустым</string>
+    <string name="field_error_description_cant_be_empty">Поле описания не может быть пустым</string>
+    <string name="field_error_date_cant_be_empty">Поле даты не может быть пустым</string>
+
+    <!-- Edit screen -->
+    <string name="title_create_new_leisure">Запланировать досуг</string>
+    <string name="title_edit_leisure">Изменить досуг</string>
+
+    <string name="label_title">Заголовок</string>
+    <string name="label_description">Описание</string>
+    <string name="label_date">Дата</string>
+    <string name="label_linked_interest">Связанный интерес</string>
+
+    <string name="label_save">Сохранить</string>
+    <string name="label_delete">Удалить</string>
+    <string name="label_are_you_sure">Вы уверены?</string>
+    <string name="label_cancel">Отмена</string>
+    <string name="label_yes">Да</string>
+
+</resources>

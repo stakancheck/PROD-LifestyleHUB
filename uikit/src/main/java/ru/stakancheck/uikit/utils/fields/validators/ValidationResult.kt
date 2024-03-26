@@ -8,6 +8,8 @@
 
 package ru.stakancheck.uikit.utils.fields.validators
 
+import ru.stakancheck.utils.fields.FormField
+
 sealed class ValidationResult<out V : Any?> {
 
     open fun <T : Any?> ValidationResult<T>.nextValidation(
@@ -79,3 +81,6 @@ internal class ValidationResultDslContext<out V : Any?>(
         return this
     }
 }
+
+fun validateAll(vararg fields: FormField<*, *>): Boolean =
+    fields.map { it.validate() }.reduce { v1, v2 -> v1 && v2 }

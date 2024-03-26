@@ -20,6 +20,9 @@ fun LeisureTab(
     LeisureListUI(
         navigateToVenueDetails = { venueId ->
             navController.navigate("venue/$venueId")
+        },
+        navigateToLeisureEdit = { leisureId ->
+            navController.navigate("leisure_edit${leisureId?.let { "?leisureId=$leisureId" } ?: ""}")
         }
     )
 }

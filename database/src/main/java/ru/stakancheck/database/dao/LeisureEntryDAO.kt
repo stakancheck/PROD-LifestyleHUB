@@ -21,7 +21,7 @@ interface LeisureEntryDAO {
     suspend fun getLeisuresByUserId(userId: String): List<LeisureEntryDBO>
 
     @Query("SELECT * FROM leisure_entries WHERE id = :leisureId")
-    suspend fun getLeisureById(leisureId: Long): LeisureEntryDBO
+    suspend fun getLeisureById(leisureId: Long): LeisureEntryDBO?
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(leisure: LeisureEntryDBO)

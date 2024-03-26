@@ -50,6 +50,31 @@ fun InfoBadge(
 }
 
 @Composable
+fun InfoBadge(
+    modifier: Modifier = Modifier,
+    icon: ImageVector? = null,
+    label: String
+) {
+    Row(
+        modifier = modifier,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        icon?.let {
+            Icon(
+                imageVector = it,
+                contentDescription = null,
+                modifier = Modifier.size(IconSize.Small)
+            )
+            Spacer(Dimens.spaceExtraSmall)
+        }
+        Text(
+            text = label,
+            style = MaterialTheme.typography.titleSmall,
+        )
+    }
+}
+
+@Composable
 fun LargeBadge(
     modifier: Modifier = Modifier,
     icon: Painter? = null,

@@ -8,14 +8,10 @@
 
 package ru.stakancheck.leisure.list.mappers
 
+import ru.stakancheck.common.utils.DateTools
 import ru.stakancheck.data.models.LeisureEntry
 import ru.stakancheck.leisure.list.entities.InterestLink
 import ru.stakancheck.leisure.list.entities.LeisureEntryUIModel
-import java.text.DateFormat
-import java.text.SimpleDateFormat
-import java.time.ZoneId
-import java.util.Date
-import java.util.Locale
 import ru.stakancheck.data.models.InterestLink as DataInterestLink
 
 class LeisureEntryToUIModelMapper {
@@ -25,7 +21,7 @@ class LeisureEntryToUIModelMapper {
                 id = leisureEntry.id ?: throw IllegalArgumentException("Leisure entry id is null"),
                 title = leisureEntry.title,
                 description = leisureEntry.description,
-                formattedDate = "",
+                formattedDate = DateTools.provideFormattedDate(leisureEntry.date),
                 date = leisureEntry.date,
                 interestLink = leisureEntry.interestLink?.let { provideInterestLink(it) }
             )
@@ -35,14 +31,6 @@ class LeisureEntryToUIModelMapper {
             return when (interestLink) {
                 is ru.stakancheck.data.models.InterestLink.Venue -> InterestLink.Venue(interestLink.id)
             }
-        }
-
-        private val formatter: DateFormat = SimpleDateFormat("dd.MM.yyyy HH:mm", Locale.ROOT)
-
-        private fun provideFormattedDate(date: Date): String {
-            val instant = date.toInstant()
-            val zonedDateTime = instant.atZone(ZoneId.systemDefault())
-            return formatter.format(zonedDateTime)
         }
     }
 }

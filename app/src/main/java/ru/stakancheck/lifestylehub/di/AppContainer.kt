@@ -26,6 +26,9 @@ import ru.stakancheck.data.repository.LeisureEntryRepository
 import ru.stakancheck.data.repository.LocationRepository
 import ru.stakancheck.data.repository.WeatherRepository
 import ru.stakancheck.database.AppDatabase
+import ru.stakancheck.leisure.edit.domain.usecases.GetLeisureEntryUseCase
+import ru.stakancheck.leisure.edit.domain.usecases.SaveLeisureEntryUseCase
+import ru.stakancheck.leisure.edit.presentation.LeisureEntryEditScreenViewModel
 import ru.stakancheck.leisure.list.domain.usecases.GetLeisureListUseCase
 import ru.stakancheck.leisure.list.presentation.LeisureListScreenViewModel
 import ru.stakancheck.lifestylehub.BuildConfig
@@ -157,12 +160,27 @@ private val useCase = module {
             errorCollector = get()
         )
     }
+
+    factory<GetLeisureEntryUseCase> {
+        GetLeisureEntryUseCase(
+            leisureEntryRepository = get(),
+            errorCollector = get()
+        )
+    }
+
+    factory<SaveLeisureEntryUseCase> {
+        SaveLeisureEntryUseCase(
+            leisureEntryRepository = get(),
+            errorCollector = get()
+        )
+    }
 }
 
 private val viewmodel = module {
     viewModel { MainFeedScreenViewModel(get(), get(), get()) }
     viewModel { VenueDetailsScreenViewModel(get(), get()) }
     viewModel { LeisureListScreenViewModel(get(), get()) }
+    viewModel { LeisureEntryEditScreenViewModel(get(), get(), get()) }
 }
 
 val commonModule = listOf(main, data, useCase, viewmodel)

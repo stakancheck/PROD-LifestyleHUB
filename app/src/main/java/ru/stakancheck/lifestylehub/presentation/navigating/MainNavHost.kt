@@ -15,6 +15,8 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import androidx.navigation.navArgument
+import ru.stakancheck.leisure.edit.presentation.LeisureEntryEditUI
 import ru.stakancheck.lifestylehub.presentation.screens.LeisureTab
 import ru.stakancheck.lifestylehub.presentation.screens.MainFeedTab
 import ru.stakancheck.lifestylehub.presentation.screens.UserProfileTab
@@ -70,7 +72,34 @@ fun MainNavHost(navController: NavHostController, modifier: Modifier = Modifier)
         ) { backStackEntry ->
             VenueDetailsUI(
                 venueId = backStackEntry.arguments?.getString("venueId")
-                    ?: throw IllegalStateException("No venueId")
+                    ?: throw IllegalStateException("No venueId"),
+                navigateToCreateLeisure = { interestId ->
+                    navController.navigate("leisure_edit?interestId=$interestId")
+                }
+            )
+        }
+
+        composable(
+            "leisure_edit?leisureId={leisureId}?&interestId={interestId}",
+            arguments = listOf(navArgument("leisureId") {
+                nullable = true
+                defaultValue = null
+            }, navArgument("interestId") {
+                nullable = true
+                defaultValue = null
+            }),
+            enterTransition = { fadeIn() },
+            exitTransition = { fadeOut() },
+            popEnterTransition = { fadeIn() },
+            popExitTransition = { fadeOut() }
+        ) { backStackEntry ->
+            LeisureEntryEditUI(
+                leisureId = backStackEntry.arguments?.getString("leisureId")?.toLongOrNull(),
+                interestId = backStackEntry.arguments?.getString("interestId"),
+                navigateBack = { navController.popBackStack() },
+                navigateToVenue = { venueId ->
+                    navController.navigate("venue/$venueId")
+                }
             )
         }
     }

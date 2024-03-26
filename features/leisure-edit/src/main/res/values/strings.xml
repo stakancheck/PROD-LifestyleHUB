@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2024. Artem Sukhanov (Stakancheck)
+  ~ All rights reserved.
+  ~
+  ~ For inquiries, please contact:
+  ~ Personal Email: stakancheck@gmail.com
+  -->
+
+<resources>
+
+    <!-- Validations -->
+    <string name="field_error_title_cant_be_empty">Title field can\'t be empty</string>
+    <string name="field_error_description_cant_be_empty">Description field can\'t be empty</string>
+    <string name="field_error_date_cant_be_empty">Date field can\'t be empty</string>
+
+    <!-- Edit screen -->
+    <string name="title_create_new_leisure">Create new leisure</string>
+    <string name="title_edit_leisure">Edit leisure</string>
+
+    <string name="label_title">Title</string>
+    <string name="label_description">Description</string>
+    <string name="label_date">Date</string>
+    <string name="label_linked_interest">Linked interest</string>
+
+    <string name="label_save">Save</string>
+    <string name="label_delete">Delete</string>
+    <string name="label_are_you_sure">Are you sure?</string>
+    <string name="label_cancel">Cancel</string>
+    <string name="label_yes">Yes</string>
+
+</resources>

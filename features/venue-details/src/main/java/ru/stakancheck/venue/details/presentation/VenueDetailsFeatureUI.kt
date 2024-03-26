@@ -69,6 +69,7 @@ import ru.stakancheck.venue.details.entities.VenueDetailsUIModel
 @Composable
 fun VenueDetailsUI(
     venueId: String,
+    navigateToCreateLeisure: (leisureId: String?) -> Unit,
 ) {
     val viewModel = koinViewModel<VenueDetailsScreenViewModel>()
 
@@ -78,7 +79,8 @@ fun VenueDetailsUI(
 
     VenueDetailsUI(
         modifier = Modifier.fillMaxSize(),
-        viewModel = viewModel
+        viewModel = viewModel,
+        navigateToCreateLeisure = navigateToCreateLeisure,
     )
 }
 
@@ -87,6 +89,7 @@ fun VenueDetailsUI(
 private fun VenueDetailsUI(
     modifier: Modifier,
     viewModel: VenueDetailsScreenViewModel,
+    navigateToCreateLeisure: (leisureId: String?) -> Unit,
 ) {
     val state by viewModel.venueDetailsState.collectAsState()
 
@@ -109,19 +112,22 @@ private fun VenueDetailsUI(
                 loading = (state is VenueDetailsScreenViewModel.VenueDetailsState.Loading ||
                         state is VenueDetailsScreenViewModel.VenueDetailsState.None)
             )
+
+            FloatingActionButton(
+                modifier = Modifier
+                    .align(Alignment.BottomEnd)
+                    .padding(Dimens.spaceLarge),
+                onClick = {
+                    navigateToCreateLeisure(it.id)
+                }
+            ) {
+                Icon(
+                    imageVector = Icons.Rounded.Add,
+                    contentDescription = stringResource(R.string.venue_details_save_to_my_leisure)
+                )
+            }
         }
 
-        FloatingActionButton(
-            modifier = Modifier
-                .align(Alignment.BottomEnd)
-                .padding(Dimens.spaceLarge),
-            onClick = { }
-        ) {
-            Icon(
-                imageVector = Icons.Rounded.Add,
-                contentDescription = stringResource(R.string.venue_details_save_to_my_leisure)
-            )
-        }
     }
 }
 

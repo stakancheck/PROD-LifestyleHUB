@@ -28,6 +28,7 @@ sealed interface DataError : Error {
 
     enum class Local : DataError {
         READ_ERROR,
+        NO_DATA,
         WRITE_ERROR,
         USER_NOT_FOUND,
         USER_NOT_LOGGINED_IN
