@@ -29,6 +29,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.compose.currentBackStackEntryAsState
 import ru.stakancheck.uikit.theme.Dimens
 import ru.stakancheck.uikit.theme.Radius
@@ -39,15 +40,16 @@ fun BottomNavigationBar(navController: NavController) {
         modifier = Modifier.height(64.dp)
     ) {
         val navBackStackEntry by navController.currentBackStackEntryAsState()
-        val currentRoute = navBackStackEntry?.destination?.route
 
         BottomBarItem.values.forEach { item ->
+            val selected =
+                navBackStackEntry?.destination?.hierarchy?.any { it.route == item.route } == true
             Box(
                 modifier = Modifier
                     .padding(horizontal = Dimens.spaceSmall)
                     .clip(RoundedCornerShape(Radius.large))
                     .selectable(
-                        selected = currentRoute == item.route,
+                        selected = selected,
                         onClick = {
                             navController.navigate(item.route) {
                                 popUpTo(navController.graph.startDestinationId)
@@ -64,8 +66,8 @@ fun BottomNavigationBar(navController: NavController) {
                     modifier = Modifier
                         .align(Alignment.Center)
                         .size(28.dp),
-                    tint = if (currentRoute == item.route) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
-                    imageVector = if (currentRoute == item.route) item.activeIcon else item.icon,
+                    tint = if (selected) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.onSurface,
+                    imageVector = if (selected) item.activeIcon else item.icon,
                     contentDescription = stringResource(id = item.labelResource)
                 )
             }

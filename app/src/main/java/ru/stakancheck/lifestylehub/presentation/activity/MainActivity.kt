@@ -23,6 +23,7 @@ import org.koin.compose.koinInject
 import ru.stakancheck.common.permission.PermissionCheckerActivity
 import ru.stakancheck.lifestylehub.presentation.navigating.BottomNavigationBar
 import ru.stakancheck.lifestylehub.presentation.navigating.MainNavHost
+import ru.stakancheck.lifestylehub.presentation.navigating.rememberAppState
 import ru.stakancheck.uikit.components.ErrorPresenter
 import ru.stakancheck.uikit.theme.LifestyleHUBTheme
 import ru.stakancheck.uikit.theme.SystemAppearance
@@ -40,11 +41,13 @@ class MainActivity : PermissionCheckerActivity() {
 
                 val navController = rememberNavController()
                 val errorPresenter: ErrorPresenter = koinInject()
+                val appState = rememberAppState(navController)
 
                 Scaffold(
                     modifier = Modifier.safeDrawingPadding(),
                     bottomBar = {
-                        BottomNavigationBar(navController = navController)
+                        if (appState.shouldShowBottomBar)
+                            BottomNavigationBar(navController = navController)
                     }
                 ) { innerPadding ->
                     Box(

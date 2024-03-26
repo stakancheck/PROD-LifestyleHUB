@@ -9,9 +9,17 @@
 package ru.stakancheck.lifestylehub.presentation.screens
 
 import androidx.compose.runtime.Composable
+import androidx.navigation.NavController
+import ru.stakancheck.leisure.list.presentation.LeisureListUI
 
 
 @Composable
-fun LeisureTab() {
-
+fun LeisureTab(
+    navController: NavController
+) {
+    LeisureListUI(
+        navigateToVenueDetails = { venueId ->
+            navController.navigate("venue/$venueId")
+        }
+    )
 }

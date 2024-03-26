@@ -12,7 +12,7 @@ plugins {
 }
 
 android {
-    namespace = "ru.stakancheck.venue.details"
+    namespace = "ru.stakancheck.leisure.list"
     compileSdk = 34
 
     defaultConfig {
@@ -47,7 +47,7 @@ android {
 }
 
 dependencies {
-    // Default dependencies (by Android Studio)
+// Default dependencies (by Android Studio)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
 
