@@ -11,6 +11,7 @@ package ru.stakancheck.database.utils
 import ru.stakancheck.database.models.Category
 import ru.stakancheck.database.models.Contact
 import ru.stakancheck.database.models.Hours
+import ru.stakancheck.database.models.Interest
 import ru.stakancheck.database.models.LeisureEntryDBO
 import ru.stakancheck.database.models.Location
 import ru.stakancheck.database.models.TimeFrame
@@ -79,7 +80,10 @@ object TestSamples {
         title = "Test Title",
         description = "This is a test description.",
         date = Date(1633027200),
-        interestLink = "venue_1231",
+        interest = Interest(
+            id = "1",
+            type = "Venue"
+        ),
         ownerId = "1"
     )
 }

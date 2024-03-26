@@ -9,6 +9,7 @@
 package ru.stakancheck.database.models
 
 import androidx.room.ColumnInfo
+import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import java.util.Date
@@ -20,8 +21,13 @@ data class LeisureEntryDBO(
     @ColumnInfo(name = "title") val title: String,
     @ColumnInfo(name = "description") val description: String,
     @ColumnInfo(name = "date") val date: Date,
-    @ColumnInfo(name = "interest_link") val interestLink: String,
+    @Embedded(prefix = "interest_") val interest: Interest?,
     @ColumnInfo(name = "owner_id") val ownerId: String,
 )
 
+
+data class Interest(
+    @ColumnInfo(name = "id") val id: String,
+    @ColumnInfo(name = "type") val type: String
+)
 

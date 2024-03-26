@@ -20,9 +20,16 @@ import ru.stakancheck.database.models.VenueDetailsDBO
 import ru.stakancheck.database.utils.Converters
 
 
+/**
+ * Public AppDatabase class is a singleton that holds the entire database.
+ * It is the main access point for the database.
+ */
 class AppDatabase internal constructor(private val database: AppRoomDatabase) {
     val venueDetailsDao: VenueDetailsDAO
         get() = database.venueDetailsDao()
+
+    val leisureEntryDao: LeisureEntryDAO
+        get() = database.leisureEntryDao()
 }
 
 @Database(entities = [VenueDetailsDBO::class, LeisureEntryDBO::class], version = 1)
