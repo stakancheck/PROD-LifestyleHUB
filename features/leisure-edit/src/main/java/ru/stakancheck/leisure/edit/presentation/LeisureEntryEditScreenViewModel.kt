@@ -123,8 +123,8 @@ class LeisureEntryEditScreenViewModel(
                         ownerId = "test"
                     )
                 )
+                intentAction(Action.NavigateBack)
             }
-            intentAction(Action.NavigateBack)
             onUpdatedState()
         }
     }
